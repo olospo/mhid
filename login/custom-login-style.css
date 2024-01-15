@@ -1,0 +1,76 @@
+body {
+background: #2D2D2D;
+}
+
+#login h1 a {
+background-image: url("../img/logo.png");
+background-size: contain;
+background-position: left top;
+width: 350px;
+height: 120px;
+margin-bottom: 40px;
+}
+
+.login form{
+box-shadow:none;
+padding:20px;
+padding-top: 40px;
+padding-bottom: 40px;
+background-color: #EBE9E6;
+border-style: none;
+}
+#login {
+background: #2D2D2D;
+margin: 50px auto;
+padding: 40px 20px;
+width: 350px;
+}
+.login label {
+color: #2D2D2D;
+font-size: 14px;
+}
+.login form .forgetmenot{
+float:none;
+}
+
+.login #nav a, .login #backtoblog a  {
+    color: #fff;
+}
+
+.login #nav a:hover, .login #backtoblog a:hover  {
+    color: #fff;
+}
+
+
+#login form p.submit{
+margin-top:15px;
+}
+.login.wp-core-ui .button-primary {
+background: #12698D;
+color: #FFF;
+text-shadow: none;
+float: none;
+clear: both;
+display: block;
+width: 100%;
+padding: 7px;
+height: auto;
+font-size: 15px;
+border: none;
+}
+
+.login.wp-core-ui .button-primary:hover {
+    background: #21ABE0;
+}
+
+a.privacy-policy-link, #language-switcher {
+display: none;
+}
+
+.login .privacy-policy-page-link {
+text-align: center;
+width: 100%;
+margin: 0;
+}
+
+

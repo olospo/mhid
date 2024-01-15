@@ -1,0 +1,58 @@
+/* Buttons 
+    
+<a href="#" class="button primary">Get a quote</a>
+<a href="#" class="button secondary">Get a quote</a>
+
+*/
+
+.button {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 15px 20px 15px 20px;
+  margin: 5px 10px 5px 0;
+  font: $bold 1.4rem/1.4rem $regular;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+  letter-spacing: 0.1rem;
+  &.primary {
+    color: $blue;
+    border: 2px solid $blue;
+    background: transparent;
+    &:hover {
+      color: $white;
+      background: $blue;
+      text-decoration: none;
+    }
+  }
+  &.secondary {
+    color: $white;
+    border: 2px solid $white;
+    background: transparent;
+    &:hover {
+      color: $blue;
+      background: $white;
+      text-decoration: none;
+    }
+  }
+  &.filled {
+    color: $white;
+    border: 2px solid $blue;
+    background: $blue;
+    &:hover {
+      background: $blue;
+    }
+    &.white {
+      color: $blue;
+      border: 2px solid $white;
+      background: $white;
+      &:hover {
+        background: $white;
+      }
+    }
+  }
+}

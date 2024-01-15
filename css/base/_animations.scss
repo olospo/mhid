@@ -1,0 +1,199 @@
+// ------------------------------------------------------------
+// Animations
+// ------------------------------------------------------------
+
+@mixin fade() {
+  opacity: 0;
+  transition: opacity linear 0.5s, transform ease-in 1s;
+}
+
+@mixin drop() {
+  opacity: 0;
+  transform: translate3d(0,-60px,0);
+  transition: opacity linear 1s, transform ease-in 0.5s;
+}
+
+@mixin rise() {
+  opacity: 0;
+  transform: translate3d(0,80px,0);
+  transition: opacity linear 1s, transform ease-in 1s;
+}
+
+@mixin reset-fade() {
+  opacity: 1;
+}
+
+
+@mixin reset() {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+}
+
+@mixin delay-children() {
+  &:nth-child(1)  {transition-delay: 0.2s;}
+  &:nth-child(2)  {transition-delay: 0.4s;}
+  &:nth-child(3)  {transition-delay: 0.6s;}
+  &:nth-child(4)  {transition-delay: 0.8s;}
+  &:nth-child(5)  {transition-delay: 1.0s;}
+  &:nth-child(6)  {transition-delay: 1.2s;}
+  &:nth-child(7)  {transition-delay: 1.4s;}
+  &:nth-child(8)  {transition-delay: 1.6s;}
+  &:nth-child(9)  {transition-delay: 1.8s;}
+  &:nth-child(10) {transition-delay: 2.0s;}
+  &:nth-child(11) {transition-delay: 2.2s;}
+  &:nth-child(12) {transition-delay: 2.4s;}
+  &:nth-child(13) {transition-delay: 2.6s;}
+  &:nth-child(14) {transition-delay: 2.8s;}
+  &:nth-child(15) {transition-delay: 3.0s;}
+  &:nth-child(16) {transition-delay: 3.2s;}
+  &:nth-child(17) {transition-delay: 3.4s;}
+  &:nth-child(18) {transition-delay: 3.6s;}
+  &:nth-child(19) {transition-delay: 3.8s;}
+  &:nth-child(20) {transition-delay: 4.0s;}
+  &:nth-child(21) {transition-delay: 4.2s;}
+  &:nth-child(22) {transition-delay: 4.4s;}
+  &:nth-child(23) {transition-delay: 4.6s;}
+  &:nth-child(24) {transition-delay: 4.8s;}
+  &:nth-child(25) {transition-delay: 5.0s;}
+  &:nth-child(26) {transition-delay: 5.2s;}
+  &:nth-child(27) {transition-delay: 5.4s;}
+  &:nth-child(28) {transition-delay: 5.6s;}
+  &:nth-child(29) {transition-delay: 5.8s;}
+  &:nth-child(30) {transition-delay: 6.0s;}
+
+}
+
+// Logo
+svg.drop_logo {
+  opacity: 0;
+  animation: opacity 1s 0s ease-in forwards;
+}
+
+polygon.drop {
+  transform: translate3d(0,0px,0);
+  animation: drop 1s 1s ease forwards;
+}
+
+@keyframes drop {
+  to {
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+@keyframes opacity {
+  to {
+    opacity: 1;
+  }
+}
+
+// General Animations
+section.home.hero {
+  @include fade();
+  h1, p {
+    @include fade();
+    transition-delay: 0.5s;
+  }
+  a.button {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s linear 1s, background ease .5s;
+    -moz-transition: opacity 0.5s linear 1s, background ease .5s;
+    -o-transition: opacity 0.5s linear 1s, background ease .5s;
+    transition: opacity 0.5s linear 1s, background ease .5s;
+  }
+  &.visible {
+    @include reset-fade();
+    h1, p, a.button {
+      @include reset();
+    }
+  }
+}
+
+section.hero {
+  h1, p {
+    @include fade();
+  }
+  &.visible {
+    h1, p {
+      @include reset();
+    }
+  }
+}
+section.home_framework {
+  .video {
+    @include fade();
+  }
+  .content {
+    @include fade();
+    transition-delay: 0.2s;
+  }
+  &.visible {
+    .video, .content {
+      @include reset();
+    }
+  }
+}
+section.home_plato {
+  .plato_content .content {
+    @include fade();
+  }
+  &.visible {
+    .plato_content .content {
+      @include reset-fade();
+    }
+  }
+}
+section.home_event {
+  .event_content .content {
+    @include fade();
+  }
+  &.visible {
+    .event_content .content {
+      @include reset-fade();
+    }
+  }
+}
+section.home_news {
+  .news_content .content {
+    @include fade();
+  }
+  &.visible {
+    .news_content .content {
+      @include reset-fade();
+    }
+  }
+}
+section.home_cta {
+  .image {
+    @include fade();
+  }
+  .content {
+    @include fade();
+    transition-delay: 0.2s;
+  }
+  &.visible {
+    .image, .content {
+      @include reset();
+    }
+  }
+}
+
+@keyframes fadeInAndDrop {
+  0% { opacity: 0; transform: translate3d(0,-60%,0); }
+  50% { opacity: 0; transform: translate3d(0,-60%,0); }
+  100% { opacity: 1; transform: translate3d(0,-50%,0); }
+}
+
+@keyframes bgZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes opacity {
+	to {
+		opacity: 1;
+	}
+}

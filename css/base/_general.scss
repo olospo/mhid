@@ -1,0 +1,840 @@
+// Avenir
+$regular: 'Lato', Helvetica, Arial, sans-serif;
+
+// Weights
+$light: 300;
+$normal: 400;
+$bold: 700;
+$xbold: 900;
+
+// Colours
+$white: #fff;
+$black: #2d2d2d;
+
+// IHC Colours
+$blue: #12698D;
+$darkblue: #055271;
+$navblue: #45CBFC;
+$green: #28666E;
+
+$grey: #A5B3C4;
+$border: #E6EAEF;
+$ui: #A5B3C4;
+$white-bg: #F8F8F8;
+
+// Breakpoints
+$breakpoint-mobile: 400px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 900px;
+$breakpoint-desktop: 1200px;
+
+// Padding
+$padding: 60px;
+$padding-half: 30px;
+$padding-quarter: 15px;
+// General
+
+::selection {
+  color: $white;
+  background: $blue !important;
+  text-shadow: none !important;
+}
+    
+::-moz-selection {
+  color: $white;
+  background: $blue;
+  text-shadow: none !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto; 
+}
+
+p {
+  font: $normal 1.8rem/2.8rem $regular;
+  margin-bottom: 27px;
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+html { // 1.5rem = 15px
+  font-size: 62.5%;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body { 
+  font-size: 1.6em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.8;
+  font-family: $regular;
+  color: $black;
+  -webkit-font-smoothing: antialiased; // Fix fonts looking rubbish in Chrome
+  background: $white;
+  letter-spacing: 0.25px;
+}
+
+h1, h2, h3, h4 {
+  font-family: $regular;
+  font-kerning: normal;
+  color: $black;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .flex {
+    display: flex;
+    flex-flow: column;
+    aside {
+      order: 2;
+      margin-top: $padding-half;
+    }
+    .content {
+      order: 1;
+    }
+  }
+}
+
+// Page 
+section {
+  &.page, &.post, &.search {
+    &.single_post {
+      margin-top: 0;
+    }
+    
+    font: $normal 2rem/3.6rem $regular;
+    font-size: 2rem;
+    line-height: 3.6rem;
+    @media (min-width: $breakpoint-tablet) {
+      font: $normal 2.6rem/4rem $regular;
+      font-size: 2.6rem;
+      line-height: 4rem;
+    }
+    .content {
+      padding: 20px 0px;
+      @media (min-width: $breakpoint-tablet) {
+        padding: 40px 0px;
+      }
+      hr {
+        clear: both;
+        color: #d3d3d3;
+        margin: 20px 0;
+        border-bottom: 0;
+        border-top: 1px solid #d3d3d3;
+      }
+    }
+    article.profile {
+      margin-bottom: $padding;
+      img {
+        margin-top: $padding-quarter;
+      }
+      &:nth-child(3n+4) {
+        margin-left: 0;
+        clear: left;
+      }
+    }
+    &.no_hero {
+      // padding: $padding-half 0px;
+      margin-top: 90px;
+      @media (min-width: $breakpoint-tablet) {
+        // padding: $padding 0px;
+      }
+      aside {
+        margin-top: 0;
+      }
+    }
+    &.bg {
+      margin-top: 0;
+    }
+  }
+  p.jump {
+    margin: 0 0 10px 0;
+    font: $bold 1.5rem/1.5rem $regular;
+  }
+  ul.jump {
+    margin: 0px 0 20px 0;
+    li {
+      margin: 5px;
+      display: inline-block;
+      a {
+        display: block;
+        border: 2px solid $blue;
+        font: $bold 1.5rem/1.5rem $regular;
+        padding: 8px 15px;
+        text-decoration: none;
+        &:hover {
+          background: $blue;
+          color: $white;
+        }
+      }
+    }
+  }
+  article.person, {
+    margin: 20px 0;
+  }
+  article.country {
+    margin: 10px 0;
+  }
+  h1, h2, h3 {
+    font-family: $regular;
+    color: $black;
+  }
+  h1 {
+    font: $xbold 3.6rem/5rem $regular;
+    margin-bottom: 10px;
+    font-size: 3.6rem;
+  }
+  h2 {
+    font: $xbold 2.8rem/3.6rem $regular;
+    margin-bottom: 10px;
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+  }
+  h3 {
+    font: $xbold 2.2rem/3.0rem $regular;
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+  }
+  h4 {
+    font: $xbold 2rem/2.8rem $regular;
+    margin-bottom: 10px;
+    font-size: 2rem;
+  }
+  h5 {
+    font: $xbold 1.8rem/2.6rem $regular;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+  }
+  p {
+    &.lead {
+      font: $normal 1.8rem/2.8rem $regular;
+    }
+    &.center {
+      text-align: center;
+    }
+  }
+  b, strong {
+    font-weight: bold;
+  }
+  em, i {
+    font-style: italic;
+  }
+  a {
+    color: $blue;
+    text-decoration: underline;
+    text-decoration-color: $blue;
+    &:hover {
+      color: $green;
+      text-decoration: none;
+    }
+  }
+  ul {
+    font: $normal 1.8rem/2.8rem $regular;
+    margin: 20px 0px;
+    li {
+      list-style: disc;
+      list-style-position: outside;
+      margin-left: 20px;
+      font: $normal 1.8rem/3.4rem $regular;
+    }
+    ul {
+      margin: 10px 0px;
+    }
+  }
+  ol {
+    font: $normal 1.8rem/2.8rem $regular;
+    margin: 20px 0px;
+    li {
+      list-style: decimal;
+      list-style-position: outside;
+      margin-left: 20px;
+    }
+  }
+  table {
+    border: 1px solid $border;
+    overflow-x: scroll;
+    font: $normal 1.6rem/2.6rem $regular;
+    width: 100%;
+    table-layout: auto;
+    border-collapse: separate !important;
+    p, ul {
+      font: $normal 1.6rem/2.6rem $regular;
+    }
+    th {
+      color: $white;
+      font: $regular 1.8rem/2.6rem $regular !important;
+      padding: 20px;
+      background: $blue;
+      text-align: left;
+      border-right: 1px solid $white;
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    tr {
+      td {
+        padding: 20px;
+        border-left: 1px solid $border;
+        &:first-child {
+          border-left: none;
+        }
+      }
+      &:nth-child(odd) {
+        td {
+          background: $white-bg;
+        }
+      }
+      &:first-child {
+        td {
+          background: $white;
+        }
+      }
+    }
+  }
+  
+  blockquote {
+    display: inline-block;
+    position: relative; 
+    padding: 20px 40px;
+    color: $black;
+    margin: 20px 0;
+    font: $light 2.4rem/3.4rem $regular;
+    &:before, &:after{
+      font-family: Arial, sans-serif;
+      position: absolute;
+      color: $black;
+      font-size:80px;
+    }
+    p {
+      font: $light 1.8rem/2.8rem $regular;
+      @media (min-width: $breakpoint-tablet) {
+        font: $light 2.4rem/3.4rem $regular;
+      }
+    }
+    &:before{
+      content: "“";        
+      top: 20px;
+      left: 0;
+    }
+    &:after{
+      content: "”";
+      right: 0;
+      bottom: -20px;
+    }
+  }
+}
+
+.resources {
+  border-top: 10px solid #666;
+  background: #F8F8F8;
+  padding: 20px 30px;
+  h2 {
+    color: #666;
+    margin-bottom: 20px;
+    font: $normal 1.8rem/2.6rem $regular;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  article {
+    border-bottom: 1px solid #cecece;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    h4 {
+      margin-bottom: 10px;
+      font: $bold 1.8rem/2.8rem $regular;
+    }
+    p {
+      margin: 0 0 10px 0;
+      font: $normal 1.6rem/2.4rem $regular;
+      &:last-child {
+        margin: 0 !important;
+      }
+      &:first-child {
+        color: red;
+      }
+    }
+    a {
+      font: $normal 1.6rem/2.4rem $regular;
+      color: $green;
+      text-decoration-color: $green;
+    }
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 10px;
+      padding-bottom: 0;
+    }
+  }
+  
+}
+
+.resources + .getit {
+  margin-top: 20px;
+}
+
+.getit {
+  border-top: 10px solid #666;
+  background: #f8f8f8;
+  padding: 20px 40px 40px 40px;
+  
+  h3 {
+    color: #2d2d2d;
+    margin-bottom: 20px;
+    font: $bold 1.8rem/2.8rem $regular;
+  }
+  #getit_definition {
+    font: $normal 1.8rem/2.8rem $regular;
+    h2 {
+      font: $bold 1.8rem/2.8rem $regular;
+      border-bottom: 1px solid #2d2d2d;
+      padding-bottom: 5px;
+    }
+    em, p {
+      font: $normal 1.6rem/2.4rem $regular;
+      strong {
+        font: $bold 1.6rem/2.4rem $regular;
+      }
+    }
+  }
+  #getit_terms {
+    width: 100%;
+    margin: 20px auto;
+    display: block;
+    font: $normal 1.6rem/2.4rem $regular;
+    @include border-radius(5px);
+    background: transparent;
+    border: 1px solid #adbac8;
+    padding: 5px;
+    &:focus {
+      border: 1px solid $black;
+    }
+  }
+}
+
+
+// Hero
+section.hero {
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  padding: 100px 0px;
+  overflow: hidden;
+  .content {
+    h1 {
+      font: $xbold 2.8rem/3.6rem $regular;
+      font-size: 2.8rem;
+      line-height: 3.6rem;
+      color: $white;
+      margin-bottom: 10px;
+      @media (min-width: $breakpoint-tablet) {
+        font: $xbold 4.0rem/4.5rem $regular;
+        font-size: 4rem;
+        line-height: 4.5rem;
+      }
+      @media (min-width: $breakpoint-desktop) {
+        font: $xbold 6.4rem/6.4rem $regular;
+        font-size: 6.4rem;
+        line-height: 6.4rem;
+      }
+    }
+    p {
+      font: $normal 2rem/3rem $regular;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      color: #f0f0f1;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 2.4rem/3.2rem $regular;
+      }
+    }
+  }
+  &.small {
+    padding: $padding-half 0px 0px 0px;
+    @media (min-width: $breakpoint-tablet) {
+      padding: $padding 0px 0px 0px;
+    }
+    .content {
+      h1 {
+        color: $blue;
+      }
+      p {
+        color: $blue;
+      }
+    }
+  }
+  &.single {
+    overflow: hidden; 
+    padding: $padding 0px;
+    background: $blue;
+    &.level-three {
+      padding: 55px 0;
+      background: #C8DAE2;
+      .content {
+        h1, p {
+          color: $black;
+        }
+        
+      }
+    }
+    .background {
+      // transform: scale(1.05);
+      // animation: bgZoom 4s;
+      padding: 100px 0px;
+      @media (min-width: $breakpoint-tablet) {
+        padding: 180px 0px;
+      }
+      overflow: hidden;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: cover;
+    }
+    .content {
+      h1 {
+        font: $xbold 2.8rem/3.6rem $regular;
+        font-size: 2.8rem;
+        line-height: 3.6rem;
+        color: $white;
+        margin-bottom: 10px;
+        @media (min-width: $breakpoint-tablet) {
+          font: $xbold 4.0rem/4.5rem $regular;
+          font-size: 4rem;
+          line-height: 4.5rem;
+        }
+        @media (min-width: $breakpoint-desktop) {
+          font: $xbold 5.4rem/5.4rem $regular;
+          font-size: 5.4rem;
+          line-height: 5.4rem;
+        }
+      }
+      .date {
+        color: $white;
+        font: $light 2.4rem/3.2rem $regular;
+      }
+    }
+  }
+  &.not_found {
+    margin-top: 90px;
+    background: $white;
+    text-align: center;
+    height: 50vh;
+    .content {
+      h1 {
+        color: $blue;
+      }
+      p {
+        color: $blue;
+      }
+    }
+  } 
+}
+
+@keyframes bgZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes opacity {
+	to {
+		opacity: 1;
+	}
+}
+
+// Pagination
+.pagination {
+  clear: both;
+  position: relative;
+  margin-top: 0px;
+  padding: 20px 0px;
+  font: $bold 1.6rem/2.2rem $regular;
+  ul {
+    text-align: center;
+    li {
+      display: inline-block;
+      list-style: none;
+      margin: 0;
+      a {
+        display: inline-block;
+        margin: 5px;
+        padding: 10px;
+        width: 25px;
+        background: $white;
+        border: 1px solid $blue;
+        color: $blue;
+        text-decoration: none;
+        &:hover {
+          background: $blue;
+          color: $white;
+        }
+      }
+      &.next, &.prev {
+        display: none;
+      }
+      &.active {
+        a {
+          background: $blue;
+          border: 1px solid $blue;
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.breadcrumbs {
+  padding: 0 0 30px 0;
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: -20px;
+    padding: 0 0 40px 0;
+  }
+  font: $normal 1.4rem/2.2rem $regular;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  .delimiter {
+    margin: 0 10px;
+  }
+}
+.nav-links {
+  text-align: center;
+  font: $bold 1.6rem/2.2rem $regular;
+  span.current {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    width: 25px;
+    background: $blue;
+    @include border-radius(10px);
+    border: 1px solid $blue;
+    color: $white;
+  }
+  a.page-numbers {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    width: 25px;
+    background: $white;
+    @include border-radius(10px);
+    border: 1px solid $blue;
+    color: $blue;
+    text-decoration: none;
+    &:hover {
+      background: $blue;
+      color: $white;
+    }
+  }
+}
+
+.search_item {
+  margin: 0px;
+  background: $white;
+  padding: 30px 0px;
+  border-bottom: 1px solid $border;
+  .title {
+    font: $normal 2.2rem/4.4rem $regular;
+    @media (min-width: $breakpoint-tablet) {
+      font: $normal 2.6rem/4.4rem $regular;
+    }
+    overflow: hidden;
+  }
+}
+
+
+// Flexible content 
+
+.flexible_content {
+  clear: both;
+  .flexible {
+    &.content_block {
+      padding: $padding-half 0;
+      overflow: hidden;
+    }
+    &.two_columns {
+      padding: $padding-half 0;
+      overflow: hidden;
+    }
+    &.accordion {
+      padding: $padding-half 0;
+      overflow: hidden;
+    }
+    &.content_block + .two_columns, &.two_columns + .content_block, &.two_columns + .accordion, &.content_block + .accordion {
+      padding: 0 0 $padding-half 0;
+    }
+    &:last-child {
+      padding: 0 !important;
+    }
+    &.two_columns:last-child {
+      padding: $padding-half 0 0 0 !important;
+    }
+    .content {
+      padding: 0;
+    }
+    &:first-child {
+      padding: 0 0 $padding-half 0;
+    }
+  }
+
+}
+
+// Accordion
+
+.accordionItem {
+  border-bottom: 1px solid $black;
+  padding: 20px 0px;
+  .title {
+    padding: 0 35px 0 20px;
+    overflow: hidden;
+    color: $blue;
+    font: $bold 2.0rem/3.4rem $regular;
+  }
+  &:first-child {
+    border-top: 1px solid $black;
+  }
+  &:hover, &.open {
+    background: #F8F8F8;
+  }
+}
+
+.accordionItemHeading {
+  color: $blue;
+  font: $bold 2.0rem/3.4rem $regular;
+  cursor:pointer;
+  position: relative;
+  .content {
+    padding: 0;
+    max-width: 100%;
+    @media (min-width: $breakpoint-tablet) {
+      max-width: 90%;
+    }
+  }
+  span{
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background: $blue;
+    opacity: 1;
+    right: 15px;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    &:nth-child(1) {top: 15px;}
+    &:nth-child(2) {top: 15px;transform: rotate(90deg);}
+  }
+}
+
+.open .accordionItemHeading {
+  border-bottom: none;
+  position: relative;
+  span{
+    &:nth-child(2) { transform: rotate(180deg);}
+  }
+}
+
+.close .accordionItemContent {
+  height:0px;
+  -webkit-transform: scaleY(0);
+  -o-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  transform: scaleY(0);
+  float:left;
+  display:block;   
+  opacity: 0;
+}
+.open .accordionItemContent {
+  margin: 0px 0px 10px 0px;
+  padding: 20px 20px 10px 20px;
+  display:block;
+  -webkit-transform: scaleY(1);
+  -o-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transform-origin: top;
+  -o-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
+  @include opacity(1);
+  @include transition(opacity linear 0.2s);
+  transition-delay: 0.2s;
+  box-sizing: border-box;
+  .content {
+    max-width: 100%;
+    @media (min-width: $breakpoint-tablet) {
+      max-width: 90%;
+    }
+  }
+  ul {
+    margin: 0px;
+  }
+  img {
+    margin-bottom: 30px;
+  }
+}
+
+
+// Screen Reader
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+// WordPress Alignment
+
+img.alignright, .wp-caption.alignright {
+  float:right; margin:0 0 0.8em 0.8em;
+  max-width: 100%;
+  height: auto;
+} 
+img.alignleft, .wp-caption.alignleft { 
+  float:left;
+  margin:0 0.8em 0.8em 0;
+  max-width: 100%;
+  height: auto;
+}
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+} 
+img.alignnone { 
+  max-width: 100%;
+  height: auto;
+}
+.alignright {
+  float:right;
+}
+.alignleft {
+  float:left;
+}
+.aligncenter { 
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.wp-caption img {
+  border: 5px solid #F8F8F8;
+}
+.wp-caption-text {
+  text-align: center;
+  padding: 5px 10px 10px 10px;
+  background: #F8F8F8;
+  font: $normal 1.6rem/2.8rem $regular;
+}

@@ -1,0 +1,77 @@
+// Footer
+footer {
+  font: $normal 1.6rem/3.0rem $regular;
+  position: relative;
+  overflow-wrap: break-word;
+  padding: 20px 0px;
+  color: $white;
+  background: $black;
+  text-align: center;
+  @media (min-width: $breakpoint-tablet) {
+    text-align: left; 
+  }
+  h5 {
+    font: $bold 1.8rem/3.0rem $regular;
+    margin: 0;
+  }
+  a {
+    color: $white;
+    text-decoration-color: $white;
+    &:hover {
+      color: $white;
+      text-decoration-color: $blue;
+    }
+  }
+  ul.social-icons {
+    margin: 0 0 10px 0;
+    li {
+      display: inline-block;
+      a {
+        margin: 0 3px;
+        padding: 0;
+        svg {
+          height: 28px;
+          width: 28px;
+        }
+        &:hover {
+          svg {
+            path, polygon {
+              fill: $blue;
+            }
+          }
+        }
+      }
+      &.follow {
+        margin-top: -10px;
+      }
+    }
+  }
+  .links {
+    
+  }
+  .copyright {
+    margin-top: 0px;
+  }
+
+}
+.back_to_top {
+  @media (max-width: $breakpoint-tablet) {
+    display: none !important;
+  }
+  display: none;
+  width: 48px;
+  height: 48px;
+  text-indent: -9999px;
+  position: fixed;
+  z-index: 999;
+  right: 20px;
+  bottom: 20px;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+  background: $blue url("../img/arrow_up.svg") no-repeat center center;
+  &:hover {
+    background: $green url("../img/arrow_up.svg") no-repeat center center;
+  }
+}
