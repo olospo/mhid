@@ -1,17 +1,10 @@
 <?php /* Page */
-
 $sub = get_field('sub_title');
-
-global $wp_query;
-$current_page_obj = $wp_query->get_queried_object();
-$current_page_hierarchy = get_post_ancestors($current_page_obj->ID);
-$current_page_level = count($current_page_hierarchy);
-
 
 get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
-<section class="hero single <?php if ($current_page_level == "2") { echo "level-three"; } ?>">
+<section class="hero single">
   <div class="container">
     <div class="content ten columns">
       <h1><?php the_title(); ?></h1>

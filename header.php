@@ -19,33 +19,38 @@
 <header class="menu">
   <div class="container">
     <div class="twelve columns">
-      <?php wp_nav_menu( array( 'theme_location' => 'countries', 'container'=> false, 'menu_class'=> false ) ); ?>
+      <?php 
+      $current_site_id = is_main_site() ? 1 : get_current_blog_id(); // Get the ID of the current site
+      $sites = get_sites();
+      
+      if ($sites) {
+          echo '<ul>';
+          foreach ($sites as $site) {
+              $site_id = $site->blog_id;
+      
+              // Check if the current site is the active one
+              $is_current_site = ($current_site_id == $site_id) ? 'current-site' : '';
+      
+              // Add a unique class based on the site ID
+              $site_details = get_blog_details($site_id);
+              $site_class = 'site-' . $site_id;
+      
+              echo '<li class="' . esc_attr($is_current_site . ' ' . $site_class) . '"><a href="' . esc_url($site_details->siteurl) . '">' . esc_html($site_details->blogname) . '</a></li>';
+          }
+          echo '</ul>';
+      } ?>
     </div>
 </header>
 <header class="main">
   <div class="container">
-    <div class="logo two columns">  
-      <?php if ( is_front_page() ) { ?>
+    <div class="three columns">  
       <h1 class="site-title">
-        <a href="<?php echo get_site_url(); ?>">
-          <img src="<?php bloginfo('template_directory'); ?>/img/logo.svg" alt="Informed Health Choices">
-        </a>
+        <?php echo bloginfo( 'name' ); ?>
       </h1>
-      <?php } else { ?>
-      <p class="site-title">
-        <a href="<?php echo get_site_url(); ?>">
-          <img src="<?php bloginfo('template_directory'); ?>/img/logo.svg" alt="Informed Health Choices">
-        </a>
-      <p>
-      <?php } ?>
     </div>
-    <nav class="primary ten columns">
+    <nav class="primary nine columns">
       <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
-      <!-- Search -->
-      <div class="search">
-        <label for="search"><div class="search_icon"></div></label>
-        <div class="search_form"><?php get_search_form(); ?></div>
-      </div>
+
     </nav>
     <a class="menu-toggle mobile_menu" aria-controls="primary-menu">
       <span></span>

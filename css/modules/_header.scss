@@ -12,9 +12,9 @@
 }
 header {
   &.menu {
-    padding: 5px 0;
-    background:#2d2d2d;
-    ul#menu-countries {
+    padding: 0;
+    background:#D6DDE0;
+    ul {
       text-align: center;
       
       @media (max-width: 1080px) {
@@ -24,24 +24,54 @@ header {
         list-style: none;
         display: inline-block;
         a {
-          color: #949494;
-          padding: 0 3px;
-          font: $normal 1.2rem/1.6rem $regular;
-          @media (min-width: 1080px) {
-            padding: 0 5px;
-            font: $normal 1.3rem/2.2rem $regular;
-          }
+          display: block;
+          text-transform: uppercase;
+          color: #2d2d2d;
+          margin: 0 5px;
+          padding: 10px 5px 10px 5px;
+          font: $normal 1.3rem/2.2rem $regular;
           text-decoration: none;
           &:hover {
             color: $white;
             text-decoration: none;
           }
         }
-        &.current-menu-item {
-          a {
+        &.site-1 {
+          border-top: 5px solid #1F3E6E;
+          &.current-site, &:hover  {
+            background: #1F3E6E;
             color: $white;
           }
         }
+        &.site-2 {
+          border-top: 5px solid #02A52A;
+          &.current-site, &:hover  {
+            background: #02A52A;
+            color: $white;
+          }
+        }
+        &.site-3 {
+          border-top: 5px solid #4347A7;
+          &.current-site, &:hover  {
+            background: #4347A7;
+            color: $white;
+          }
+        }
+        &.site-4 {
+          border-top: 5px solid #A74794;
+          &.current-site, &:hover  {
+            background: #A74794;
+            color: $white;
+          }
+        }
+        &.site-5 {
+          border-top: 5px solid #009FAD;
+          &.current-site, &:hover  {
+            background: #009FAD;
+            color: $white;
+          }
+        }
+        
       }
     }
   }
