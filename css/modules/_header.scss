@@ -118,7 +118,7 @@ header {
       li {
         display: inline-block;
         &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
-          color: $navblue;
+          color: $white;
           padding: 10px 0px;
           margin: 20px 8px;
           border-bottom: 2px solid $white;
