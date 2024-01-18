@@ -15,8 +15,7 @@ header {
     padding: 0;
     background:#2d2d2d;
     ul {
-      text-align: center;
-      
+      text-align: right;
       @media (max-width: 1080px) {
         line-height: 24px;
       }
@@ -42,27 +41,22 @@ header {
           a {
             border-top: 5px solid #1F3E6E;
           }
-          
           &.current-site, &:hover  {
             a {
               background: #1F3E6E;
               color: $white;
             }
-            
           }
         }
         &.site-2 {
           a {
             border-top: 5px solid #02A52A;
           }
-    
           &.current-site, &:hover  {
-            
             a {
               background: #02A52A;
               color: $white;
             }
-           
           }
         }
         &.site-3 {
@@ -94,18 +88,18 @@ header {
     background: $darkblue;
   }
 
-  .logo {
-    .site-title {
-      margin: 20px 0px;
-      line-height: 0;
-      img, svg {
-        height: 42px;
-      }
+  
+  .site-title {
+    color: $white;
+    margin: 20px 0px;
+    // line-height: 0;
+    img, svg {
+      height: 42px;
     }
   }
+  
   nav.primary {
     box-sizing: border-box;
-    padding-right: 50px;
     display: none;
     @media (min-width: 1080px) {
       display: block;
