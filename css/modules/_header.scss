@@ -13,7 +13,7 @@
 header {
   &.menu {
     padding: 0;
-    background:#D6DDE0;
+    background:#2d2d2d;
     ul {
       text-align: center;
       
@@ -22,13 +22,15 @@ header {
       }
       li {
         list-style: none;
+        margin: 0;
+        padding: 0;
         display: inline-block;
         a {
           display: block;
+          color: $white;
           text-transform: uppercase;
-          color: #2d2d2d;
-          margin: 0 5px;
-          padding: 10px 5px 10px 5px;
+          margin: 0;
+          padding: 5px 10px;
           font: $normal 1.3rem/2.2rem $regular;
           text-decoration: none;
           &:hover {
@@ -37,17 +39,30 @@ header {
           }
         }
         &.site-1 {
-          border-top: 5px solid #1F3E6E;
+          a {
+            border-top: 5px solid #1F3E6E;
+          }
+          
           &.current-site, &:hover  {
-            background: #1F3E6E;
-            color: $white;
+            a {
+              background: #1F3E6E;
+              color: $white;
+            }
+            
           }
         }
         &.site-2 {
-          border-top: 5px solid #02A52A;
+          a {
+            border-top: 5px solid #02A52A;
+          }
+    
           &.current-site, &:hover  {
-            background: #02A52A;
-            color: $white;
+            
+            a {
+              background: #02A52A;
+              color: $white;
+            }
+           
           }
         }
         &.site-3 {

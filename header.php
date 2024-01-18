@@ -35,7 +35,7 @@
               $site_details = get_blog_details($site_id);
               $site_class = 'site-' . $site_id;
       
-              echo '<li class="' . esc_attr($is_current_site . ' ' . $site_class) . '"><a href="' . esc_url($site_details->siteurl) . '">' . esc_html($site_details->blogname) . '</a></li>';
+              echo '<li class="' . esc_attr($site_class . ' ' . $is_current_site) . '"><a href="' . esc_url($site_details->siteurl) . '">' . esc_html($site_details->blogname) . '</a></li>';
           }
           echo '</ul>';
       } ?>
