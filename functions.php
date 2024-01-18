@@ -3,7 +3,6 @@
 function theme_setup() {
   // Menus
   register_nav_menu( 'main', 'Main Menu' );
-  register_nav_menu( 'sites', 'Sites Menu' );
   // RSS Feed
   add_theme_support( 'automatic-feed-links' );
   // Thumbnails

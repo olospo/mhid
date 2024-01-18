@@ -122,7 +122,8 @@
                     "multiple": 0,
                     "allow_null": 0,
                     "ui": 1,
-                    "parent_repeater": "field_6074422cdd1f7"
+                    "parent_repeater": "field_6074422cdd1f7",
+                    "bidirectional_target": []
                 },
                 {
                     "key": "field_6408929790cbd",
@@ -221,8 +222,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687360563
+    "modified": 1705591594
 }

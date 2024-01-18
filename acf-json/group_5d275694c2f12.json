@@ -6,6 +6,7 @@
             "key": "field_5d27569e7a94c",
             "label": "Title",
             "name": "title",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -25,6 +26,7 @@
             "key": "field_6066d2a47974c",
             "label": "Content",
             "name": "content",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -44,6 +46,7 @@
             "key": "field_5d5befbb08ee6",
             "label": "Button Text",
             "name": "button_text",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -63,6 +66,7 @@
             "key": "field_5d5befc408ee7",
             "label": "Button Link",
             "name": "button_link",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -78,6 +82,7 @@
             "key": "field_5d2757887a94e",
             "label": "Background Image",
             "name": "background_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -116,7 +121,8 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "active": true,
+    "active": false,
     "description": "",
-    "modified": 1617354076
+    "show_in_rest": false,
+    "modified": 1705591594
 }
