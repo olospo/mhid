@@ -121,7 +121,7 @@ header {
           color: $navblue;
           padding: 10px 0px;
           margin: 20px 8px;
-          border-bottom: 2px solid $navblue;
+          border-bottom: 2px solid $white;
           
         }
         a {
@@ -130,7 +130,7 @@ header {
           line-height:1em;
           display: block;
           color: $white;
-          border-bottom: 2px solid $white;
+          border-bottom: 2px solid transparent;
           text-decoration: none;
           padding: 10px 0px;
           margin: 20px 8px;
