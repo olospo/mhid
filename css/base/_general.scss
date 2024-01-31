@@ -370,50 +370,6 @@ section {
   
 }
 
-.resources + .getit {
-  margin-top: 20px;
-}
-
-.getit {
-  border-top: 10px solid #666;
-  background: #f8f8f8;
-  padding: 20px 40px 40px 40px;
-  
-  h3 {
-    color: #2d2d2d;
-    margin-bottom: 20px;
-    font: $bold 1.8rem/2.8rem $regular;
-  }
-  #getit_definition {
-    font: $normal 1.8rem/2.8rem $regular;
-    h2 {
-      font: $bold 1.8rem/2.8rem $regular;
-      border-bottom: 1px solid #2d2d2d;
-      padding-bottom: 5px;
-    }
-    em, p {
-      font: $normal 1.6rem/2.4rem $regular;
-      strong {
-        font: $bold 1.6rem/2.4rem $regular;
-      }
-    }
-  }
-  #getit_terms {
-    width: 100%;
-    margin: 20px auto;
-    display: block;
-    font: $normal 1.6rem/2.4rem $regular;
-    @include border-radius(5px);
-    background: transparent;
-    border: 1px solid #adbac8;
-    padding: 5px;
-    &:focus {
-      border: 1px solid $black;
-    }
-  }
-}
-
-
 // Hero
 section.hero {
   overflow: hidden;

@@ -142,7 +142,7 @@ header {
             padding-right: 20px;
           }
           &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {     
-            background: url('../img/menu_arrow_hover.svg') right center no-repeat;
+            background: url('../img/menu_arrow.svg') right center no-repeat;
             padding-right: 20px;
           } 
           ul {
@@ -159,7 +159,7 @@ header {
                 margin: 0;
                 border-bottom: none;
                 background: none !important;
-                border-bottom: 1px solid $navblue;
+                border-bottom: 1px solid $white;
               }
               &:last-child {
                 a {
@@ -167,7 +167,8 @@ header {
                 }
               }
               &:hover a, &.current-menu-item a, &.current_page_item a {
-                color: $navblue;
+                color: $white;
+                text-decoration: underline;
               }
               &.menu-item-has-children, &.page_item_has_children {
                 a {
