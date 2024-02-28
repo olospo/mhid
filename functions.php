@@ -281,6 +281,11 @@ function enqueue_custom_login_styles() {
         // CSS file for yag site login
         wp_enqueue_style('yag-login-styles', get_stylesheet_directory_uri() . '/login/yag-login-style.css');
         break;
+        
+      case 'aim':
+        // CSS file for yag site login
+        wp_enqueue_style('aim-login-styles', get_stylesheet_directory_uri() . '/login/aim-login-style.css');
+        break;
 
       default:
         // Default CSS file if no specific match is found
