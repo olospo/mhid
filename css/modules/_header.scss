@@ -13,7 +13,7 @@
 header {
   &.menu {
     padding: 0;
-    background:#2d2d2d;
+    background:#233E70;
     ul {
       text-align: right;
       @media (max-width: 1080px) {
@@ -24,14 +24,16 @@ header {
         margin: 0;
         padding: 0;
         display: inline-block;
+        cursor: pointer;
         a {
           display: block;
           color: $white;
           text-transform: uppercase;
           margin: 0;
-          padding: 5px 20px;
+          padding: 5px 20px 10px;
           font: $normal 1.2rem/2.2rem $regular;
           text-decoration: none;
+          
           &:hover {
             color: $white;
             text-decoration: none;
@@ -39,11 +41,11 @@ header {
         }
         &.site-1 {
           a {
-            border-top: 5px solid #243F6D;
+            border-top: 5px solid #EA5D4E;
           }
           &.current-site, &:hover  {
             a {
-              background: #243F6D;
+              background: #EA5D4E;
               color: $white;
             }
           }
@@ -85,10 +87,9 @@ header {
     }
   }
   &.main {
-    background: $darkblue;
+    background: $white;
   }
 
-  
   .site-title {
     color: $white;
     margin: 20px 0px;
@@ -118,10 +119,10 @@ header {
       li {
         display: inline-block;
         &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
-          color: $white;
+          color: $blue;
           padding: 10px 0px;
           margin: 20px 8px;
-          border-bottom: 2px solid $white;
+          border-bottom: 2px solid $blue;
           
         }
         a {
@@ -129,7 +130,7 @@ header {
           @include transition(all 0.2s ease-out);
           line-height:1em;
           display: block;
-          color: $white;
+          color: $blue;
           border-bottom: 2px solid transparent;
           text-decoration: none;
           padding: 10px 0px;
