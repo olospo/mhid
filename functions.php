@@ -269,7 +269,7 @@ function enqueue_custom_login_styles() {
 
       case 'supportingearlyminds':
         // CSS file for supportingearlyminds site login
-        wp_enqueue_style('supportingearlyminds-login-styles', get_stylesheet_directory_uri() . '/login/supportingearlyminds-login-style.css');
+        wp_enqueue_style('gearlyminds-login-styles', get_stylesheet_directory_uri() . '/login/earlyminds-login-style.css');
         break;
 
       case 'wisdom':

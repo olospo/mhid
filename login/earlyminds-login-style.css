@@ -3,10 +3,10 @@ background: #193E72;
 }
 
 #login h1 a {
-background-image: url("../img/login/mhid_logo.png");
+background-image: url("../img/login/earlyminds_logo.png");
 background-size: contain;
 background-position: left top;
-width: 175px;
+width: 320px;
 height: 115px;
 margin-bottom: 40px;
 }
@@ -46,7 +46,7 @@ float:none;
 margin-top:15px;
 }
 .login.wp-core-ui .button-primary {
-background: #193E72;
+background: #6465AB;
 color: #FFF;
 text-shadow: none;
 float: none;
@@ -60,7 +60,7 @@ border: none;
 }
 
 .login.wp-core-ui .button-primary:hover {
-    background: #EA5D4E;
+    background: #193E72;
 }
 
 a.privacy-policy-link, #language-switcher {
@@ -72,5 +72,3 @@ text-align: center;
 width: 100%;
 margin: 0;
 }
-
-

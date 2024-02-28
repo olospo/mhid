@@ -3,7 +3,7 @@ background: #193E72;
 }
 
 #login h1 a {
-background-image: url("../img/andy_logo.png");
+background-image: url("../img/login/andy_logo.png");
 background-size: contain;
 background-position: left top;
 width: 262px;
@@ -60,7 +60,7 @@ border: none;
 }
 
 .login.wp-core-ui .button-primary:hover {
-    background: #FED47A;
+    background: #193E72;
 }
 
 a.privacy-policy-link, #language-switcher {
@@ -72,5 +72,3 @@ text-align: center;
 width: 100%;
 margin: 0;
 }
-
-
