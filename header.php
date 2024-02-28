@@ -43,10 +43,20 @@
 </header>
 <header class="main">
   <div class="container">
-    <div class="three columns">  
+    <div class="logo three columns">  
+      <?php if ( is_front_page() ) { ?>
       <h1 class="site-title">
-        <?php echo bloginfo( 'name' ); ?>
+        <a href="<?php echo get_site_url(); ?>">
+          <img src="<?php bloginfo('template_directory'); ?>/img/mhid_logo.png" alt="<?php echo bloginfo( 'name' ); ?>">
+        </a>
       </h1>
+      <?php } else { ?>
+      <p class="site-title">
+        <a href="<?php echo get_site_url(); ?>">
+          <img src="<?php bloginfo('template_directory'); ?>/img/mhid_logo.png" alt="<?php echo bloginfo( 'name' ); ?>">
+        </a>
+      <p>
+      <?php } ?>
     </div>
     <nav class="primary nine columns">
       <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>

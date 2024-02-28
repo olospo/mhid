@@ -3,16 +3,28 @@ footer {
   font: $normal 1.6rem/3.0rem $regular;
   position: relative;
   overflow-wrap: break-word;
-  padding: 20px 0px;
+  padding: 40px 0px;
   color: $white;
-  background: $black;
+  background: $blue;
   text-align: center;
   @media (min-width: $breakpoint-tablet) {
     text-align: left; 
   }
+  .logo {
+    img, svg {
+      height: 160px;
+    }
+  }
   h5 {
-    font: $bold 1.8rem/3.0rem $regular;
-    margin: 0;
+    color: $white;
+    font: $bold 2.2rem/3.2rem $regular;
+    margin-bottom: 10px;
+  }
+  p, address {
+    font: $normal 1.4rem/2.4rem $regular;
+    @media (min-width: $breakpoint-laptop) {
+      font: $normal 1.6rem/2.7rem $regular;
+    }
   }
   a {
     color: $white;
@@ -22,56 +34,47 @@ footer {
       text-decoration-color: $blue;
     }
   }
-  ul.social-icons {
-    margin: 0 0 10px 0;
+  ul.footer-sites {
     li {
-      display: inline-block;
-      a {
-        margin: 0 3px;
-        padding: 0;
-        svg {
-          height: 28px;
-          width: 28px;
-        }
-        &:hover {
-          svg {
-            path, polygon {
-              fill: $blue;
-            }
-          }
+      &.site-1 {
+        a {
+          border-left: 5px solid #EA5D4E;
+          padding-left: 10px;
         }
       }
-      &.follow {
-        margin-top: -10px;
+      &.site-2 {
+        a {
+          border-left: 5px solid #6BB679;
+          padding-left: 10px;
+        }
+      }
+      &.site-3 {
+        a {
+          border-left: 5px solid #6465AB;
+          padding-left: 10px;
+        }
+      }
+      &.site-4 {
+        a {
+          border-left: 5px solid #A74794;
+          padding-left: 10px;
+        }
+      }
+      &.site-5 {
+        a {
+          border-left: 5px solid #5DB1AD;
+          padding-left: 10px;
+        }
       }
     }
   }
-  .links {
-    
-  }
   .copyright {
-    margin-top: 0px;
-  }
-
-}
-.back_to_top {
-  @media (max-width: $breakpoint-tablet) {
-    display: none !important;
-  }
-  display: none;
-  width: 48px;
-  height: 48px;
-  text-indent: -9999px;
-  position: fixed;
-  z-index: 999;
-  right: 20px;
-  bottom: 20px;
-  -webkit-transition: all ease .5s;
-  -moz-transition: all ease .5s;
-  -o-transition: all ease .5s;
-  transition: all ease .5s;
-  background: $blue url("../img/arrow_up.svg") no-repeat center center;
-  &:hover {
-    background: $green url("../img/arrow_up.svg") no-repeat center center;
+    margin: 40px 0 0 0;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+    p {
+      font: $normal 1.4rem/2.4rem $regular;
+    }
   }
 }
