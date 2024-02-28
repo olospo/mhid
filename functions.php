@@ -227,6 +227,11 @@ function add_site_specific_body_class($classes) {
       // Body class for subsite 4
       $classes[] = 'subsite-4';
       break;
+      
+    case 6:
+      // Body class for subsite 5
+      $classes[] = 'subsite-5';
+      break;
 
     // Add more cases for additional subsites as needed
 
