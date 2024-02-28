@@ -1,13 +1,13 @@
 body {
-background: #D6DDE0;
+background: #193E72;
 }
 
 #login h1 a {
-background-image: url("../img/logo.png");
+background-image: url("../img/mhid_logo.png");
 background-size: contain;
 background-position: left top;
-width: 350px;
-height: 120px;
+width: 175px;
+height: 115px;
 margin-bottom: 40px;
 }
 
@@ -20,9 +20,9 @@ background-color: #EBE9E6;
 border-style: none;
 }
 #login {
-background: #D6DDE0;
-margin: 50px auto;
-padding: 40px 20px;
+background: #193E72;
+margin: 20px auto;
+padding: 20px 20px;
 width: 350px;
 }
 .login label {
@@ -34,11 +34,11 @@ float:none;
 }
 
 .login #nav a, .login #backtoblog a  {
-    color: #1A365F;
+    color: #fff;
 }
 
 .login #nav a:hover, .login #backtoblog a:hover  {
-    color: #1A365F;
+    color: #fff;
 }
 
 
@@ -46,7 +46,7 @@ float:none;
 margin-top:15px;
 }
 .login.wp-core-ui .button-primary {
-background: #1A365F;
+background: #193E72;
 color: #FFF;
 text-shadow: none;
 float: none;
@@ -60,7 +60,7 @@ border: none;
 }
 
 .login.wp-core-ui .button-primary:hover {
-    background: #4347A7;
+    background: #EA5D4E;
 }
 
 a.privacy-policy-link, #language-switcher {
