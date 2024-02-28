@@ -243,10 +243,47 @@ function add_site_specific_body_class($classes) {
 add_filter('body_class', 'add_site_specific_body_class');
 
 // Custom login
-function my_custom_login() {
-echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/login/custom-login-style.css" />';
+function enqueue_custom_login_styles() {
+    // Get the current site's URL
+    $site_url = site_url();
+
+    // Extract subdomain from the site's URL
+    $subdomain = explode('.', parse_url($site_url, PHP_URL_HOST))[0];
+
+    // Enqueue different stylesheets based on the subdomain
+    switch ($subdomain) {
+      case 'mhid':
+        // CSS file for main site login
+        wp_enqueue_style('mhid-login-styles', get_stylesheet_directory_uri() . '/login/mhid-login-style.css');
+        break;
+
+      case 'andyoxford':
+        // CSS file for andyoxford site login
+        wp_enqueue_style('andyoxford-login-styles', get_stylesheet_directory_uri() . '/login/andyoxford-login-style.css');
+        break;
+
+      case 'supportingearlyminds':
+        // CSS file for supportingearlyminds site login
+        wp_enqueue_style('supportingearlyminds-login-styles', get_stylesheet_directory_uri() . '/login/supportingearlyminds-login-style.css');
+        break;
+
+      case 'wisdom':
+        // CSS file for wisdom site login
+        wp_enqueue_style('wisdom-login-styles', get_stylesheet_directory_uri() . '/login/wisdom-login-style.css');
+        break;
+
+      case 'yag':
+        // CSS file for yag site login
+        wp_enqueue_style('yag-login-styles', get_stylesheet_directory_uri() . '/login/yag-login-style.css');
+        break;
+
+      default:
+        // Default CSS file if no specific match is found
+        wp_enqueue_style('default-login-styles', get_stylesheet_directory_uri() . '/login/mhid-login-style.css');
+        break;
+    }
 }
-add_action('login_head', 'my_custom_login');
+add_action('login_enqueue_scripts', 'enqueue_custom_login_styles');
 
 // Change login logo URL
 function custom_login_logo_url() {
