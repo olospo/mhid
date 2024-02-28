@@ -39,30 +39,30 @@ header {
         }
         &.site-1 {
           a {
-            border-top: 5px solid #1F3E6E;
+            border-top: 5px solid #243F6D;
           }
           &.current-site, &:hover  {
             a {
-              background: #1F3E6E;
+              background: #243F6D;
               color: $white;
             }
           }
         }
         &.site-2 {
           a {
-            border-top: 5px solid #02A52A;
+            border-top: 5px solid #6BB679;
           }
           &.current-site, &:hover  {
             a {
-              background: #02A52A;
+              background: #6BB679;
               color: $white;
             }
           }
         }
         &.site-3 {
-          border-top: 5px solid #4347A7;
+          border-top: 5px solid #6465AB;
           &.current-site, &:hover  {
-            background: #4347A7;
+            background: #6465AB;
             color: $white;
           }
         }
@@ -74,9 +74,9 @@ header {
           }
         }
         &.site-5 {
-          border-top: 5px solid #009FAD;
+          border-top: 5px solid #5DB1AD;
           &.current-site, &:hover  {
-            background: #009FAD;
+            background: #5DB1AD;
             color: $white;
           }
         }
