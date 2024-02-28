@@ -9,9 +9,13 @@
       <div class="one-third column">
         <h5>Get in touch</h5>
         <address>
-          Address
+          Address line one<br />
+          Address line two<br />
+          Address line three
           <?php // the_field('address','options'); ?>
         </address>
+        <p>Email: <a href="mailto:email@mhid.org.uk">email@mhid.org.uk</a><br />
+        Phone: <a href="tel:2342342342342">01865 112233</a></p>
       </div>
       <div class="one-third column">
         <h5>Research</h5>
@@ -38,7 +42,10 @@
       </div>
       <div class="one-third column">
         <h5>Quick Links</h5>
-        <p>Lorem ipsum</p>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
         <h5>Connect with us</h5>
         <ul>
           <li><a href="#">Facebook</a></li>

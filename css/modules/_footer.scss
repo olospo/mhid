@@ -26,6 +26,9 @@ footer {
       font: $normal 1.6rem/2.7rem $regular;
     }
   }
+  address {
+    margin-bottom: 20px;
+  }
   a {
     color: $white;
     text-decoration-color: $white;
@@ -34,12 +37,19 @@ footer {
       text-decoration-color: $blue;
     }
   }
+  ul {
+    margin-bottom: 10px;
+  }
   ul.footer-sites {
+    margin-bottom: 0;
     li {
       &.site-1 {
         a {
           border-left: 5px solid #EA5D4E;
           padding-left: 10px;
+          &:hover {
+            text-decoration-color: #EA5D4E;
+          }
         }
       }
       &.site-2 {
@@ -60,7 +70,7 @@ footer {
           padding-left: 10px;
         }
       }
-      &.site-5 {
+      &.site-6 {
         a {
           border-left: 5px solid #5DB1AD;
           padding-left: 10px;

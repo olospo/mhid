@@ -76,13 +76,19 @@ header {
           }
         }
         &.site-5 {
+          border-top: 5px solid #233E70;
+          &.current-site, &:hover  {
+            background: #233E70;
+            color: $white;
+          }
+        }
+        &.site-6 {
           border-top: 5px solid #5DB1AD;
           &.current-site, &:hover  {
             background: #5DB1AD;
             color: $white;
           }
         }
-        
       }
     }
   }
