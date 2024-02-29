@@ -115,8 +115,8 @@ header {
       right: 0;
     }
     
-    font: $normal 1.8em/3rem $regular;
-    letter-spacing: 0.1rem;
+    font: $normal 1.6em/3rem $regular;
+    
     ul {
       margin: 0 0;
       text-align: right;
@@ -125,23 +125,24 @@ header {
         display: block;
       } 
       li {
+        text-transform: uppercase;
         display: inline-block;
         &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
           color: $blue;
-          padding: 10px 5px;
+          padding: 10px 15px;
           margin: 0px 8px;
-          border-bottom: 3px solid $blue;
+          border-bottom: 5px solid #EA5D4E;
           
         }
         a {
-          font: $normal 1.8rem/3.0rem $regular;
+          font: $bold 1.6rem/3.0rem $regular;
           @include transition(all 0.2s ease-out);
           line-height:1em;
           display: block;
           color: $blue;
           border-bottom: 3px solid transparent;
           text-decoration: none;
-          padding: 10px 5px;
+          padding: 10px 15px;
           margin: 0px 8px;
           // text-transform: uppercase;
         }
@@ -339,30 +340,6 @@ nav.mobile {
         &:nth-last-child(2), &:last-child {
           a {
             border-bottom: 1px solid #e1e1ff;
-          }
-        }
-      }
-      &.button {
-        padding: 0;
-        margin: 10px;
-        display: inline-block;
-        font: $bold 1.6rem/1.6rem $regular;
-        a {
-          color: $white;
-          font: $bold 1.6rem/1.6rem $regular !important;
-          overflow: hidden;
-          display: inline-block;
-          vertical-align: middle;
-          padding: 15px 80px 15px 20px;
-          margin: 5px 10px 5px 0;
-          text-decoration: none;
-          text-transform: uppercase;
-          -webkit-transition: all ease .5s;
-          -moz-transition: all ease .5s;
-          -o-transition: all ease .5s;
-          transition: all ease .5s;
-          &:hover {
-            color: $white;
           }
         }
       }

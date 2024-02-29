@@ -429,6 +429,9 @@ section.hero {
       }
     }
   }
+  &.single {
+    padding: $padding 0;
+  }
 }
 
 
