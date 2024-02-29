@@ -20,18 +20,18 @@
   transition: all ease .5s;
   letter-spacing: 0.1rem;
   &.primary {
-    color: $blue;
-    border: 2px solid $blue;
+    color: $white;
+    border: 3px solid $white;
     background: transparent;
     &:hover {
-      color: $white;
-      background: $blue;
+      color: $blue;
+      background: $white;
       text-decoration: none;
     }
   }
   &.secondary {
     color: $white;
-    border: 2px solid #EA5D4E;
+    border: 3px solid #EA5D4E;
     
     background: transparent;
     &:hover {

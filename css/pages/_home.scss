@@ -1,7 +1,7 @@
 // Home
 section.home_about {
   background: #EEF1F6;
-  border-bottom: 10px solid #EA5D4E;
+  // border-bottom: 10px solid #EA5D4E;
   padding: $padding 0;
   .container {
     background: #EEF1F6;
@@ -10,8 +10,16 @@ section.home_about {
   h2 {
     border-bottom: 5px solid #EA5D4E;
     display: inline-block;
+    padding-bottom: 10px;
     margin-bottom: 30px;
     color: $blue;
+    font: $xbold 3.2rem/4.2rem $regular;
+    @media (min-width: $breakpoint-tablet) {
+      font: $xbold 3.2rem/3.8rem $regular;
+    }
+    @media (min-width: $breakpoint-laptop) {
+      font: $xbold 3.8rem/4.6rem $regular;
+    }
   }
 }
 
@@ -36,6 +44,7 @@ section.home_about {
 
   }
   .resources_content {
+    background: #5DB1AD;
     order: 2;
     width: 100%;
     text-align: left;
@@ -62,16 +71,17 @@ section.home_about {
           font: $xbold 3.8rem/4.6rem $regular;
         }
         margin-bottom: 20px;
-        color: $blue;
+        color: $white;
       }
       h4 {
         font: $xbold 2.4rem/3.6rem $regular;
         margin-bottom: 20px;
-        color: $blue;
+        color: $white;
       }
       p {
         font: $normal 1.8rem/2.6rem $regular;
         margin-bottom: 20px;
+        color: $white;
       }
     }
   }
