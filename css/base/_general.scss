@@ -372,7 +372,6 @@ section {
 
 // Hero
 section.hero {
-  // border-bottom: 5px solid #EA5D4E;
   overflow: hidden;
   position: relative;
   background-repeat: no-repeat;
@@ -381,7 +380,7 @@ section.hero {
   padding: 0;
   .background {
     transform: scale(1.05);
-    animation: bgZoom 4s;
+    animation: bgZoom 3s;
     padding: 140px 0px;
     @media (min-width: $breakpoint-tablet) {
       padding: 240px 0px;
