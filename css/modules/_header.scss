@@ -110,9 +110,11 @@ header {
     display: none;
     @media (min-width: 1080px) {
       display: block;
-      bottom: 0;
+      position: absolute;
+      top: 120px;
       right: 0;
     }
+    
     font: $normal 1.8em/3rem $regular;
     letter-spacing: 0.1rem;
     ul {
@@ -126,21 +128,21 @@ header {
         display: inline-block;
         &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
           color: $blue;
-          padding: 10px 0px;
-          margin: 20px 8px;
-          border-bottom: 2px solid $blue;
+          padding: 10px 5px;
+          margin: 0px 8px;
+          border-bottom: 3px solid $blue;
           
         }
         a {
-          font: $normal 1.6rem/3.0rem $regular;
+          font: $normal 1.8rem/3.0rem $regular;
           @include transition(all 0.2s ease-out);
           line-height:1em;
           display: block;
           color: $blue;
-          border-bottom: 2px solid transparent;
+          border-bottom: 3px solid transparent;
           text-decoration: none;
-          padding: 10px 0px;
-          margin: 20px 8px;
+          padding: 10px 5px;
+          margin: 0px 8px;
           // text-transform: uppercase;
         }
         &.menu-item-has-children, &.page_item_has_children {
@@ -383,10 +385,10 @@ nav.mobile {
 nav.primary ul ul {
   position: absolute;
   z-index: 9999;
-  background: $black;
+  background: #2B3C4E;
   margin: 0;
   min-width: 200px;
-  border: 1px solid $black;
+  border: 1px solid #2B3C4E;
   letter-spacing: 0px;
   @include invisible();
   opacity: 0;

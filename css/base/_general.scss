@@ -396,7 +396,7 @@ section.hero {
     position: absolute !important;
     top: 100% !important;
     left: 0 !important;
-    padding: $padding-half 0;
+    padding: $padding 0;
     z-index: 1 !important;
     width: 100% !important;
     transform: translate3d(0%, -100%, 0) !important;
@@ -407,7 +407,7 @@ section.hero {
       font-size: 2.8rem;
       line-height: 3.6rem;
       color: $white;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       @media (min-width: $breakpoint-tablet) {
         font: $xbold 4.0rem/4.5rem $regular;
         font-size: 4rem;
