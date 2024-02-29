@@ -105,6 +105,12 @@ header {
     }
   }
   
+  .nihr {
+    position: absolute;
+    top: 40px;
+    right: 0;
+  }
+  
   nav.primary {
     box-sizing: border-box;
     display: none;
@@ -116,7 +122,7 @@ header {
     }
     
     font: $normal 1.6em/3rem $regular;
-    
+    letter-spacing: 0.2rem;
     ul {
       margin: 0 0;
       text-align: right;
@@ -129,31 +135,31 @@ header {
         display: inline-block;
         &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
           color: $blue;
-          padding: 10px 15px;
+          padding: 10px 20px;
           margin: 0px 8px;
           border-bottom: 5px solid #EA5D4E;
           
         }
         a {
-          font: $bold 1.6rem/3.0rem $regular;
+          font: $bold 1.5rem/3.0rem $regular;
           @include transition(all 0.2s ease-out);
           line-height:1em;
           display: block;
           color: $blue;
           border-bottom: 3px solid transparent;
           text-decoration: none;
-          padding: 10px 15px;
+          padding: 10px 20px;
           margin: 0px 8px;
           // text-transform: uppercase;
         }
         &.menu-item-has-children, &.page_item_has_children {
           a {
-            background: url('../img/menu_arrow.svg') right center no-repeat;
-            padding-right: 20px;
+            background: url('../img/menu_arrow.svg') right 20px center no-repeat;
+            padding-right: 50px;
           }
           &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {     
-            background: url('../img/menu_arrow.svg') right center no-repeat;
-            padding-right: 20px;
+            background: url('../img/menu_arrow.svg') right 20px center no-repeat;
+            padding-right: 50px;
           } 
           ul {
             box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
@@ -254,6 +260,7 @@ nav.mobile {
     margin: 10px 0px;
     padding: 0px 20px;
     li {
+      
       text-align: left;
       display: block;
       // margin: 10px 0px;
