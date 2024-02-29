@@ -372,13 +372,36 @@ section {
 
 // Hero
 section.hero {
+  // border-bottom: 5px solid #EA5D4E;
   overflow: hidden;
   position: relative;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
-  padding: 100px 0px;
-  overflow: hidden;
+  padding: 0;
+  .background {
+    transform: scale(1.05);
+    animation: bgZoom 4s;
+    padding: 140px 0px;
+    @media (min-width: $breakpoint-tablet) {
+      padding: 240px 0px;
+    }
+    overflow: hidden;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+  }
+  .float {
+    display: block !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    padding: $padding-half 0;
+    z-index: 1 !important;
+    width: 100% !important;
+    transform: translate3d(0%, -100%, 0) !important;
+  }
   .content {
     h1 {
       font: $xbold 2.8rem/3.6rem $regular;
@@ -392,8 +415,8 @@ section.hero {
         line-height: 4.5rem;
       }
       @media (min-width: $breakpoint-desktop) {
-        font: $xbold 6.4rem/6.4rem $regular;
-        font-size: 6.4rem;
+        font: $xbold 5.4rem/6.4rem $regular;
+        font-size: 5.4rem;
         line-height: 6.4rem;
       }
     }
@@ -407,86 +430,8 @@ section.hero {
       }
     }
   }
-  &.small {
-    padding: $padding-half 0px 0px 0px;
-    @media (min-width: $breakpoint-tablet) {
-      padding: $padding 0px 0px 0px;
-    }
-    .content {
-      h1 {
-        color: $blue;
-      }
-      p {
-        color: $blue;
-      }
-    }
-  }
-  &.single {
-    overflow: hidden; 
-    padding: $padding 0px;
-    background: $blue;
-    &.level-three {
-      padding: 55px 0;
-      background: #C8DAE2;
-      .content {
-        h1, p {
-          color: $black;
-        }
-        
-      }
-    }
-    .background {
-      // transform: scale(1.05);
-      // animation: bgZoom 4s;
-      padding: 100px 0px;
-      @media (min-width: $breakpoint-tablet) {
-        padding: 180px 0px;
-      }
-      overflow: hidden;
-      position: relative;
-      background-repeat: no-repeat;
-      background-position: center bottom;
-      background-size: cover;
-    }
-    .content {
-      h1 {
-        font: $xbold 2.8rem/3.6rem $regular;
-        font-size: 2.8rem;
-        line-height: 3.6rem;
-        color: $white;
-        margin-bottom: 10px;
-        @media (min-width: $breakpoint-tablet) {
-          font: $xbold 4.0rem/4.5rem $regular;
-          font-size: 4rem;
-          line-height: 4.5rem;
-        }
-        @media (min-width: $breakpoint-desktop) {
-          font: $xbold 5.4rem/5.4rem $regular;
-          font-size: 5.4rem;
-          line-height: 5.4rem;
-        }
-      }
-      .date {
-        color: $white;
-        font: $light 2.4rem/3.2rem $regular;
-      }
-    }
-  }
-  &.not_found {
-    margin-top: 90px;
-    background: $white;
-    text-align: center;
-    height: 50vh;
-    .content {
-      h1 {
-        color: $blue;
-      }
-      p {
-        color: $blue;
-      }
-    }
-  } 
 }
+
 
 @keyframes bgZoom {
   0% {

@@ -31,11 +31,12 @@
   }
   &.secondary {
     color: $white;
-    border: 2px solid $white;
+    border: 2px solid #EA5D4E;
+    
     background: transparent;
     &:hover {
-      color: $blue;
-      background: $white;
+      color: $white;
+      background: #EA5D4E;
       text-decoration: none;
     }
   }
