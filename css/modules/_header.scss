@@ -182,7 +182,7 @@ nav.primary {
   @media (min-width: 1080px) {
     display: block;
   }
-  font: $normal 1.5em/3rem $regular;
+  font: $normal 1.5em/2.0rem $regular;
   letter-spacing: 0.2rem;
   ul {
     margin: 0;
@@ -195,9 +195,9 @@ nav.primary {
       text-transform: uppercase;
       display: inline-block;
       a {
-        font: normal 1.5rem/3.0rem $regular;
+        font: normal 1.5rem/2.0rem $regular;
         @include transition(all 0.2s ease-out);
-        line-height:1em;
+
         display: block;
         color: $blue;
         text-decoration: none;
@@ -460,7 +460,7 @@ nav.primary ul ul {
   @include invisible();
   opacity: 0;
   visibility: hidden;
-  min-width: 240px;
+  min-width: 300px;
   left: 0; // Align left edge with the parent item
   top: 100%; // Position the submenu just below the parent item
 }
@@ -483,7 +483,7 @@ nav.primary ul ul ul {
   @include invisible();
   opacity: 0;
   visibility: hidden;
-  min-width: 240px;
+  min-width: 300px;
 }
 
 nav.primary ul ul li:hover > ul {
