@@ -181,13 +181,11 @@ nav.primary {
   display: none;
   @media (min-width: 1080px) {
     display: block;
-    top: 120px;
   }
-  
-  font: $normal 1.6em/3rem $regular;
+  font: $normal 1.5em/3rem $regular;
   letter-spacing: 0.2rem;
   ul {
-    margin: 0 0;
+    margin: 0;
     text-align: left;
     line-height:1em;
     @media (min-width: $breakpoint-desktop) {
@@ -196,66 +194,95 @@ nav.primary {
     li {
       text-transform: uppercase;
       display: inline-block;
-      &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
-        color: $blue;
-        padding: 15px 20px;
-        margin: 0px;
-        background: $blue;
-        color: $white;
-      }
-      
       a {
-        font: $bold 1.5rem/3.0rem $regular;
+        font: normal 1.5rem/3.0rem $regular;
         @include transition(all 0.2s ease-out);
         line-height:1em;
         display: block;
         color: $blue;
-        // border-bottom: 5px solid transparent;
         text-decoration: none;
         padding: 15px 20px;
         margin: 0px;
-        // text-transform: uppercase;
+        &:hover {
+          margin: 0;
+          background: $blue;
+          color: $white;
+        }
       }
-      &.menu-item-has-children, &.page_item_has_children {
-        a {
+      &.current_page_item,
+      &.current-menu-item, 
+      &.current-page-ancestor, 
+      &.current-post-ancestor, 
+      &.current-menu-parent, 
+      &.current-category-ancestor, 
+      &.current_page_parent {
+        > a {
+          margin: 0;
+          background: $blue;
+          color: $white;
+          &:hover {
+            margin: 0;
+            background: $blue;
+            color: $white;
+          }
+        }
+      }
+      &.menu-item-has-children, 
+      &.page_item_has_children {
+        > a {
           background: url('../img/menu_arrow.svg') right 20px center no-repeat;
           padding-right: 50px;
+          &:hover {
+            background: $blue url('../img/menu_arrow_hover.svg') right 20px center no-repeat;
+            padding-right: 50px;
+            color: $white;
+          }
         }
-        &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {     
-          background: $blue url('../img/menu_arrow_hover.svg') right 20px center no-repeat;
-          padding-right: 50px;
-        } 
-        ul {
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-          border: none;
-          text-align: left;
-          li {
-            display: block;
-            a {
-              font: $normal 1.6rem/3.0rem $regular;
-              color: $white;
-              padding: 10px 15px;
+      }
+      &.current_page_item.menu-item-has-children, 
+      &.current-menu-item.menu-item-has-children, 
+      &.current-page-ancestor.menu-item-has-children, 
+      &.current-post-ancestor.menu-item-has-children, 
+      &.current-menu-parent.menu-item-has-children, 
+      &.current-category-ancestor.menu-item-has-children, 
+      &.current_page_parent.menu-item-has-children,
+      &.current_page_item.page_item_has_children, 
+      &.current-menu-item.page_item_has_children, 
+      &.current-page-ancestor.page_item_has_children, 
+      &.current-post-ancestor.page_item_has_children, 
+      &.current-menu-parent.page_item_has_children, 
+      &.current-category-ancestor.page_item_has_children, 
+      &.current_page_parent.page_item_has_children {
+        > a {
+          background: $blue url('../img/menu_arrow_hover.svg') right 20px center no-repeat; // Apply the hover background
+          padding-right: 50px; // Ensure padding for arrow space
+          color: $white; // Text color
+        }
+      }
+      ul {
+        border: none;
+        text-align: left;
+        li {
+          display: block;
+          a {
+            margin: 0;
+            background: #F0F1F5;
+            color: $blue;
+            &:hover {
               margin: 0;
-              border-bottom: none;
-              background: none !important;
-            }
-            &:last-child {
-              a {
-                border-bottom: none;
-              }
-            }
-            &:hover a, &.current-menu-item a, &.current_page_item a {
+              background: $blue;
               color: $white;
-              text-decoration: none;
-              background: #FDD47A;
             }
-            &.menu-item-has-children, &.page_item_has_children {
-              a {
-                background: url('../img/menu_arrow_hover.svg') right 20px center no-repeat !important;
+            &.menu-item-has-children, 
+            &.page_item_has_children {
+              > a {
+                background: url('../img/menu_arrow.svg') right 20px center no-repeat;
                 padding-right: 50px;
-              }
-              a:hover > ul {
-                  position: relative;
+                &:hover {
+                  background: $blue url('../img/menu_arrow_hover.svg') right 20px center no-repeat;
+                  padding-right: 50px;
+                  color: $white;
+                }
               }
             }
           }
@@ -263,8 +290,6 @@ nav.primary {
       }
     }
   }
-}
-
   a.menu-toggle {
     display: block;
     @media (min-width: 1080px) {
@@ -305,7 +330,7 @@ nav.primary {
       }
     }
   }
-
+}
 
 nav.mobile {
   display: none;
@@ -422,17 +447,26 @@ nav.mobile {
   transition: opacity linear 0.1s, visibility linear 0.1s;
 }
 
+nav.primary ul {
+  position: relative; // Ensure ul has a relative positioning context
+}
+
 nav.primary ul ul {
   position: absolute;
   z-index: 9999;
-  background: $blue;
+  background: #F0F1F5;
   margin: 0;
-  min-width: 200px;
-  border: 1px solid $white;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   @include invisible();
   opacity: 0;
   visibility: hidden;
+  min-width: 240px;
+  left: 0; // Align left edge with the parent item
+  top: 100%; // Position the submenu just below the parent item
+}
+
+nav.primary ul li {
+  position: relative; // This creates a positioning context for the submenu
 }
 
 nav.primary ul li:hover > ul {
@@ -443,17 +477,13 @@ nav.primary ul li:hover > ul {
 
 nav.primary ul ul ul {
   position: absolute;
-  z-index: 9999;
-  background: #2B3C4E;
-  margin: 0;
-  left: 200px;
-  top: 0;
-  min-width: 200px;
-  border: 1px solid $white;
-  letter-spacing: 0px;
+  left: 100%; // Position the second-level submenu to the right of its parent
+  top: 0; // Align it to the top of the parent item
+  letter-spacing: 0;
   @include invisible();
   opacity: 0;
   visibility: hidden;
+  min-width: 240px;
 }
 
 nav.primary ul ul li:hover > ul {
