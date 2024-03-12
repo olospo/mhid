@@ -5,7 +5,6 @@ $(".mobile_menu").click(function() {
 
 $(".search_icon").click(function() {
   $('.search_form').fadeToggle();
-  // $('#menu-main').fadeToggle();
 });
 
 $(window).resize(function() { // Hide Mobile Menu if Browser window goes above 768px
@@ -31,6 +30,20 @@ $('a.back_to_top').click(function() {
     scrollTop: 0
   }, 300);
   return false;
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('searchform');
+  var inputs = form.querySelectorAll('input');
+
+  inputs.forEach(function (input) {
+    input.addEventListener('focus', function () {
+      form.classList.add('focused');
+    }, { passive: true }); // Use passive event listener
+    input.addEventListener('blur', function () {
+      form.classList.remove('focused');
+    }, { passive: true }); // Use passive event listener
+  });
 });
 
 // SVG as Images

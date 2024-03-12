@@ -11,7 +11,7 @@
   vertical-align: middle;
   padding: 15px 20px 15px 20px;
   margin: 5px 10px 5px 0;
-  font: $bold 1.4rem/1.4rem $regular;
+  font: $normal 1.4rem/1.4rem $regular;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: all ease .5s;
@@ -20,12 +20,12 @@
   transition: all ease .5s;
   letter-spacing: 0.1rem;
   &.primary {
-    color: $white;
-    border: 3px solid $white;
+    color: $black;
+    border: 3px solid #5DB1AD;
     background: transparent;
     &:hover {
-      color: $blue;
-      background: $white;
+      color: $white;
+      background: #5DB1AD;
       text-decoration: none;
     }
   }
