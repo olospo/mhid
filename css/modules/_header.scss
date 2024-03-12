@@ -182,8 +182,8 @@ nav.primary {
   @media (min-width: 1080px) {
     display: block;
   }
-  font: $normal 1.5em/2.0rem $regular;
-  letter-spacing: 0.2rem;
+  
+  letter-spacing: 0.1rem;
   ul {
     margin: 0;
     text-align: left;
@@ -192,10 +192,10 @@ nav.primary {
       display: block;
     } 
     li {
-      text-transform: uppercase;
+      // text-transform: uppercase;
       display: inline-block;
       a {
-        font: normal 1.5rem/2.0rem $regular;
+        font: $normal 1.6rem/2.0rem $regular;
         @include transition(all 0.2s ease-out);
 
         display: block;
@@ -264,7 +264,12 @@ nav.primary {
         text-align: left;
         li {
           display: block;
+          border-bottom: 1px solid #c9cad1;
+          &:last-child {
+            border-bottom: none;
+          }
           a {
+            font: $normal 1.5rem/2.0rem $regular;
             margin: 0;
             background: #F0F1F5;
             color: $blue;
