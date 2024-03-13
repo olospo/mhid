@@ -10,8 +10,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_directory'); ?>/img/favicon-16x16.png"/>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> 
-<?php if( get_field('social_metadata', 'options') ): the_field('social_metadata', 'options'); endif; // Social Metadata ?>
-<?php if( get_field('google_analytics', 'options') ): the_field('google_analytics', 'options'); endif; // Google Analytics Code ?>
+<?php if( get_field('social_metadata', 'options') ): echo get_field('social_metadata', 'options'); endif; // Social Metadata ?>
+<?php if( get_field('google_analytics', 'options') ): echo get_field('google_analytics', 'options'); endif; // Google Analytics Code ?>
 <meta name="google-site-verification" content="add-content-here" />
 </head>
 <body <?php body_class(); ?>>
@@ -44,19 +44,10 @@
 <header class="main">
   <div class="container">
     <div class="logo three columns">  
-      <?php if ( is_front_page() ) { ?>
       <h1 class="site-title">
-        <a href="<?php echo get_site_url(); ?>">
-          <img src="<?php bloginfo('template_directory'); ?>/img/mhid_logo.png" alt="<?php echo bloginfo( 'name' ); ?>">
-        </a>
+        <?php get_template_part( 'inc/logo' ); ?>
+       
       </h1>
-      <?php } else { ?>
-      <p class="site-title">
-        <a href="<?php echo get_site_url(); ?>">
-          <img src="<?php bloginfo('template_directory'); ?>/img/mhid_logo.png" alt="<?php echo bloginfo( 'name' ); ?>">
-        </a>
-      <p>
-      <?php } ?>
     </div>
     <div class="extra nine columns">
       <div class="nihr">
@@ -80,6 +71,7 @@
     <nav class="primary twelve columns">
 <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
     </nav>
+    
     <nav class="mobile">
       <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
     </nav>
