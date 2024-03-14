@@ -46,24 +46,36 @@ section.intro {
         background: $white;
         span.unit {
           color: $blue;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 5px solid $blue;
         }
       }
       &.grey {
         background: #F0F1F5;
         span.unit {
           color: $blue;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 5px solid $blue;
         }
       }
       &.dark {
         background: #ACBCC3;
         span.unit {
           color: $blue;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 5px solid $blue;
         }
       }
       &.teal {
         background: $teal;
         span.unit {
           color: $white;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 5px solid $white;
         }
         span.description {
           color: $white;
@@ -72,7 +84,11 @@ section.intro {
       &.blue{
         background: $blue;
         span.unit {
+          
           color: $white;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 5px solid $white;
         }
         span.description {
           color: $white;
@@ -80,12 +96,12 @@ section.intro {
       }
 
       span.unit {
+        
         font: $bold 3.8rem/3.8rem $regular;
         @media (min-width: $breakpoint-tablet) {
           font: $bold 6.4rem/6.4rem $regular;
         }
-        display: block;
-        margin-bottom: 5px;
+        display: inline-block;
       }
       span.description {
         font: $normal 1.4rem/2.0rem $regular;
