@@ -1,7 +1,6 @@
 // Intro
 section.intro {
   background: #EEF1F6;
-  border-top: 5px solid $white;
   padding: $padding 0;
   .container {
     background: #EEF1F6;
@@ -48,7 +47,7 @@ section.intro {
           color: $blue;
           padding-bottom: 20px;
           margin-bottom: 20px;
-          border-bottom: 5px solid $blue;
+          border-bottom: 3px solid $blue;
         }
       }
       &.grey {
@@ -57,7 +56,7 @@ section.intro {
           color: $blue;
           padding-bottom: 20px;
           margin-bottom: 20px;
-          border-bottom: 5px solid $blue;
+          border-bottom: 3px solid $blue;
         }
       }
       &.dark {
@@ -66,7 +65,7 @@ section.intro {
           color: $blue;
           padding-bottom: 20px;
           margin-bottom: 20px;
-          border-bottom: 5px solid $blue;
+          border-bottom: 3px solid $blue;
         }
       }
       &.teal {
@@ -75,7 +74,7 @@ section.intro {
           color: $white;
           padding-bottom: 20px;
           margin-bottom: 20px;
-          border-bottom: 5px solid $white;
+          border-bottom: 3px solid $white;
         }
         span.description {
           color: $white;
