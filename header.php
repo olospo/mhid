@@ -16,7 +16,7 @@
 </head>
 <body <?php body_class(); ?>>
 
-<header class="menu">
+<nav class="sites">
   <div class="container">
     <div class="twelve columns">
       <?php 
@@ -40,7 +40,7 @@
           echo '</ul>';
       } ?>
     </div>
-</header>
+</nav>
 <header class="main">
   <div class="container">
     <div class="logo three columns">  
@@ -66,14 +66,14 @@
     </a>
   </div>
 </header>
-<div class="menu">
+<nav class="menu">
   <div class="container">
-    <nav class="primary twelve columns">
+    <div class="primary twelve columns">
 <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
-    </nav>
+    </div>
     
-    <nav class="mobile">
+    <div class="mobile">
       <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
-    </nav>
+    </div>
   </div>
-</div>
+</nav>

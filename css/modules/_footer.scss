@@ -1,16 +1,12 @@
 // Footer
 footer {
-  border-top: 5px solid $white;
   font: $normal 1.6rem/3.0rem $regular;
   position: relative;
   overflow-wrap: break-word;
   padding: 40px 0px;
   color: $white;
   background: $blue;
-  text-align: center;
-  @media (min-width: $breakpoint-tablet) {
-    text-align: left; 
-  }
+  text-align: left;
   .logo {
     img, svg {
       height: 160px;
@@ -19,6 +15,9 @@ footer {
   h5 {
     color: $white;
     font: $bold 2.2rem/3.2rem $regular;
+    @media (min-width: $breakpoint-tablet) {
+      text-align: left; 
+    }
     margin-bottom: 10px;
   }
   p, address {
@@ -46,31 +45,31 @@ footer {
     li {
       &.site-1 {
         a {
-          border-left: 5px solid #EA5D4E;
+          border-left: 5px solid $orange;
           padding-left: 10px;
         }
       }
       &.site-2 {
         a {
-          border-left: 5px solid #6BB679;
+          border-left: 5px solid $green;
           padding-left: 10px;
         }
       }
       &.site-3 {
         a {
-          border-left: 5px solid #6465AB;
+          border-left: 5px solid $purple;
           padding-left: 10px;
         }
       }
       &.site-4 {
         a {
-          border-left: 5px solid #A74794;
+          border-left: 5px solid $pink;
           padding-left: 10px;
         }
       }
       &.site-6 {
         a {
-          border-left: 5px solid #5DB1AD;
+          border-left: 5px solid $teal;
           padding-left: 10px;
         }
       }

@@ -1,0 +1,183 @@
+{
+    "key": "group_643fd3b8915f9",
+    "title": "Flex - Stat Section",
+    "fields": [
+        {
+            "key": "field_643fd3b8f9194",
+            "label": "Stat",
+            "name": "stat",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "layout": "block",
+            "pagination": 0,
+            "min": 1,
+            "max": 4,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_643fd3faf9195",
+                    "label": "Unit",
+                    "name": "unit",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "E.g. 22",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "relevanssi_exclude": 0,
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "placeholder": 0,
+                    "step": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_643fd3b8f9194"
+                },
+                {
+                    "key": "field_643fd507d3e2f",
+                    "label": "Unit Extra",
+                    "name": "unit_extra",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "E.g. + or TB",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "relevanssi_exclude": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_643fd3b8f9194"
+                },
+                {
+                    "key": "field_643fd428f9197",
+                    "label": "Prefix or Postfix",
+                    "name": "postfix_or_prefix",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Prefix (before) or Postfix (after) the unit. E.g. 5+ or 5TB",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_643fd507d3e2f",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "relevanssi_exclude": 0,
+                    "choices": {
+                        "prefix": "Before",
+                        "postfix": "After"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_643fd3b8f9194"
+                },
+                {
+                    "key": "field_643fd40ef9196",
+                    "label": "Description",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "A description for what the number\/unit means E.g. Benchmarks",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "relevanssi_exclude": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_643fd3b8f9194"
+                },
+                {
+                    "key": "field_643fdea9ea416",
+                    "label": "Colour",
+                    "name": "stat_color",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Select the Stat Box background colour",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "white": "White",
+                        "grey": "Grey",
+                        "dark": "Dark Grey",
+                        "blue": "Blue",
+                        "teal": "Teal"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_643fd3b8f9194"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1710425578
+}

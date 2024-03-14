@@ -1,12 +1,6 @@
 <?php /* Template Name: Home */
 get_header();
 
-$title = get_field('section_one_title');
-$content = get_field('section_one_content');
-$buttonText = get_field('section_one_button_text');
-$buttonLink = get_field('section_one_button_link');
-$video = get_field('section_one_video');
-
 while ( have_posts() ) : the_post(); ?>
 
 <section class="home hero">

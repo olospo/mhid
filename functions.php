@@ -497,9 +497,20 @@ function breadcrumbs() {
 
 function tg_include_custom_post_types_in_search_results( $query ) {
   if ( $query->is_main_query() && $query->is_search() && ! is_admin() ) {
-      $query->set( 'post_type', array( 'post', 'page', 'projects' ) );
+      $query->set( 'post_type', array( 'post', 'page' ) );
   }
 }
 add_action( 'pre_get_posts', 'tg_include_custom_post_types_in_search_results' );
 
-?>
+// Convert number to their word equivalent 
+function number_to_word($number) {
+  $words = array(
+    'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'
+  );
+    
+  if ($number <= 10) {
+    return $words[$number];
+  }
+
+  return $number;
+}

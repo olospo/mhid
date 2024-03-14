@@ -1,73 +1,83 @@
-// Main Site
+//--------------- MHID ---------------//
 
 body.main-site {
   header.main {
    
   }
   section.hero.single {
-    background: #243F6D;
+    background: $blue;
     h1 {
       color: #fff;
     }
   }
 }
+
+//---------------  ANDY ---------------//
 
 body.subsite-1 { // Andy
   header.main {
     
   }
   section.hero.single {
-    background: #6BB679;
+    background: $green;
     h1 {
-      color: #fff;
+      color: $white;
     }
   }
 }
+
+//--------------- Early Minds ---------------//
 
 body.subsite-2 { // Support
   header.main {
     
   }
   section.hero.single {
-    background: #6465AB;
+    background: $purple;
     h1 {
-      color: #fff;
+      color: $white;
     }
   }
 }
+
+//---------------  Wisdom ---------------//
 
 body.subsite-3 { // Wisdom
   header.main {
     
   }
   section.hero.single {
-    background: #A74794;
+    background: $pink;
     h1 {
-      color: #fff;
+      color: $white;
     }
   }
 }
+
+//---------------  YAG ---------------//
 
 body.subsite-4 { // YAG
   header.main {
     
   }
   section.hero.single {
-    background: #243F6D;
+    background: $blue;
     h1 {
-      color: #fff;
+      color: $white;
     }
   }
 }
+
+//---------------  AIM ---------------//
 
 body.subsite-5 { // AIM
   header.main {
     
   }
   section.hero.single {
-    background: #5DB1AD;
+    background: $teal;
     h1 {
-      color: #fff;
+      color: $white;
     }
   }
 }

@@ -1,49 +1,40 @@
-$(".mobile_menu").click(function() {
-  $('nav.mobile').fadeToggle();
-  $(this).toggleClass("open");
-});
+$( document ).ready(function() {
 
-$(".search_icon").click(function() {
-  $('.search_form').fadeToggle();
-});
-
-$(window).resize(function() { // Hide Mobile Menu if Browser window goes above 768px
-  var width = $(this).width(); // The window width
-  if (width > 768) {
-    $('nav.mobile').hide();
-  }
-});
-
-// Back to Top Scroll 
-var amountScrolled = 300;
-
-$(window).scroll(function() {
-  if ( $(window).scrollTop() > amountScrolled ) {
-    $('a.back_to_top').fadeIn();
-  } else {
-    $('a.back_to_top').fadeOut('fast');
-  }
-});
-
-$('a.back_to_top').click(function() {
-  $('html, body').animate({
-    scrollTop: 0
-  }, 300);
-  return false;
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  var form = document.getElementById('searchform');
-  var inputs = form.querySelectorAll('input');
-
-  inputs.forEach(function (input) {
-    input.addEventListener('focus', function () {
-      form.classList.add('focused');
-    }, { passive: true }); // Use passive event listener
-    input.addEventListener('blur', function () {
-      form.classList.remove('focused');
-    }, { passive: true }); // Use passive event listener
+  $(".mobile_menu").click(function() {
+    $('nav.mobile').fadeToggle();
+    $(this).toggleClass("open");
   });
+  
+  $(".search_icon").click(function() {
+    $('.search_form').fadeToggle();
+  });
+  
+  $(window).resize(function() { // Hide Mobile Menu if Browser window goes above 768px
+    var width = $(this).width(); // The window width
+    if (width > 768) {
+      $('nav.mobile').hide();
+    }
+  });
+
+  // Back to Top Scroll 
+  var amountScrolled = 300;
+  
+  $(window).scroll(function() {
+    if ( $(window).scrollTop() > amountScrolled ) {
+      $('a.back_to_top').fadeIn();
+    } else {
+      $('a.back_to_top').fadeOut('fast');
+    }
+  });
+  
+  $('a.back_to_top').click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 300);
+    return false;
+  });
+
+
 });
 
 // SVG as Images
@@ -101,41 +92,45 @@ function accordion_ajax() {
 }
 accordion_ajax();
 
-$('.slider').slick({
-  dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 3,
-  slidesToScroll: 3,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
+// Stats Scrolling
+function formatNumber(number) {
+  const fixed = number.toFixed(2);
+  return parseFloat(fixed) === parseInt(fixed) ? parseInt(fixed) : fixed;
+}
+
+function checkInView() {
+  if (triggerAtY <= $(window).scrollTop()) {
+    startCounter();
+    $(window).off('scroll', checkInView); // Remove the scroll event handler
+  }
+}
+
+function startCounter() {
+  $('.unit').each(function () {
+    const prefix = $(this).data('prefix') || '';
+    const postfix = $(this).data('postfix') || '';
+    $(this).prop('Counter', 0).delay(0).animate({
+      Counter: $(this).text()
+    }, {
+      duration: 3000,
+      easing: 'swing',
+      step: function() {
+        $(this).text(prefix + Math.round(this.Counter).toLocaleString() + postfix);
+      },
+      complete: function() {
+        $(this).text(prefix + formatNumber(parseFloat(this.Counter)).toLocaleString() + postfix);
       }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-});
+    });
+    $('.fade_in').fadeIn(500).delay(100);
+  });
+}
+
+var triggerAtY = $('.stat_section').offset().top - $(window).outerHeight();
+
+$(window).on('scroll', checkInView); // Add the scroll event handler
+checkInView(); // Check if the section is in view on page load
+
+var counter = 0;
   
 // ------------------------------------------------------------
 // Animation Javascript
