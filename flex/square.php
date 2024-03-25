@@ -7,7 +7,7 @@ if( $layout == 'left' ) { ?>
   <div class="container">
     <?php if( have_rows('image') ): // Image ?>
       <?php while( have_rows('image') ): the_row(); ?>
-      <div class="square_background" style="background: url('<?php echo the_sub_field('square_image'); ?>') center center no-repeat; background-size:cover;"></div>
+      <div class="square_background" style="background: url('<?php echo get_sub_field('square_image'); ?>') center center no-repeat; background-size:cover;"></div>
       <?php endwhile; ?>
     <?php endif; ?>
     
@@ -72,7 +72,7 @@ if( $layout == 'left' ) { ?>
     
     <?php if( have_rows('image') ): // Image ?>
       <?php while( have_rows('image') ): the_row(); ?>
-      <div class="square_background" style="background: url('<?php echo the_sub_field('square_image'); ?>') center center no-repeat; background-size:cover;"></div>
+      <div class="square_background" style="background: url('<?php echo get_sub_field('square_image'); ?>') center center no-repeat; background-size:cover;"></div>
       <?php endwhile; ?>
     <?php endif; ?>
     

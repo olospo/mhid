@@ -3,29 +3,6 @@
     "title": "Flex - Square Section",
     "fields": [
         {
-            "key": "field_651d65f4f8a73",
-            "label": "Section Layout",
-            "name": "section_layout",
-            "aria-label": "",
-            "type": "button_group",
-            "instructions": "Select the position of the background image.",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "left": "<i class=\"dashicons dashicons-align-left\"><\/i> Image on Left",
-                "right": "Image on Right <i class=\"dashicons dashicons-align-right\"><\/i>"
-            },
-            "default_value": "",
-            "return_format": "value",
-            "allow_null": 0,
-            "layout": "horizontal"
-        },
-        {
             "key": "field_651d653c51726",
             "label": "Colour Scheme",
             "name": "colour_scheme",
@@ -43,6 +20,29 @@
                 "blue": "Blue",
                 "teal": "Teal",
                 "orange": "Orange"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_651d65f4f8a73",
+            "label": "Section Layout",
+            "name": "section_layout",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "Select the position of the background image.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "<i class=\"dashicons dashicons-align-left\"><\/i> Image on Left",
+                "right": "Image on Right <i class=\"dashicons dashicons-align-right\"><\/i>"
             },
             "default_value": "",
             "return_format": "value",
@@ -185,5 +185,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710427883
+    "modified": 1711361752
 }

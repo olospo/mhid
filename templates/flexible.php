@@ -8,6 +8,8 @@ while ( have_posts() ) : the_post(); ?>
   <?php while (have_rows('section_content')) { the_row(); ?>
     <?php if( get_row_layout() == 'hero' ): ?>
       <?php get_template_part( 'flex/hero'); // Hero ?>
+    <?php elseif( get_row_layout() == 'content_section' ): ?>
+      <?php get_template_part( 'flex/content'); // Content ?>
     <?php elseif( get_row_layout() == 'stats' ): ?>
       <?php get_template_part( 'flex/stats'); // Stats ?>
     <?php elseif( get_row_layout() == 'square' ): ?>

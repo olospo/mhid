@@ -49,16 +49,16 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_65f2f9df42b83": {
-                    "key": "layout_65f2f9df42b83",
-                    "name": "stats",
-                    "label": "Stat Section",
+                "layout_65f316bf9fe30": {
+                    "key": "layout_65f316bf9fe30",
+                    "name": "intro",
+                    "label": "Intro Section",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_65f2f9e142b85",
-                            "label": "Stats",
-                            "name": "stats",
+                            "key": "field_65f316c79fe33",
+                            "label": "Intro",
+                            "name": "intro",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -70,7 +70,39 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_643fd3b8915f9"
+                                "group_65f315cc5c43a"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_66014d8826a38": {
+                    "key": "layout_66014d8826a38",
+                    "name": "content_section",
+                    "label": "Content Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_66014d8f26a3a",
+                            "label": "Content",
+                            "name": "content",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_66014cc8d3dac"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -113,16 +145,16 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_65f316bf9fe30": {
-                    "key": "layout_65f316bf9fe30",
-                    "name": "intro",
-                    "label": "Intro Section",
+                "layout_65f2f9df42b83": {
+                    "key": "layout_65f2f9df42b83",
+                    "name": "stats",
+                    "label": "Stat Section",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_65f316c79fe33",
-                            "label": "Intro",
-                            "name": "intro",
+                            "key": "field_65f2f9e142b85",
+                            "label": "Stats",
+                            "name": "stats",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -134,7 +166,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_65f315cc5c43a"
+                                "group_643fd3b8915f9"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -258,5 +290,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710429921
+    "modified": 1711364426
 }
