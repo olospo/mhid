@@ -33,7 +33,7 @@ section.content_section {
         padding-bottom: 10px;
         margin-bottom: 10px;
         color: $blue;
-        font: $xbold 3.2rem/4.2rem $regular;
+        font: $xbold 2.6rem/3.4rem $regular;
       }
       ul {
         li {
@@ -58,6 +58,19 @@ section.content_section {
             
           }
         }
+      }
+    }
+    .page_nav + .page_extra {
+      margin-top: 40px;
+    }
+    .page_extra {
+      h3 {
+        border-bottom: 5px solid #EA5D4E;
+        display: inline-block;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        color: $blue;
+        font: $xbold 2.6rem/3.4rem $regular;
       }
     }
   }
