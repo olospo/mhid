@@ -51,6 +51,8 @@ if( $layout == 'one' ) { ?>
       <div class="page_nav">
         <h3>In this section</h3>
         <?php global $post;
+        $current_page_id = $post->ID; // Save the current page ID for later comparison.
+        
         if ( $post ) : 
             // Determine if the current page has a parent to fetch siblings accordingly.
             $parent_id = ($post->post_parent) ? $post->post_parent : $post->ID;
@@ -62,7 +64,6 @@ if( $layout == 'one' ) { ?>
                 'nopaging'      => true, // Get all pages without pagination.
                 'orderby'       => 'menu_order', // Order by menu order.
                 'order'         => 'ASC', // Ascending order.
-                // Don't exclude the current post to apply the 'current' class conditionally.
             );
         
             $siblings = new WP_Query($args);
@@ -70,10 +71,11 @@ if( $layout == 'one' ) { ?>
         ?>
         <ul>
             <?php while ( $siblings->have_posts() ) : $siblings->the_post(); ?>
-            <li <?php if($post->ID == get_the_ID()) echo 'class="current"'; ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <li <?php if($current_page_id == get_the_ID()) echo 'class="current"'; ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
             <?php endwhile; wp_reset_postdata(); // Reset post data to the original global post. ?>
         </ul>
         <?php endif; endif; ?>
+
 
       </div>
       <?php } ?>

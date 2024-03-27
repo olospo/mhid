@@ -44,6 +44,12 @@ section.content_section {
             text-decoration: none;
             display: block;
             background: #F0F1F5;
+            border-left: 5px solid $blue;
+            border-bottom: 1px solid #47658E
+            &:hover {
+              background: $blue;
+              color: $white;
+            }
           }
           &.current {
             a {
