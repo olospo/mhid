@@ -1,9 +1,12 @@
 // Breadcrumbs
 section.breadcrumbs {
   margin: 0;
-  padding: 15px;
+  padding: 15px 0;
   background: #F0F1F5;
   margin-bottom: 40px;
+  font: $normal 1.6rem/2.2rem $regular;
+  text-transform: none;
+  letter-spacing: 0px;
 }
 
 section.breadcrumbs + section.content_section {
