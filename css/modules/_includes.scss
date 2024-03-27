@@ -40,8 +40,17 @@ section.content_section {
           margin: 0;
           list-style: none;
           a {
+            padding: 10px 15px;
+            text-decoration: none;
             display: block;
             background: #F0F1F5;
+          }
+          &.current {
+            a {
+              background: $blue;
+              color: $white;
+            }
+            
           }
         }
       }
