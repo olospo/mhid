@@ -52,39 +52,29 @@ if( $layout == 'one' ) { ?>
         <h3>In this section</h3>
         <?php global $post;
         if ( $post ) : 
-            // Check if the current page has a parent.
-            $parent_id = $post->post_parent;
-            if ( $parent_id ) {
-                // Fetch sibling pages including the current page.
-                $args = array(
-                    'post_type'     => 'page',
-                    'post_parent'   => $parent_id, // Use post_parent to fetch siblings.
-                    'post_status'   => 'publish', // Ensure only published pages are retrieved.
-                    'nopaging'      => true, // Get all sibling pages without paging.
-                    'post__not_in'  => array($post->ID) // Exclude the current post to not duplicate it in the list.
-                );
-            } else {
-                // If no parent, this is a top-level page, fetch other top-level pages.
-                $args = array(
-                    'post_type'     => 'page',
-                    'post_parent'   => 0, // Fetch only top-level pages.
-                    'post_status'   => 'publish',
-                    'nopaging'      => true,
-                    'post__not_in'  => array($post->ID) // Exclude the current post to not duplicate it in the list.
-                );
-            }
+            // Determine if the current page has a parent to fetch siblings accordingly.
+            $parent_id = ($post->post_parent) ? $post->post_parent : $post->ID;
+            // Setup the query arguments.
+            $args = array(
+                'post_type'     => 'page',
+                'post_parent'   => $parent_id, // Fetch pages with the same parent.
+                'post_status'   => 'publish', // Only published pages.
+                'nopaging'      => true, // Get all pages without pagination.
+                'orderby'       => 'menu_order', // Order by menu order.
+                'order'         => 'ASC', // Ascending order.
+                // Don't exclude the current post to apply the 'current' class conditionally.
+            );
         
             $siblings = new WP_Query($args);
             if ( $siblings->have_posts() ) :
         ?>
         <ul>
-            <!-- Always include the current page -->
-            <li class="current"><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a></li>
-            <?php while ( $siblings->have_posts() ) : $siblings->the_post(); // Loop through sibling pages. ?>
-            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <?php while ( $siblings->have_posts() ) : $siblings->the_post(); ?>
+            <li <?php if($post->ID == get_the_ID()) echo 'class="current"'; ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
             <?php endwhile; wp_reset_postdata(); // Reset post data to the original global post. ?>
         </ul>
         <?php endif; endif; ?>
+
       </div>
       <?php } ?>
       <div>
