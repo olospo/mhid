@@ -93,7 +93,7 @@ header {
     position: relative;
     .nihr {
       position: absolute;
-      top: 30px;
+      top: 60px;
       right: 0;
       display: none; 
       @media (min-width: $breakpoint-laptop) {
@@ -103,58 +103,7 @@ header {
         max-height: 40px;
       }
     }
-    .searchbox {
-      right: 0;
-      position: absolute;
-      top: 80px;
-      right: 0;
-      .search_form {
-        
-        form {
-          position: relative;
-          float: right;
-          border-bottom: 1px solid $blue;
-          width: 240px;
-          &.focused {
-            border-bottom: 1px solid $orange;
-          }
-          input {
-            margin: 0;
-            display: inline-block;
-            &.search {
-              text-align: left;
-              box-sizing: border-box;
-              font: $normal 1.6rem/2.6rem $regular;
-              background: transparent;
-              border: 1px solid transparent;
-              padding: 10px 0;
-              color: $blue;
-              width: 200px;
-              &:focus {
-                outline: none;
-              }
-              &::placeholder { 
-                color: $blue;
-                opacity: 1;
-              }
-            }
-            &.search-submit {
-              text-indent: -9999px;
-              overflow: hidden;
-              box-sizing: border-box;
-              font: $normal 1.6rem/2.6rem $regular;
-              background: transparent;
-              border: 1px solid transparent;
-              padding: 10px 0;
-              
-              background: url(../img/search_icon.svg) right center no-repeat;
-              cursor: pointer;
-              width: 40px;
-            }
-          }
-        }
-      }
-    }
+    
   }
 }
 nav.menu {
@@ -358,6 +307,57 @@ nav.menu {
           &:nth-child(1), &:nth-child(4) { opacity: 0; }
           &:nth-child(2) {transform: rotate(45deg);}
           &:nth-child(3) {transform: rotate(-45deg);}
+        }
+      }
+    }
+    .search {
+      right: 0;
+      position: absolute;
+      top: 0px;
+      right: 0;
+      width: 230px;
+      .search_form {
+        
+        form {
+          position: relative;
+          float: right;
+          &.focused {
+            border-bottom: 1px solid $orange;
+          }
+          input {
+            margin: 0;
+            display: inline-block;
+            &.search {
+              text-align: left;
+              box-sizing: border-box;
+              font: $normal 1.6rem/2.6rem $regular;
+              background: transparent;
+              border: 1px solid transparent;
+              padding: 12px 30px 12px 30px;
+              color: $blue;
+              border-left: 3px solid #dddfe9;
+              &:focus {
+                outline: none;
+              }
+              &::placeholder { 
+                color: $blue;
+                opacity: 1;
+              }
+            }
+            &.search-submit {
+              text-indent: -9999px;
+              overflow: hidden;
+              box-sizing: border-box;
+              font: $normal 1.6rem/2.6rem $regular;
+              background: transparent;
+              border: 1px solid transparent;
+              padding: 12px 0;
+              
+              background: url(../img/search_icon.svg) right center no-repeat;
+              cursor: pointer;
+              width: 40px;
+            }
+          }
         }
       }
     }

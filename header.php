@@ -46,16 +46,13 @@
     <div class="logo three columns">  
       <h1 class="site-title">
         <?php get_template_part( 'inc/logo' ); ?>
-       
       </h1>
     </div>
     <div class="extra nine columns">
       <div class="nihr">
         <img src="<?php bloginfo('template_directory'); ?>/img/nihr_logo.png" alt="National Institute for Health and Care Research" />
       </div>
-      <div class="searchbox" role="search">
-        <div class="search_form"><?php get_search_form(); ?></div>
-      </div>
+     
     </div>
     
     <a class="menu-toggle mobile_menu" aria-controls="primary-menu">
@@ -70,6 +67,10 @@
   <div class="container">
     <div class="primary twelve columns">
 <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
+    <!-- Search -->
+    <div class="search" role="search">
+      <div class="search_form"><?php get_search_form(); ?></div>
+    </div>
     </div>
     
     <div class="mobile">

@@ -1,12 +1,18 @@
 <?php /* Search */
 get_header(); ?>
 
-<section class="search no_hero">
+<section class="hero single">
+  <div class="container">
+    <div class="content ten columns">
+      <h1><?php printf( __( 'Search Results for: %s', 'twentytwelve' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+    </div>
+  </div>  
+</section>
+
+<section class="search">
   <div class="container">
     <div class="ten columns offset-by-one">
       <div class="content">
-        <h1><?php printf( __( 'Search Results for: %s', 'twentytwelve' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-    
         <?php if ( have_posts() ) : // Show search results ?>
         <?php while ( have_posts() ) : the_post(); ?>
         <article class="search_item">
