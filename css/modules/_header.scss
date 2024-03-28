@@ -86,7 +86,7 @@ header {
     margin: 20px 0px;
     // line-height: 0;
     img, svg {
-      height: 120px;
+      max-height: 120px;
     }
   }
   .extra {

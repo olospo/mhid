@@ -43,12 +43,12 @@
 </nav>
 <header class="main">
   <div class="container">
-    <div class="logo three columns">  
+    <div class="logo six columns">  
       <h1 class="site-title">
         <?php get_template_part( 'inc/logo' ); ?>
       </h1>
     </div>
-    <div class="extra nine columns">
+    <div class="extra six columns">
       <div class="nihr">
         <img src="<?php bloginfo('template_directory'); ?>/img/nihr_logo.png" alt="National Institute for Health and Care Research" />
       </div>
