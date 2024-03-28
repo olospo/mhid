@@ -19,7 +19,8 @@
             "choices": {
                 "one": "<i class=\"dashicons dashicons-layout\"><\/i> One Columns",
                 "two": "<i class=\"dashicons dashicons-layout\"><\/i> Two Columns",
-                "sidebar": "<i class=\"dashicons dashicons-layout\"><\/i> One Column + Sidebar"
+                "sidebar": "<i class=\"dashicons dashicons-layout\"><\/i> One Column + Sidebar",
+                "sidebar-two": "<i class=\"dashicons dashicons-layout\"><\/i> Two Columns + Sidebar"
             },
             "default_value": "",
             "return_format": "value",
@@ -79,6 +80,13 @@
                         "operator": "==",
                         "value": "two"
                     }
+                ],
+                [
+                    {
+                        "field": "field_66014cc9cb056",
+                        "operator": "==",
+                        "value": "sidebar-two"
+                    }
                 ]
             ],
             "wrapper": {
@@ -125,6 +133,13 @@
                         "operator": "==",
                         "value": "sidebar"
                     }
+                ],
+                [
+                    {
+                        "field": "field_66014cc9cb056",
+                        "operator": "==",
+                        "value": "sidebar-two"
+                    }
                 ]
             ],
             "wrapper": {
@@ -148,11 +163,87 @@
                         "class": "",
                         "id": ""
                     },
-                    "message": "Display inline page navigation",
-                    "default_value": 0,
-                    "ui": 0,
+                    "message": "Display \"In this section\" in the sidebar",
+                    "default_value": 1,
                     "ui_on_text": "",
-                    "ui_off_text": ""
+                    "ui_off_text": "",
+                    "ui": 1
+                },
+                {
+                    "key": "field_6605737ad4735",
+                    "label": "Sidebar Content",
+                    "name": "sidebar_extra",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Display additional content in the sidebar",
+                    "default_value": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1
+                },
+                {
+                    "key": "field_66057394d4736",
+                    "label": "Sidebar Title",
+                    "name": "sidebar_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6605737ad4735",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6605739bd4737",
+                    "label": "Sidebar Content",
+                    "name": "sidebar_content",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6605737ad4735",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 }
             ]
         }
@@ -175,5 +266,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711367352
+    "modified": 1711633566
 }
