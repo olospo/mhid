@@ -52,6 +52,28 @@ body.subsite-3 { // Wisdom
       color: $white;
     }
   }
+  // Content Section
+  section.content_section {
+    padding: $padding 0;
+    aside {
+      .page_nav {
+        h3 {
+          border-bottom: 5px solid #A74794;
+        }
+      }
+      .page_extra {
+        h3 {
+          border-bottom: 5px solid #A74794;
+        }
+      }
+    }
+  }
+  // Intro Section
+  section.intro {
+    h2 {
+      border-bottom: 5px solid #A74794;
+    }
+  }
 }
 
 //---------------  YAG ---------------//
