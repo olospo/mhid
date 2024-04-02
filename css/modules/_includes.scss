@@ -10,7 +10,7 @@ section.breadcrumbs {
 }
 
 section.breadcrumbs + section.content_section {
-  padding: 0 0 40px 0;
+  padding: 0 0 $padding 0;
 }
 
 // Intro
@@ -89,6 +89,10 @@ section.content_section {
       }
     }
   }
+}
+
+section.content_section > section.content_section {
+  padding: 0 0 $padding 0;
 }
 
 // Stat Section
