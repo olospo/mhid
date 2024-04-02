@@ -91,7 +91,7 @@ section.content_section {
   }
 }
 
-section.content_section > section.content_section {
+section.content_section + section.content_section {
   padding: 0 0 $padding 0;
 }
 
