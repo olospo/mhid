@@ -10,7 +10,10 @@ section.breadcrumbs {
 }
 
 section.breadcrumbs + section.content_section {
-  padding: 0 0 $padding 0;
+  padding: 0 0 $padding-half 0;
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 0 $padding 0;
+  }
 }
 
 // Intro
@@ -50,8 +53,15 @@ section.intro {
 
 // Content Section
 section.content_section {
-  padding: $padding 0;
+  padding: $padding-half 0;
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding 0;
+  }
   aside {
+    margin-top: $padding-half;
+    @media (min-width: $breakpoint-tablet) {
+      margin-top: 0px;
+    }
     .page_nav {
       h3 {
         border-bottom: 5px solid #EA5D4E;
