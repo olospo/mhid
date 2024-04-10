@@ -19,25 +19,31 @@
 <nav class="sites">
   <div class="container">
     <div class="twelve columns">
+      <a aria-label="Toggle Menu" class="site-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
       <?php 
       $current_site_id = is_main_site() ? 1 : get_current_blog_id(); // Get the ID of the current site
       $sites = get_sites();
       
       if ($sites) {
-          echo '<ul>';
-          foreach ($sites as $site) {
-              $site_id = $site->blog_id;
-      
-              // Check if the current site is the active one
-              $is_current_site = ($current_site_id == $site_id) ? 'current-site' : '';
-      
-              // Add a unique class based on the site ID
-              $site_details = get_blog_details($site_id);
-              $site_class = 'site-' . $site_id;
-      
-              echo '<li class="' . esc_attr($site_class . ' ' . $is_current_site) . '"><a href="' . esc_url($site_details->siteurl) . '">' . esc_html($site_details->blogname) . '</a></li>';
-          }
-          echo '</ul>';
+        echo '<ul class="sites">';
+        foreach ($sites as $site) {
+          $site_id = $site->blog_id;
+  
+          // Check if the current site is the active one
+          $is_current_site = ($current_site_id == $site_id) ? 'current-site' : '';
+  
+          // Add a unique class based on the site ID
+          $site_details = get_blog_details($site_id);
+          $site_class = 'site-' . $site_id;
+  
+          echo '<li class="' . esc_attr($site_class . ' ' . $is_current_site) . '"><a href="' . esc_url($site_details->siteurl) . '">' . esc_html($site_details->blogname) . '</a></li>';
+        }
+        echo '</ul>';
       } ?>
     </div>
 </nav>
@@ -52,29 +58,28 @@
       <div class="nihr">
         <img src="<?php bloginfo('template_directory'); ?>/img/nihr_logo.png" alt="National Institute for Health and Care Research" />
       </div>
-     
     </div>
-    
-    <a class="menu-toggle mobile_menu" aria-controls="primary-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </a>
   </div>
 </header>
+
 <nav class="menu">
   <div class="container">
     <div class="primary twelve columns">
-<?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
-    <!-- Search -->
-    <div class="search" role="search">
-      <div class="search_form"><?php get_search_form(); ?></div>
-    </div>
+      <a class="menu-toggle mobile_menu" aria-controls="primary-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
+      <!-- Search -->
+      <div class="search" role="search">
+        <div class="search_form"><?php get_search_form(); ?></div>
+      </div>
     </div>
     
-    <div class="mobile">
-      <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
-    </div>
   </div>
+</nav>
+<nav class="mobile">
+  <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
 </nav>
