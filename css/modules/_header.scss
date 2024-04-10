@@ -274,7 +274,7 @@ nav.menu {
       margin: 0;
       text-align: left;
       line-height:1em;
-      @media (max-width: $breakpoint-desktop) {
+      @media (max-width: 940px) {
         &:not(.active) {
           display: none; // Hide the menu on mobile when not active
         }
@@ -431,9 +431,9 @@ nav.menu {
       top: 0px;
       right: 0;
       width: 230px;
-      display: none;
-      @media (min-width: $breakpoint-desktop) {
-        display: block;
+      display: block;
+      @media (max-width: 940px) {
+        display: none;
       }
       .search_form {
         
