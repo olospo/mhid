@@ -54,9 +54,14 @@ img {
   height: auto; 
 }
 
+
 p {
-  font: $normal 1.8rem/2.8rem $regular;
-  margin-bottom: 27px;
+  font: $normal 1.6rem/2.4rem $regular;
+  margin-bottom: 20px;
+  @media (min-width: $breakpoint-tablet) {
+    font: $normal 1.8rem/2.8rem $regular;
+    margin-bottom: 27px;
+  }
   &:last-child {
     margin-bottom: 0px;
   }
@@ -234,13 +239,19 @@ section {
     }
   }
   ul {
-    font: $normal 1.8rem/3.4rem $regular;
-    margin: 20px 0px;
+    font: $normal 1.6rem/2.4rem $regular;
+    @media (min-width: $breakpoint-tablet) {
+      font: $normal 1.8rem/3.4rem $regular;
+    }
+    margin: 20px 0px 20px 20px;
     li {
       list-style: disc;
       list-style-position: outside;
       margin-left: 20px;
-      font: $normal 1.8rem/3.4rem $regular;
+      font: $normal 1.6rem/2.4rem $regular;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 1.8rem/3.4rem $regular;
+      }
     }
     ul {
       margin: 10px 0px;

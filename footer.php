@@ -11,7 +11,7 @@
         <h5>Get in touch</h5>
         <p>Email: <a href="mailto:email@mhid.org.uk">email@mhid.org.uk</a><br />
         <h5>Connect with us</h5>
-        <ul>
+        <ul class="social">
           <li><a href="#">Facebook</a></li>
           <li><a href="#">LinkedIn</a></li>
         </ul>

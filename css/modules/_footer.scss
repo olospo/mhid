@@ -3,13 +3,21 @@ footer {
   font: $normal 1.6rem/3.0rem $regular;
   position: relative;
   overflow-wrap: break-word;
-  padding: 40px 0px;
+  padding: 20px 0px;
+  @media (min-width: $breakpoint-tablet) {
+    padding: 40px 0px;
+  }
   color: $white;
   background: $blue;
   text-align: left;
   .logo {
     img, svg {
-      height: 160px;
+      height: 120px;
+      margin-bottom: 30px;
+      @media (min-width: $breakpoint-tablet) {
+        height: 160px;
+        margin-bottom: 0px;
+      }
     }
   }
   h5 {
@@ -37,11 +45,20 @@ footer {
       text-decoration-color: $blue;
     }
   }
+  ul.social {
+    margin-bottom: 20px;
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 10px;
+    }
+  }
   ul {
     margin-bottom: 10px;
   }
   ul.footer-sites {
-    margin-bottom: 0;
+    margin-bottom: 20px;
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 0;
+    }
     li {
       &.site-1 {
         a {
@@ -76,8 +93,12 @@ footer {
     }
   }
   .copyright {
-    margin: 40px 0 0 0;
-    padding-top: 40px;
+    margin: 20px 0 0 0;
+    padding-top: 20px;
+    @media (min-width: $breakpoint-tablet) {
+      margin: 40px 0 0 0;
+      padding-top: 40px;
+    }
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     text-align: left;
     p {
