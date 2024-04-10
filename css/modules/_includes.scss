@@ -9,7 +9,7 @@ section.breadcrumbs {
   letter-spacing: 0px;
 }
 
-section.breadcrumbs + section.content_section {
+section.breadcrumbs > section.content_section {
   padding: 0 0 $padding-half 0;
   @media (min-width: $breakpoint-tablet) {
     padding: 0 0 $padding 0;
