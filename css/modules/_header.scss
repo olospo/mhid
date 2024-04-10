@@ -3,7 +3,9 @@ nav.sites {
   background:#193E72;
   ul.sites {
     text-align: right;
+    margin: 0;
     @media (max-width: 940px) {
+      margin: 20px 0 10px 0;
       text-align: left;
       &:not(.active) {
         display: none; // Hide the menu on mobile when not active
@@ -23,10 +25,12 @@ nav.sites {
         color: $white;
         text-transform: uppercase;
         margin: 0;
-        padding: 5px 15px 10px 15px;
+        padding: 5px 0px 5px 0px;
+        @media (min-width: 940px) {
+          padding: 5px 15px 10px 15px;
+        }
         font: $normal 1.1rem/2.2rem $regular;
         text-decoration: none;
-        border-left: 3px solid #193E72;
         &:hover {
           color: $white;
           text-decoration: none;
@@ -35,10 +39,14 @@ nav.sites {
       &.site-1 {
         a {
           border-top: transparent;
+          @media (min-width: 940px) {
+            border-left: none;
+          }
+        
         }
         &.current-site, &:hover  {
           a {
-            border-left: 3px solid $orange;
+            
             @media (min-width: 940px) {
               border-left: none;
               border-top: 3px solid $orange;
@@ -50,10 +58,13 @@ nav.sites {
       &.site-2 {
         a {
           border-top: transparent;
+          @media (min-width: 940px) {
+            border-left: none;
+          }
         }
         &.current-site, &:hover  {
           a {
-            border-left: 3px solid $green;
+            
             @media (min-width: 940px) {
               border-left: none;
               border-top: 3px solid $green;
@@ -65,9 +76,12 @@ nav.sites {
       &.site-3 {
         a {
           border-top: transparent;
+          @media (min-width: 940px) {
+            border-left: none;
+          }
         }
         &.current-site, &:hover  {
-          border-left: 3px solid $purple;
+          
           @media (min-width: 940px) {
             border-left: none;
             border-top: 3px solid $purple;
@@ -78,9 +92,12 @@ nav.sites {
       &.site-4 {
         a {
           border-top: transparent;
+          @media (min-width: 940px) {
+            border-left: none;
+          }
         }
         &.current-site, &:hover  {
-          border-left: 3px solid $pink;
+          
           @media (min-width: 940px) {
             border-left: none;
             border-top: 3px solid $pink;
@@ -91,9 +108,12 @@ nav.sites {
       &.site-5 {
         a {
           border-top: transparent;
+          @media (min-width: 940px) {
+            border-left: none;
+          }
         }
         &.current-site, &:hover  {
-          border-left: 3px solid $white;
+          
           @media (min-width: 940px) {
             border-left: none;
             border-top: 3px solid $white;
@@ -104,9 +124,12 @@ nav.sites {
       &.site-6 {
         a {
           border-top: transparent;
+          @media (min-width: 940px) {
+            border-left: none;
+          }
         }
         &.current-site, &:hover  {
-          border-left: 3px solid $teal;
+          
           @media (min-width: 940px) {
             border-left: none;
             border-top: 3px solid $teal;
@@ -284,7 +307,6 @@ nav.menu {
         a {
           font: $normal 1.6rem/2.0rem $regular;
           @include transition(all 0.2s ease-out);
-  
           display: block;
           color: $blue;
           text-decoration: none;
@@ -503,19 +525,19 @@ nav.mobile {
   ul {
     text-align: left;
     margin: 10px 0px;
-    padding: 0px 20px;
+    padding: 0px 20px 0 10px;
     li {
       
       text-align: left;
       display: block;
       // margin: 10px 0px;
       &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
-        font: $normal 1.8rem/1.8rem $regular !important;
+        font: $normal 1.6rem/1.8rem $regular !important;
         color: $blue;
         padding: 15px 0px;
       }
       a {
-        font: $normal 1.8rem/1.8rem $regular !important;
+        font: $normal 1.6rem/1.8rem $regular !important;
         @include transition(all 0.2s ease-out);
         line-height: 1.4rem;
         display: block;
