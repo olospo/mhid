@@ -200,7 +200,10 @@ header {
     margin: 20px 0px;
     // line-height: 0;
     img, svg {
-      max-height: 120px;
+      max-height: 100px;
+      @media (min-width: $breakpoint-tablet) {
+        max-height: 120px;
+      }
     }
   }
   .extra {
