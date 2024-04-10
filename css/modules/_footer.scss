@@ -85,3 +85,25 @@ footer {
     }
   }
 }
+
+.back_to_top {
+  @media (max-width: $breakpoint-tablet) {
+    display: none !important;
+  }
+  display: none;
+  width: 48px;
+  height: 48px;
+  text-indent: -9999px;
+  position: fixed;
+  z-index: 999;
+  right: 20px;
+  bottom: 20px;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+  background: #F05F4E url("../img/arrow_up.svg") no-repeat center center;
+  &:hover {
+    background: #193E72 url("../img/arrow_up.svg") no-repeat center center;
+  }
+}

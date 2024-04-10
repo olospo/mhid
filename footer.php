@@ -1,5 +1,6 @@
 <?php /* Footer */ ?>
 <?php wp_footer(); ?>
+<a href="#" class="back_to_top">Back to Top</a>
 <footer>
   <div class="container">
     <div class="logo four columns">
@@ -8,16 +9,15 @@
     <div class="links eight columns">
       <div class="one-third column">
         <h5>Get in touch</h5>
-        <address>
-          Address line one<br />
-          Address line two<br />
-          Address line three
-        </address>
         <p>Email: <a href="mailto:email@mhid.org.uk">email@mhid.org.uk</a><br />
-        Phone: <a href="tel:2342342342342">01865 112233</a></p>
+        <h5>Connect with us</h5>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
       </div>
       <div class="one-third column">
-        <h5>Research</h5>
+        <h5>Our Work</h5>
         <?php 
         $current_site_id = is_main_site() ? 1 : get_current_blog_id(); // Get the ID of the current site
         $sites = get_sites();
@@ -43,13 +43,9 @@
         <h5>Quick Links</h5>
         <ul>
           <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Cookies Policy</a></li>
         </ul>
-        <h5>Connect with us</h5>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">LinkedIn</a></li>
-        </ul>
+        
       </div>
     </div>
     <div class="row">

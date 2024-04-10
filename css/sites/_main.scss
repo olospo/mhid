@@ -24,6 +24,12 @@ body.subsite-1 { // Andy
       color: $white;
     }
   }
+  .back_to_top {
+    background: $green url("../img/arrow_up.svg") no-repeat center center;
+    &:hover {
+      background: #193E72 url("../img/arrow_up.svg") no-repeat center center;
+    }
+  }
 }
 
 //--------------- Early Minds ---------------//
@@ -38,11 +44,20 @@ body.subsite-2 { // Support
       color: $white;
     }
   }
+  .back_to_top {
+    background: $purple url("../img/arrow_up.svg") no-repeat center center;
+    &:hover {
+      background: #193E72 url("../img/arrow_up.svg") no-repeat center center;
+    }
+  }
 }
 
 //---------------  Wisdom ---------------//
 
 body.subsite-3 { // Wisdom
+  nav.sites {
+    display: none;
+  }
   header.main {
     
   }
@@ -73,6 +88,12 @@ body.subsite-3 { // Wisdom
       border-bottom: 5px solid #A74794;
     }
   }
+  .back_to_top {
+    background: #A74794 url("../img/arrow_up.svg") no-repeat center center;
+    &:hover {
+      background: #193E72 url("../img/arrow_up.svg") no-repeat center center;
+    }
+  }
 }
 
 //---------------  YAG ---------------//
@@ -99,6 +120,12 @@ body.subsite-5 { // AIM
     background: $teal;
     h1 {
       color: $white;
+    }
+  }
+  .back_to_top {
+    background: $teal url("../img/arrow_up.svg") no-repeat center center;
+    &:hover {
+      background: #193E72 url("../img/arrow_up.svg") no-repeat center center;
     }
   }
 }
