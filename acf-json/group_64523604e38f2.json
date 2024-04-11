@@ -19,7 +19,9 @@
             "choices": {
                 "blue": "Blue",
                 "teal": "Teal",
-                "orange": "Orange"
+                "orange": "Orange",
+                "purple": "Purple",
+                "pink": "Pink"
             },
             "default_value": "",
             "return_format": "value",
@@ -185,5 +187,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711361752
+    "modified": 1712845978
 }

@@ -309,10 +309,10 @@ section.content_section + section.content_section {
         }
         h3 {
           font: $xbold 3.2rem/4.2rem $regular;
-          @media (min-width: $breakpoint-tablet) {
+          @media (min-width: $breakpoint-laptop) {
             font: $xbold 3.2rem/3.8rem $regular;
           }
-          @media (min-width: $breakpoint-laptop) {
+          @media (min-width: $breakpoint-desktop) {
             font: $xbold 3.8rem/4.6rem $regular;
           }
           margin-bottom: 0px;
@@ -327,7 +327,7 @@ section.content_section + section.content_section {
       .square_content {
         border-top: 10px solid $blue;
         @media (min-width: $breakpoint-tablet) {
-          margin-right: -10px;
+          margin-right: 0px;
           border-top: none;
           border-right: 10px solid $blue;
         }
@@ -338,7 +338,7 @@ section.content_section + section.content_section {
       .square_content {
         border-top: 10px solid $teal;
         @media (min-width: $breakpoint-tablet) {
-          margin-right: -10px;
+          margin-right: 0px;
           border-top: none;
           border-right: 10px solid $teal;
         }
@@ -348,9 +348,29 @@ section.content_section + section.content_section {
       .square_content {
         border-top: 10px solid $orange;
         @media (min-width: $breakpoint-tablet) {
-          margin-right: -10px;
+          margin-right: 0px;
           border-top: none;
           border-right: 10px solid $orange; 
+        }
+      }
+    }
+    &.purple {
+      .square_content {
+        border-top: 10px solid $purple;
+        @media (min-width: $breakpoint-tablet) {
+          margin-right: 0px;
+          border-top: none;
+          border-right: 10px solid $purple; 
+        }
+      }
+    }
+    &.pink {
+      .square_content {
+        border-top: 10px solid $pink;
+        @media (min-width: $breakpoint-tablet) {
+          margin-right: 0px;
+          border-top: none;
+          border-right: 10px solid $pink; 
         }
       }
     }
@@ -383,6 +403,26 @@ section.content_section + section.content_section {
           margin-left: -10px;
           border-top: none;
           border-left: 10px solid $orange;
+        }
+      }
+    }
+    &.purple {
+      .square_content {
+        border-top: 10px solid $purple;
+        @media (min-width: $breakpoint-tablet) {
+          margin-left: -10px;
+          border-top: none;
+          border-left: 10px solid $purple;
+        }
+      }
+    }
+    &.pink {
+      .square_content {
+        border-top: 10px solid $pink;
+        @media (min-width: $breakpoint-tablet) {
+          margin-left: -10px;
+          border-top: none;
+          border-left: 10px solid $pink;
         }
       }
     }
@@ -443,6 +483,52 @@ section.content_section + section.content_section {
           border: 3px solid $orange;
           &:hover {
             background: $orange;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  &.purple {
+    background: #f3f3f7;
+    .square_content {
+      background: #f3f3f7;
+      .content {
+        p {
+          color: $blue;
+        }
+        .title {
+          h3 {
+            color: $purple;
+          }
+        }
+        a.button {
+          border: 3px solid $purple;
+          &:hover {
+            background: $purple;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  &.pink {
+    background: #f5eff3;
+    .square_content {
+      background: #f5eff3;
+      .content {
+        p {
+          color: $blue;
+        }
+        .title {
+          h3 {
+            color: $pink;
+          }
+        }
+        a.button {
+          border: 3px solid $pink;
+          &:hover {
+            background: $pink;
             color: $white;
           }
         }

@@ -177,7 +177,7 @@ nav.sites {
     }
     &.open {
       &:before {
-        content: "Close menu";
+        content: "Close Menu";
       }
       span{
         background-color: $white !important;
@@ -283,7 +283,7 @@ nav.menu {
       }
       &.open {
         &:before {
-          content: "Close menu";
+          content: "Close Menu";
         }
         span{
           background-color: $blue !important;
