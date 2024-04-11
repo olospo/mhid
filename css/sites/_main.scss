@@ -30,6 +30,11 @@ body.subsite-1 { // Andy
       background: #193E72 url("../img/arrow_up.svg") no-repeat center center;
     }
   }
+  h1 {
+    font-family: "brother-1816", 'Lato', Helvetica, Arial, sans-serif !important;
+    font-weight: 700;
+    font-style: normal;
+  }
 }
 
 //--------------- Early Minds ---------------//
@@ -56,7 +61,7 @@ body.subsite-2 { // Support
 
 body.subsite-3 { // Wisdom
   nav.sites {
-    display: none;
+    // display: none;
   }
   header.main {
     
@@ -95,7 +100,7 @@ body.subsite-3 { // Wisdom
     }
   }
   h1 {
-    font-family: "citrus-gothic-solid", sans-serif !important;
+    font-family: "citrus-gothic-solid", 'Lato', Helvetica, Arial, sans-serif !important;
     font-weight: 400;
     font-style: normal;
   }

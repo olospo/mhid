@@ -11,7 +11,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> 
 
-<?php $current_site_id = get_current_blog_id(); switch ($current_site_id) { case 4: // Wisdom Typekit ?>
+<?php $current_site_id = get_current_blog_id(); switch ($current_site_id) { 
+  case 2: // ANDY Typekit ?>
+<link rel="stylesheet" href="https://use.typekit.net/mqg3rwg.css">
+<?php break;
+  case 4: // Wisdom Typekit ?>
 <link rel="stylesheet" href="https://use.typekit.net/kwl7ryk.css">   
 <?php break; } ?>
 
