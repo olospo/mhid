@@ -69,8 +69,7 @@
       <div class="one-third column">
         <h5>Quick Links</h5>
         <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Cookies Policy</a></li>
+          <li><a href="<?php echo get_site_url(); ?>/cookies-policy">Cookies Policy</a></li>
         </ul>
         <h5>Search</h5>
         <!-- Search -->

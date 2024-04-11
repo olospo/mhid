@@ -459,7 +459,10 @@ section.hero {
     }
   }
   &.single {
-    padding: $padding 0;
+    padding: $padding-half 0;
+    @media (min-width: $breakpoint-tablet) {
+      padding: $padding 0;
+    }
   }
 }
 
