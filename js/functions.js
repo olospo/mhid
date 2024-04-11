@@ -34,6 +34,47 @@ $( document ).ready(function() {
     }, 300);
     return false;
   });
+  
+  
+  // Stats Scrolling
+  function formatNumber(number) {
+    const fixed = number.toFixed(2);
+    return parseFloat(fixed) === parseInt(fixed) ? parseInt(fixed) : fixed;
+  }
+  
+  function checkInView() {
+    if (triggerAtY <= $(window).scrollTop()) {
+      startCounter();
+      $(window).off('scroll', checkInView); // Remove the scroll event handler
+    }
+  }
+  
+  function startCounter() {
+    $('.unit').each(function () {
+      const prefix = $(this).data('prefix') || '';
+      const postfix = $(this).data('postfix') || '';
+      $(this).prop('Counter', 0).delay(0).animate({
+        Counter: $(this).text()
+      }, {
+        duration: 3000,
+        easing: 'swing',
+        step: function() {
+          $(this).text(prefix + Math.round(this.Counter).toLocaleString() + postfix);
+        },
+        complete: function() {
+          $(this).text(prefix + formatNumber(parseFloat(this.Counter)).toLocaleString() + postfix);
+        }
+      });
+      $('.fade_in').fadeIn(500).delay(100);
+    });
+  }
+  
+  var triggerAtY = $('.stat_section').offset().top - $(window).outerHeight();
+  
+  $(window).on('scroll', checkInView); // Add the scroll event handler
+  checkInView(); // Check if the section is in view on page load
+  
+  var counter = 0;
 
 
 });
@@ -76,13 +117,13 @@ $(function(){
 
 var componentVisible = (function ($) {
   
-  var $components = $('section, .step');
+  var $components = $('section, footer, header, .step');
 
   var componentsWaypoints = $components.waypoint({
     handler: function() {
       $(this.element).addClass("visible");
     },
-    offset: '80%'
+    offset: '90%'
   });
 
 })(jQuery);
@@ -117,43 +158,3 @@ function accordion_ajax() {
   }
 }
 accordion_ajax();
-
-// Stats Scrolling
-function formatNumber(number) {
-  const fixed = number.toFixed(2);
-  return parseFloat(fixed) === parseInt(fixed) ? parseInt(fixed) : fixed;
-}
-
-function checkInView() {
-  if (triggerAtY <= $(window).scrollTop()) {
-    startCounter();
-    $(window).off('scroll', checkInView); // Remove the scroll event handler
-  }
-}
-
-function startCounter() {
-  $('.unit').each(function () {
-    const prefix = $(this).data('prefix') || '';
-    const postfix = $(this).data('postfix') || '';
-    $(this).prop('Counter', 0).delay(0).animate({
-      Counter: $(this).text()
-    }, {
-      duration: 3000,
-      easing: 'swing',
-      step: function() {
-        $(this).text(prefix + Math.round(this.Counter).toLocaleString() + postfix);
-      },
-      complete: function() {
-        $(this).text(prefix + formatNumber(parseFloat(this.Counter)).toLocaleString() + postfix);
-      }
-    });
-    $('.fade_in').fadeIn(500).delay(100);
-  });
-}
-
-var triggerAtY = $('.stat_section').offset().top - $(window).outerHeight();
-
-$(window).on('scroll', checkInView); // Add the scroll event handler
-checkInView(); // Check if the section is in view on page load
-
-var counter = 0;

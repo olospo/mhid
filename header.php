@@ -19,8 +19,6 @@
 <link rel="stylesheet" href="https://use.typekit.net/kwl7ryk.css">   
 <?php break; } ?>
 
-<?php if( get_field('social_metadata', 'options') ): echo get_field('social_metadata', 'options'); endif; // Social Metadata ?>
-<?php if( get_field('google_analytics', 'options') ): echo get_field('google_analytics', 'options'); endif; // Google Analytics Code ?>
 </head>
 <body <?php body_class(); ?>>
 

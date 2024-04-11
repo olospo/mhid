@@ -44,27 +44,6 @@ function my_deregister_scripts() {
 }
 add_action( 'wp_footer', 'my_deregister_scripts' );
 
-// Options Page
-
-if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> true,
-		'menu_position'       => 20,
-	));
-
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Settings',
-		'menu_title'	=> 'Settings',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-	
-}
-
 // Excerpt Length
 function excerpt_length($length) {
   return 30;

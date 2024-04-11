@@ -177,6 +177,31 @@ section.home_cta {
   }
 }
 
+header {
+  .logo {
+    @include fade();
+  }
+  .extra {
+    @include fade();
+  }
+  &.visible {
+    .logo, .extra {
+      @include reset();
+    }
+  }
+}
+
+footer {
+  .logo, .links, .copyright {
+    @include fade();
+  }
+  &.visible {
+    .logo, .links, .copyright {
+      @include reset();
+    }
+  }
+}
+
 @keyframes fadeInAndDrop {
   0% { opacity: 0; transform: translate3d(0,-60%,0); }
   50% { opacity: 0; transform: translate3d(0,-60%,0); }

@@ -264,7 +264,7 @@ section.content_section + section.content_section {
     min-height: 240px;
     width: 100%;
     @media (max-width: $breakpoint-tablet) {
-      order: 1;
+      order: 2;
     }
     @media (min-width: $breakpoint-tablet) {
       width: 50%;
@@ -277,7 +277,7 @@ section.content_section + section.content_section {
     background: #F0F1F5;
     width: 100%;
     @media (max-width: $breakpoint-tablet) {
-      order: 2;
+      order: 1;
     }
     @media (min-width: $breakpoint-tablet) {
       position: relative;

@@ -1,85 +1,11 @@
 {
     "key": "group_5c6bfca9bf663",
-    "title": "General",
+    "title": "Social Media",
     "fields": [
         {
-            "key": "field_5d3704e85c013",
-            "label": "Code",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5d5aaaff60f65",
-            "label": "Social Metadata",
-            "name": "social_metadata",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "Add in the social metadata to go inside the header",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_5c6bfcbf3877e",
-            "label": "Google Analytics",
-            "name": "google_analytics",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "Add in the code for Google Analytics",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_5d3711a6f7431",
-            "label": "Contact Details",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5d3711c0f7433",
-            "label": "Email",
-            "name": "email",
+            "key": "field_5d443665ef6dd",
+            "label": "Facebook Link",
+            "name": "facebook_link",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -95,63 +21,6 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_65e06c11f5f43",
-            "label": "Address",
-            "name": "address",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_5d3711c6f7434",
-            "label": "Phone Number",
-            "name": "phone_number",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5d3711ccf7435",
-            "label": "Social",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
         },
         {
             "key": "field_5e7218d6b6d6a",
@@ -174,9 +43,9 @@
             "maxlength": ""
         },
         {
-            "key": "field_5d443665ef6dd",
-            "label": "Facebook Link",
-            "name": "facebook_link",
+            "key": "field_6617dfd4ca08b",
+            "label": "LinkedIn Link",
+            "name": "linkedin_link",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -188,30 +57,10 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5e7218ddb6d6b",
-            "label": "YouTube Link",
-            "name": "youtube_link",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_5f841f1e3b367",
@@ -232,6 +81,26 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_6617dff2ca08c",
+            "label": "Threads Link",
+            "name": "threads_link",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -239,7 +108,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-settings"
+                "value": "social-media"
             }
         ]
     ],
@@ -252,5 +121,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709206560
+    "modified": 1712840700
 }
