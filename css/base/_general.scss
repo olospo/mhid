@@ -440,6 +440,9 @@ section.hero {
         line-height: 6.4rem;
       }
     }
+    h1:last-child {
+      margin-bottom: 0; /* Remove margin if no <p> follows <h1> */
+    }
     p {
       font: $normal 1.6rem/2.4rem $regular;
       font-size: 1.6rem;
