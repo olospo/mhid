@@ -9,7 +9,10 @@
   overflow: hidden;
   display: inline-block;
   vertical-align: middle;
-  padding: 15px 20px 15px 20px;
+  padding: 10px;
+  @media (max-width: $breakpoint-tablet) {
+    padding: 15px 20px 15px 20px;
+  }
   margin: 5px 10px 5px 0;
   font: $normal 1.4rem/1.4rem $regular;
   text-decoration: none;
