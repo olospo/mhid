@@ -54,37 +54,37 @@ footer {
   ul {
     margin-bottom: 10px;
   }
-  ul.footer-sites {
+  ul.sites {
     margin-bottom: 20px;
     @media (min-width: $breakpoint-tablet) {
       margin-bottom: 0;
     }
     li {
-      &.site-1 {
+      &.mhid {
         a {
           border-left: 5px solid $orange;
           padding-left: 10px;
         }
       }
-      &.site-2 {
+      &.andy {
         a {
           border-left: 5px solid $green;
           padding-left: 10px;
         }
       }
-      &.site-3 {
+      &.sem {
         a {
           border-left: 5px solid $purple;
           padding-left: 10px;
         }
       }
-      &.site-4 {
+      &.wisdom {
         a {
           border-left: 5px solid $pink;
           padding-left: 10px;
         }
       }
-      &.site-6 {
+      &.aim {
         a {
           border-left: 5px solid $teal;
           padding-left: 10px;

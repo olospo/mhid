@@ -54,26 +54,7 @@
           default: // For all other cases ?>
           <h5>MHID Projects</h5>
         <?php break; } ?>
-        <?php 
-        $current_site_id = is_main_site() ? 1 : get_current_blog_id(); // Get the ID of the current site
-        $sites = get_sites();
-        
-        if ($sites) {
-            echo '<ul class="footer-sites">';
-            foreach ($sites as $site) {
-                $site_id = $site->blog_id;
-        
-                // Check if the current site is the active one
-                $is_current_site = ($current_site_id == $site_id) ? 'current-site' : '';
-        
-                // Add a unique class based on the site ID
-                $site_details = get_blog_details($site_id);
-                $site_class = 'site-' . $site_id;
-        
-                echo '<li class="' . esc_attr($site_class . ' ' . $is_current_site) . '"><a href="' . esc_url($site_details->siteurl) . '">' . esc_html($site_details->blogname) . '</a></li>';
-            }
-            echo '</ul>';
-        } ?>
+        <?php custom_global_menu(); ?>
       </div>
       <div class="one-third column">
         <h5>Quick Links</h5>
