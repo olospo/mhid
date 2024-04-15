@@ -287,6 +287,10 @@ section.content_section + section.content_section {
     
     .content {
       padding: 30px;
+      @media (min-width: $breakpoint-tablet) {
+        @include vertical-align;
+        padding: 40px;
+      }
       @media (min-width: $breakpoint-laptop) {
         @include vertical-align;
         padding: 60px;
