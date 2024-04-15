@@ -294,9 +294,9 @@ section.content_section + section.content_section {
       
       p {
         color: $blue;
-        font: $normal 1.4rem/2.6rem $regular;
+        font: $normal 1.4rem/2.4rem $regular;
         @media (min-width: $breakpoint-laptop) {
-          font: $normal 1.6rem/3.0rem $regular;
+          font: $normal 1.6rem/2.6rem $regular;
         }
         @media (min-width: $breakpoint-desktop) {
           font: $normal 1.8rem/3.2rem $regular;
