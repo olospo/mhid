@@ -79,9 +79,9 @@
       </a>
       <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
       <!-- Search -->
-      <div class="search" role="search">
+      <!-- <div class="search" role="search">
         <div class="search_form"><?php get_search_form(); ?></div>
-      </div>
+      </div> -->
     </div>
     
   </div>
