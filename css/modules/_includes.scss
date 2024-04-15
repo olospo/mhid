@@ -309,6 +309,9 @@ section.content_section + section.content_section {
         }
         h3 {
           font: $bold 2.0rem/3.0rem $regular;
+          @media (min-width: $breakpoint-tablet) {
+            font: $xbold 2.4rem/3.2rem $regular;
+          }
           @media (min-width: $breakpoint-laptop) {
             font: $xbold 3.2rem/3.8rem $regular;
           }
