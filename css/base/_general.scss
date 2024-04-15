@@ -195,15 +195,27 @@ section {
     font-size: 3.6rem;
   }
   h2 {
-    font: $xbold 2.4rem/3.4rem $regular;
+    font: $bold 2.0rem/3.0rem $regular;
     margin-bottom: 10px;
-    font-size: 2.4rem;
-    line-height: 3.4rem;
+    font-size: 2.0rem;
+    line-height: 3.0rem;
+    @media (min-width: $breakpoint-tablet) {
+      font: $xbold 2.4rem/3.4rem $regular;
+      margin-bottom: 10px;
+      font-size: 2.4rem;
+      line-height: 3.4rem;
+    }
   }
   h3 {
-    font: $xbold 2.2rem/3.0rem $regular;
+    font: $bold 1.8rem/2.8rem $regular;
     margin-bottom: 10px;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    @media (min-width: $breakpoint-tablet) {
+      font: $xbold 2.2rem/3.0rem $regular;
+      margin-bottom: 10px;
+      font-size: 2.2rem;
+    }
   }
   h4 {
     font: $xbold 2rem/2.8rem $regular;
