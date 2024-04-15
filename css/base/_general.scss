@@ -261,6 +261,7 @@ section {
       list-style-position: outside;
       margin-left: 20px;
       font: $normal 1.6rem/2.4rem $regular;
+      padding-left: 10px;
       @media (min-width: $breakpoint-tablet) {
         font: $normal 1.8rem/3.4rem $regular;
       }
@@ -279,6 +280,7 @@ section {
       list-style: decimal;
       list-style-position: outside;
       margin-left: 20px;
+      padding-left: 10px;
     }
   }
   table {

@@ -10,11 +10,13 @@
   display: inline-block;
   vertical-align: middle;
   padding: 10px;
+  font: $normal 1.3rem/1.3rem $regular;
   @media (min-width: $breakpoint-laptop) {
     padding: 15px 20px 15px 20px;
+    font: $normal 1.4rem/1.4rem $regular;
   }
   margin: 5px 10px 5px 0;
-  font: $normal 1.4rem/1.4rem $regular;
+  
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: all ease .5s;
