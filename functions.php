@@ -3,6 +3,8 @@
 function theme_setup() {
   // Menus
   register_nav_menu( 'main', 'Main Menu' );
+  register_nav_menu( 'network', 'Network Menu');
+  
   // RSS Feed
   add_theme_support( 'automatic-feed-links' );
   // Thumbnails
@@ -37,6 +39,25 @@ function theme_enqueue_scripts() {
 // Disable Emoji Loading
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
+
+// Function to display global menu
+function custom_global_menu() {
+  // Specify the site ID of the site where the menu is created
+  $menu_site_id = 1; // Change this to the ID of the site where your menu is created
+
+  // Get the menu from the specified site
+  switch_to_blog($menu_site_id);
+  $menu = wp_nav_menu(array(
+    'theme_location' => 'network', // Replace 'Global Menu' with the name of your menu
+    'echo' => false,
+    'menu_class' => 'sites', 
+  ));
+  restore_current_blog();
+
+  // Display the menu
+  echo $menu;
+}
+
 
 // Disable WP Embed
 function my_deregister_scripts() {
