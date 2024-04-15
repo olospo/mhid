@@ -287,7 +287,7 @@ section.content_section + section.content_section {
     
     .content {
       padding: 30px;
-      @media (min-width: $breakpoint-tablet) {
+      @media (min-width: $breakpoint-laptop) {
         @include vertical-align;
         padding: 60px;
       }
@@ -308,7 +308,7 @@ section.content_section + section.content_section {
           padding: 0 0 20px 0;
         }
         h3 {
-          font: $xbold 3.2rem/4.2rem $regular;
+          font: $bold 2.0rem/3.0rem $regular;
           @media (min-width: $breakpoint-laptop) {
             font: $xbold 3.2rem/3.8rem $regular;
           }
