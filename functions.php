@@ -59,6 +59,7 @@ function custom_global_menu() {
 }
 
 
+
 // Disable WP Embed
 function my_deregister_scripts() {
  wp_dequeue_script( 'wp-embed' );

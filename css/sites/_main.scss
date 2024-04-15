@@ -1,9 +1,23 @@
 //--------------- MHID ---------------//
 
 body.main-site {
-  header.main {
-   
+  nav.sites {
+    ul.sites {
+      li.mhid { // Wisdom
+        a {
+          border-top: transparent;
+          @media (min-width: 940px) {
+            border-left: none;
+            border-top: 3px solid $orange;
+          }
+        }
+        a:hover {
+          border-top: 0px solid $orange;
+        }
+      }
+    }
   }
+
   section.hero.single {
     background: $blue;
     h1 {
@@ -61,11 +75,23 @@ body.subsite-2 { // Support
 
 body.subsite-3 { // Wisdom
   nav.sites {
-    // display: none;
+    ul.sites {
+      li.wisdom { // Wisdom
+        a {
+          border-top: transparent;
+          @media (min-width: 940px) {
+            border-left: none;
+            border-top: 3px solid $pink;
+          }
+        
+        }
+        a:hover {
+          border-top: 0px solid $pink;
+        }
+      }
+    }
   }
-  header.main {
-    
-  }
+
   section.hero.single {
     background: $pink;
     h1 {
