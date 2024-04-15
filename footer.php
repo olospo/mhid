@@ -44,7 +44,16 @@
         <?php endif; ?>
       </div>
       <div class="one-third column">
-        <h5>Our Work</h5>
+        
+        <?php // H5 Heading
+        $current_site_id = get_current_blog_id(); 
+        switch ($current_site_id) { 
+          case 1: // Your case for site 1 ?>
+          <h5>Our Work</h5>
+        <?php break;
+          default: // For all other cases ?>
+          <h5>MHID Projects</h5>
+        <?php break; } ?>
         <?php 
         $current_site_id = is_main_site() ? 1 : get_current_blog_id(); // Get the ID of the current site
         $sites = get_sites();

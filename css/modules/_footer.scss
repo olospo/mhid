@@ -201,5 +201,19 @@ footer {
   background: #F05F4E url("../img/arrow_up.svg") no-repeat center center;
   &:hover {
     background: #193E72 url("../img/arrow_up.svg") no-repeat center center;
+    &::before {
+      text-indent: 0;
+      content: "Back To Top";
+      position: absolute;
+      background: #4e4b66;
+      color: #fff;
+      right: calc(100% + 7px);
+      font-size: 12px;
+      line-height: 16px;
+      width: max-content;
+      padding: 4px 8px;
+      border-radius: 4px;
+      top: 10px
+    }
   }
 }
