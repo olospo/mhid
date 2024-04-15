@@ -317,7 +317,10 @@ section.content_section + section.content_section {
             font: $xbold 2.4rem/3.2rem $regular;
           }
           @media (min-width: $breakpoint-laptop) {
-            font: $xbold 3.2rem/3.8rem $regular;
+            font: $xbold 2.8rem/3.6rem $regular;
+          }
+          @media (min-width: $breakpoint-desktop) {
+            font: $xbold 3.4rem/4.0rem $regular;
           }
           margin-bottom: 0px;
           color: $blue;

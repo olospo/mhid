@@ -10,7 +10,7 @@
   display: inline-block;
   vertical-align: middle;
   padding: 10px;
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-laptop) {
     padding: 15px 20px 15px 20px;
   }
   margin: 5px 10px 5px 0;
