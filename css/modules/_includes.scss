@@ -291,7 +291,7 @@ section.content_section + section.content_section {
         @include vertical-align;
         padding: 40px;
       }
-      @media (min-width: $breakpoint-laptop) {
+      @media (min-width: $breakpoint-desktop) {
         @include vertical-align;
         padding: 60px;
       }
@@ -303,7 +303,7 @@ section.content_section + section.content_section {
           font: $normal 1.6rem/2.6rem $regular;
         }
         @media (min-width: $breakpoint-desktop) {
-          font: $normal 1.8rem/3.2rem $regular;
+          font: $normal 1.7rem/3.0rem $regular;
         }
       }
       .title {
@@ -318,9 +318,6 @@ section.content_section + section.content_section {
           }
           @media (min-width: $breakpoint-laptop) {
             font: $xbold 3.2rem/3.8rem $regular;
-          }
-          @media (min-width: $breakpoint-desktop) {
-            font: $xbold 3.8rem/4.6rem $regular;
           }
           margin-bottom: 0px;
           color: $blue;
