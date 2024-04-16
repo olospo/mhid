@@ -422,7 +422,7 @@ nav.menu {
       opacity: 0;
       visibility: hidden;
       min-width: 300px;
-      right: 0; // Align left edge with the parent item
+      left: 0; // Align left edge with the parent item
       top: 100%; // Position the submenu just below the parent item
     }
     
