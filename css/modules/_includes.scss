@@ -56,7 +56,7 @@ section.intro {
 }
 
 // Content Section
-section.content_section {
+section.content_section, section.post {
   padding: $padding-half 0;
   @media (min-width: $breakpoint-tablet) {
     padding: $padding 0;
