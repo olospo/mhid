@@ -30,6 +30,7 @@
     </div>
   </div>
 </nav>
+
 <header class="main">
   <div class="container">
     <div class="logo six columns">  
@@ -64,6 +65,7 @@
     
   </div>
 </nav>
+
 <nav class="mobile">
   <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
   <div class="search">
