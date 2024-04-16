@@ -242,6 +242,9 @@ nav.menu {
     
   }
   .primary {
+    @media (min-width: 940px) {
+      height: 50px;
+    }
     box-sizing: border-box;
     letter-spacing: 0.1rem;
     a.menu-toggle {
@@ -299,6 +302,7 @@ nav.menu {
       margin: 0;
       text-align: right;
       line-height:1em;
+      margin-right: 35px;
       @media (max-width: 940px) {
         margin-right: 60px;
         &:not(.active) {
@@ -448,20 +452,37 @@ nav.menu {
       opacity: 1;
       visibility: visible;
     }
-
+    .search_icon {
+      background: url('../img/search_icon.svg') no-repeat center center;
+      background-size: contain;
+      width: 20px;  
+      height: auto;
+      padding: 15px 0px;
+      float: right;
+      box-sizing: border-box;
+      position: absolute;
+      top: 10px;
+      right: 0px;
+      cursor: pointer;
+      border-left: 1px solid $white;
+      &.open {
+        background: url('../img/close_icon.svg') no-repeat center center;
+      }
+    }
     
     .search {
-      right: 0;
-      position: absolute;
       top: 0px;
       right: 0;
-      width: 230px;
       display: block;
       @media (max-width: 940px) {
         display: none;
       }
       .search_form {
-        
+        display: none;
+        position: absolute;
+        top: 0px;
+        right: 35px;
+        z-index: 1;
         form {
           position: relative;
           float: right;
@@ -472,14 +493,14 @@ nav.menu {
             margin: 0;
             display: inline-block;
             &.search {
+              z-index: 1;
               text-align: left;
               box-sizing: border-box;
               font: $normal 1.6rem/2.6rem $regular;
-              background: transparent;
-              border: 1px solid transparent;
-              padding: 12px 30px 12px 30px;
+              background: $white;
+              border: 1px solid $blue;
+              padding: 12px 20px 11px 20px;
               color: $blue;
-              border-left: 3px solid #dddfe9;
               &:focus {
                 outline: none;
               }
@@ -489,17 +510,20 @@ nav.menu {
               }
             }
             &.search-submit {
-              text-indent: -9999px;
+              z-index: 2;
               overflow: hidden;
               box-sizing: border-box;
               font: $normal 1.6rem/2.6rem $regular;
-              background: transparent;
+              background: $blue;
+              color: $white;
               border: 1px solid transparent;
-              padding: 12px 0;
-              
-              background: url(../img/search_icon.svg) right center no-repeat;
+              padding: 12px 0 10px 0;
+              position: relative;
               cursor: pointer;
-              width: 40px;
+              width: 80px;
+              &:hover {
+                background: $orange;
+              }
             }
           }
         }
@@ -610,6 +634,46 @@ nav.mobile {
         &:nth-last-child(2), &:last-child {
           a {
             border-bottom: 1px solid #e1e1ff;
+          }
+        }
+      }
+    }
+  }
+  .search {
+    .search_form {
+      padding: 0 20px 20px 20px;
+      form {
+        input {
+          margin: 0;
+          display: inline-block;
+          &.search {
+            text-align: left;
+            box-sizing: border-box;
+            font: $normal 1.6rem/2.6rem $regular;
+            background: $white;
+            padding: 5px 10px;
+            color: $white;
+            border: 1px solid $blue;
+            &:focus {
+              outline: none;
+            }
+            &::placeholder { 
+              color: $blue;
+              opacity: 1;
+            }
+          }
+          &.search-submit {
+            text-indent: -9999px;
+            overflow: hidden;
+            box-sizing: border-box;
+            font: $normal 1.6rem/2.6rem $regular;
+            background: $white;
+            border: 1px solid transparent;
+            padding: 5px;
+            
+            background: $blue url(../img/search_icon_white.svg) center center no-repeat;
+            cursor: pointer;
+            width: 40px;
           }
         }
       }

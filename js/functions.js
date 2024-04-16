@@ -6,15 +6,15 @@ $( document ).ready(function() {
     $('nav.menu').toggleClass("open");
   });
 
-  $(document).ready(function() {
-    $('.site-menu').click(function() {
-      $('ul.sites').toggleClass('active');
-      $(this).toggleClass("open");
-    });
+  $('.site-menu').click(function() {
+    $('ul.sites').toggleClass('active');
+    $(this).toggleClass("open");
   });
   
-  $(".search_icon").click(function() {
-    $('.search_form').fadeToggle();
+  $(".primary .search_icon").click(function() {
+    $('.primary .search_form').fadeToggle();
+    $(this).toggleClass("open");
+    $('#menu-main').fadeToggle();
   });
   
   // Back to Top Scroll 

@@ -7,7 +7,6 @@
 <?php wp_head(); ?>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> 
-
 <?php $current_site_id = get_current_blog_id(); switch ($current_site_id) { 
   case 2: // ANDY Typekit ?>
 <link rel="stylesheet" href="https://use.typekit.net/mqg3rwg.css">
@@ -15,7 +14,6 @@
   case 4: // Wisdom Typekit ?>
 <link rel="stylesheet" href="https://use.typekit.net/kwl7ryk.css">   
 <?php break; } ?>
-
 </head>
 <body <?php body_class(); ?>>
 
@@ -58,13 +56,17 @@
       </a>
       <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
       <!-- Search -->
-      <!-- <div class="search" role="search">
+      <div class="search">
+        <label for="search"><div class="search_icon"></div></label>
         <div class="search_form"><?php get_search_form(); ?></div>
-      </div> -->
+      </div>
     </div>
     
   </div>
 </nav>
 <nav class="mobile">
   <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
+  <div class="search">
+    <div class="search_form"><?php get_search_form(); ?></div>
+  </div>
 </nav>
