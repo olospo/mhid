@@ -13,12 +13,15 @@ get_header(); ?>
   </div>  
 </section>
 
+<section class="breadcrumbs">
+  <div class="container">
+  <?php if (function_exists('breadcrumbs')) breadcrumbs(); ?>
+  </div>
+</section>
+
 <section class="post">
   <div class="container flex">
     <div class="content eight columns">
-      <div class="breadcrumbs">
-        <?php if (function_exists('breadcrumbs')) breadcrumbs(); ?>
-      </div>
       <?php the_content(); ?>
     </div> 
     
