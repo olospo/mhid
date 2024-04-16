@@ -179,11 +179,14 @@ section {
       }
     }
   }
-  article.person, {
-    margin: 20px 0;
+  h2.wp-block-heading.margin {
+    margin-bottom: 40px;
   }
-  article.country {
-    margin: 10px 0;
+  figure {
+    &.aligncenter {
+      font: $bold 1.5rem/1.5rem $regular;
+      text-align: center;
+    }
   }
   h1, h2, h3 {
     font-family: $regular;
