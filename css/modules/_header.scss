@@ -226,6 +226,9 @@ nav.menu {
   background:#F0F1F5;
   &.open {
     background: $blue;
+    @media (min-width: 940px) {
+      background:#F0F1F5;
+    }
     .primary {
       a.menu-toggle {
         color: $white;
@@ -545,6 +548,9 @@ nav.mobile {
   }
   &.active {
     display: block;
+    @media (min-width: 940px) {
+      display: none;
+    }
   }
   background: #F0F1F5;
   z-index: 1000;

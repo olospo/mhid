@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-
   $(".mobile_menu").click(function() {
     $('.mobile').toggleClass('active');
     $(this).toggleClass("open");
