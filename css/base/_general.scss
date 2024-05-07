@@ -289,6 +289,17 @@ section {
       padding-left: 10px;
     }
   }
+  figure.wp-block-table {
+    td {
+      padding: 15px;
+      border: 1px solid $border;
+    }
+    th {
+      padding: 15px;
+      background: #193E72;
+      border: 1px solid #193E72;
+    }
+  }
   table {
     border: 1px solid $border;
     overflow-x: scroll;
@@ -305,28 +316,16 @@ section {
       padding: 20px;
       background: $blue;
       text-align: left;
-      border-right: 1px solid $white;
-      &:last-child {
-        border-right: none;
-      }
     }
 
     tr {
       td {
         padding: 20px;
-        border-left: 1px solid $border;
-        &:first-child {
-          border-left: none;
-        }
+        border: 1px solid $border;
       }
       &:nth-child(odd) {
         td {
-          background: $white-bg;
-        }
-      }
-      &:first-child {
-        td {
-          background: $white;
+          background: #F0F1F5;
         }
       }
     }
