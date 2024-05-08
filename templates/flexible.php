@@ -50,6 +50,8 @@ if (!$has_hero): ?>
             get_template_part('flex/square'); // Square section
         elseif (get_row_layout() == 'intro'): 
             get_template_part('flex/intro'); // Intro section
+        elseif (get_row_layout() == 'accordion'): 
+            get_template_part('flex/accordion'); // Accordion section
         endif;
     endwhile; 
     ?>

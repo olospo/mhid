@@ -1,6 +1,6 @@
-
 <?php if( have_rows('accordion') ): ?>
 <div class="flexible accordion">
+  <div class="container">
   <?php while( have_rows('accordion') ): the_row(); 
     $title = get_sub_field('title');
     $content = get_sub_field('content');
@@ -16,5 +16,6 @@
     </div>
   </article>
   <?php endwhile; ?>
+  </div>
 </div>
 <?php endif; ?>
