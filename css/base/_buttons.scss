@@ -16,7 +16,6 @@
     font: $normal 1.4rem/1.4rem $regular;
   }
   margin: 5px 10px 5px 0;
-  
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: all ease .5s;
@@ -26,11 +25,11 @@
   letter-spacing: 0.1rem;
   &.primary {
     color: $blue;
-    border: 3px solid #5DB1AD;
+    border: 3px solid $blue;
     background: transparent;
     &:hover {
       color: $white;
-      background: #5DB1AD;
+      background: $blue;
       text-decoration: none;
     }
   }
@@ -60,5 +59,33 @@
         background: $white;
       }
     }
+  }
+}
+
+.download-link {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px;
+  font: $normal 1.3rem/1.3rem $regular;
+  @media (min-width: $breakpoint-laptop) {
+    padding: 15px 20px 15px 20px;
+    font: $normal 1.4rem/1.4rem $regular;
+  }
+  margin: 5px 10px 5px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+  letter-spacing: 0.1rem;
+  color: $blue;
+  border: 3px solid $blue;
+  background: transparent;
+  &:hover {
+    color: $white;
+    background: $blue;
+    text-decoration: none;
   }
 }

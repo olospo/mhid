@@ -1,5 +1,5 @@
 <?php if( have_rows('accordion') ): ?>
-<div class="flexible accordion">
+<secion class="flexible accordion">
   <div class="container">
   <?php while( have_rows('accordion') ): the_row(); 
     $title = get_sub_field('title');
@@ -17,5 +17,5 @@
   </article>
   <?php endwhile; ?>
   </div>
-</div>
+</section>
 <?php endif; ?>
