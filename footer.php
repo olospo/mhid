@@ -17,7 +17,7 @@
     </div>
     <div class="links eight columns">
       <div class="one-third column">
-        <h5>Get in touch</h5>
+        <h5>Get in Touch</h5>
         <p><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
         <?php
         // Check if at least one social icon is present
