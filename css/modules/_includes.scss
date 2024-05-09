@@ -15,9 +15,6 @@ section.breadcrumbs {
 
 section.breadcrumbs + section.content_section, section.breadcrumbs + section.post {
   padding: 0 0 $padding-half 0;
-  @media (min-width: $breakpoint-tablet) {
-    padding: 0 0 $padding 0;
-  }
 }
 
 // Intro
