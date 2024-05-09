@@ -119,7 +119,7 @@ section.content_section, section.post {
 }
 
 section.content_section + section.content_section {
-  padding: 0 0 $padding 0;
+  padding: 0 0 $padding-half 0;
 }
 
 // Stat Section
