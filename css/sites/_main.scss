@@ -54,8 +54,22 @@ body.subsite-1 { // Andy
 //--------------- Early Minds ---------------//
 
 body.subsite-2 { // Support
-  header.main {
-    
+  nav.sites {
+    ul.sites {
+      li.wisdom { // Wisdom
+        a {
+          border-top: transparent;
+          @media (min-width: 940px) {
+            border-left: none;
+            border-top: 3px solid $purple;
+          }
+        
+        }
+        a:hover {
+          border-top: 0px solid $purple;
+        }
+      }
+    }
   }
   section.hero.single {
     background: $purple;
