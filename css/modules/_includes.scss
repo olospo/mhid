@@ -468,6 +468,13 @@ section.content_section + section.content_section {
             color: $teal;
           }
         }
+        a.button {
+          border: 3px solid $teal;
+          &:hover {
+            background: $teal;
+            color: $white;
+          }
+        }
       }
     }
   }
