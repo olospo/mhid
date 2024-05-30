@@ -515,3 +515,26 @@ function number_to_word($number) {
 
   return $number;
 }
+
+function custom_menu_classes($classes, $item, $args) {
+    // Check if it's the primary menu (adjust 'primary' to your actual menu location)
+    if ($args->theme_location == 'main') {
+
+        // Remove 'current_page_parent' from 'News' menu item on 'Resources' CPT archive or single CPT item
+        if (is_post_type_archive('resource') || is_singular('resource')) {
+            // Assuming 'News' is set as the blog page
+            if ($item->object_id == get_option('page_for_posts')) {
+                $classes = array_diff($classes, array('current_page_parent', 'current-menu-item', 'current_page_ancestor'));
+            }
+        }
+        
+        // Add 'current-menu-item' to 'Resources' menu item on 'Resources' CPT archive or single CPT item
+        if (is_post_type_archive('resource') || is_singular('resource')) {
+            if ($item->object == 'custom' && $item->url == get_post_type_archive_link('resources')) {
+                $classes[] = 'current-menu-item';
+            }
+        }
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'custom_menu_classes', 10, 3);

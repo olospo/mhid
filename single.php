@@ -12,6 +12,12 @@ while ( have_posts() ) : the_post(); ?>
   </div>
 </section>
 
+<section class="breadcrumbs">
+  <div class="container">
+  <?php if (function_exists('breadcrumbs')) breadcrumbs(); ?>
+  </div>
+</section>
+
 <section class="post news">
   <div class="container flex">
     <div class="content twelve columns">
