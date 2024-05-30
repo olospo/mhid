@@ -272,13 +272,6 @@
                 "operator": "!=",
                 "value": "default"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "resource"
-            }
         ]
     ],
     "menu_order": 1,
@@ -290,5 +283,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711364426
+    "modified": 1717074910
 }
