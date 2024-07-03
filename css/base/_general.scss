@@ -639,6 +639,49 @@ section.hero {
 
 // Accordion
 
+.wp-block-yoast-faq-block {
+  margin-bottom: 20px;
+}
+
+// FAQ
+.schema-faq {
+  margin: 0 0 40px 0;
+  .schema-faq-section {
+    padding: 20px 0;
+    border-bottom: 1px solid #d5d5d5;
+    position: relative;
+    .schema-faq-question {
+      cursor: pointer;
+      display: block;
+      font: $bold 2.0rem/3.6rem $regular;
+      padding: 0 40px 0 0;
+      &:after {
+        content: '+';
+        position: absolute;
+        right: 10px;
+        font: $normal 2.4rem/3.6rem $regular;
+        transition: transform 2.3s ease;
+      }
+      &.open {
+        &:after {
+          content: '-';
+          transition: transform 2.3s ease;
+        }
+      }
+    }
+    .schema-faq-answer {
+      margin-top: 10px;
+      display: none;
+      transition: max-height 0.3s ease-out;
+      overflow: hidden;
+      &.open {
+        display: block;
+      }
+    }
+  }
+
+}
+
 .accordionItem {
   border-bottom: 1px solid $black;
   padding: 20px 0px;

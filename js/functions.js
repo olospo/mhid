@@ -157,3 +157,21 @@ function accordion_ajax() {
   }
 }
 accordion_ajax();
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Select all FAQ question elements
+    var faqQuestions = document.querySelectorAll('.schema-faq-question');
+
+    // Loop through each question and add a click event listener
+    faqQuestions.forEach(function (question) {
+        question.addEventListener('click', function () {
+            // Toggle the 'open' class on the corresponding answer
+            var answer = this.nextElementSibling;
+            if (answer && answer.classList.contains('schema-faq-answer')) {
+                answer.classList.toggle('open');
+            }
+            // Toggle the 'open' class on the question itself
+            this.classList.toggle('open');
+        });
+    });
+});

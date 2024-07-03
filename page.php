@@ -1,5 +1,4 @@
 <?php /* Page */
-$sub = get_field('sub_title');
 
 get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
@@ -8,7 +7,6 @@ get_header(); ?>
   <div class="container">
     <div class="content ten columns">
       <h1><?php the_title(); ?></h1>
-     <?php if ($sub): ?><p><?php echo $sub; ?></p><?php endif; ?>
     </div>
   </div>  
 </section>
