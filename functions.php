@@ -32,7 +32,13 @@ function theme_enqueue_scripts() {
   wp_enqueue_script( 'jquery' ); // Re-register jQuery
   
   wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri().'/js/application.min.js', 'jquery', NULL, true );
-  wp_enqueue_script( 'theme-functions', get_stylesheet_directory_uri().'/js/functions.js', 'jquery', NULL , true ); 
+  wp_enqueue_script(
+      'theme-functions',
+      get_stylesheet_directory_uri() . '/js/functions.js',
+      array('jquery'),  // Dependencies should be in an array
+      filemtime( get_stylesheet_directory() . '/style.css' ), // Version number
+      true  // Load in footer
+  );
 
 }
 
