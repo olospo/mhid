@@ -778,6 +778,49 @@ section.hero {
   }
 }
 
+// Members
+form.members {
+  margin: 0 0 10px 0;
+  p {
+    margin: 0 0 10px 0;
+  }
+  input[type="password"] {
+    font: $normal 1.8rem/2.6rem $regular;
+    @include border-radius(10px 0 0 10px);
+    background: $white;
+    border: 1px solid #c8c8c8;
+    padding: 10px 15px;
+    &:focus {
+      outline: none;
+      border: 1px solid #002A4A;
+    }
+  }
+  input[type="submit"] {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 0;
+    padding: 10px 20px;
+    font: $normal 1.6rem/2.6rem $regular;
+    text-decoration: none;
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    -o-transition: all ease .5s;
+    transition: all ease .5s;
+   @include border-radius(0 10px 10px 0);
+    color: $white;
+    background: $blue;
+    border: 2px solid $blue;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      color: $white;
+      border: 2px solid #A74794;
+      background: #A74794;
+    }
+  }
+}
+
 
 // Screen Reader
 /* Text meant only for screen readers. */

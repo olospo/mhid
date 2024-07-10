@@ -544,3 +544,31 @@ function custom_menu_classes($classes, $item, $args) {
     return $classes;
 }
 add_filter('nav_menu_css_class', 'custom_menu_classes', 10, 3);
+
+// Private Content
+function remove_protected_text($title) {
+    return '%s';
+}
+add_filter('protected_title_format', 'remove_protected_text');
+
+// Customise password-protected message
+function custom_protected_text($content) {
+    if (post_password_required()) {
+        return custom_password_form();
+    } else {
+        return $content;
+    }
+}
+add_filter('the_content', 'custom_protected_text');
+
+// Override the default password form
+function custom_password_form() {
+    global $post;
+    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+    $output = '<form class="members" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
+    <p>This section is for Network Members only.  Please enter the password below:</p>
+    <input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /><input type="submit" name="Submit" value="' . esc_attr__( 'Submit' ) . '" />
+    </form><p>If you dont have a password, you can get in touch at <a href="mailto:wisdom.network@psy.ox.ac.uk">wisdom.network@psy.ox.ac.uk</a> to join the Network.</p>';
+    return $output;
+}
+add_filter('the_password_form', 'custom_password_form');
