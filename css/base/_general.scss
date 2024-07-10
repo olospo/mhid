@@ -787,7 +787,7 @@ form.members {
   input[type="password"] {
     font: $normal 1.8rem/2.6rem $regular;
     @include border-radius(10px 0 0 10px);
-    background: $white;
+    background: #F0F1F5;
     border: 1px solid #c8c8c8;
     padding: 10px 15px;
     &:focus {
@@ -809,14 +809,14 @@ form.members {
     transition: all ease .5s;
    @include border-radius(0 10px 10px 0);
     color: $white;
-    border: 2px solid #A74794;
+    border: 1px solid #A74794;
     background: #A74794;
     text-decoration: none;
     cursor: pointer;
     &:hover {
       color: $white;
       background: $blue;
-      border: 2px solid $blue;
+      border: 1px solid $blue;
       
     }
   }
