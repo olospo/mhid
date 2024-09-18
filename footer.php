@@ -59,9 +59,6 @@
       <div class="one-third column">
         <h5>Policies and Notices</h5>
         <?php wp_nav_menu( array( 'theme_location' => 'footer', 'container'=> false, 'menu_class'=> false ) ); ?>
-        <ul>
-          <li><a href="<?php echo get_site_url(); ?>/cookies-policy">Cookies Policy</a></li>
-        </ul>
         <h5>Search</h5>
         <!-- Search -->
         <div class="search" role="search">
