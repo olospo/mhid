@@ -243,7 +243,7 @@ nav.menu {
   }
   .primary {
     box-sizing: border-box;
-    letter-spacing: 0.1rem;
+    // letter-spacing: 0.1rem;
     @media (min-width: 940px) {
       height: 50px;
     }
@@ -313,12 +313,12 @@ nav.menu {
       li {
         display: inline-block;
         a {
-          font: $normal 1.6rem/2.0rem $regular;
+          font: $normal 1.5rem/2.0rem $regular;
           @include transition(all 0.2s ease-out);
           display: block;
           color: $blue;
           text-decoration: none;
-          padding: 15px 20px;
+          padding: 15px 15px;
           margin: 0px;
           &:hover {
             margin: 0;
@@ -422,7 +422,7 @@ nav.menu {
       @include invisible();
       opacity: 0;
       visibility: hidden;
-      min-width: 300px;
+      min-width: 260px;
       left: 0; // Align left edge with the parent item
       top: 100%; // Position the submenu just below the parent item
     }
