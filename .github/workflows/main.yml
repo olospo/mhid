@@ -16,7 +16,7 @@ jobs:
         with:
           server: ${{ secrets.SERVER_IP }}
           port: 21
-          server-dir: wp-content/themes/mhid/
+          server-dir: public_html/wp-content/themes/mhid/
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           # Requires secrets to be added to the repo (Settings > Secrets)
