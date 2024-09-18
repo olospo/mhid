@@ -348,10 +348,10 @@ nav.menu {
         &.page_item_has_children {
           > a {
             background: url('../img/menu_arrow.svg') right 20px center no-repeat;
-            padding-right: 50px;
+            padding-right: 40px;
             &:hover {
               background: $blue url('../img/menu_arrow_hover.svg') right 20px center no-repeat;
-              padding-right: 50px;
+              padding-right: 40px;
               color: $white;
             }
           }
@@ -372,7 +372,7 @@ nav.menu {
         &.current_page_parent.page_item_has_children {
           > a {
             background: $blue url('../img/menu_arrow_hover.svg') right 20px center no-repeat; // Apply the hover background
-            padding-right: 50px; // Ensure padding for arrow space
+            padding-right: 40px; // Ensure padding for arrow space
             color: $white; // Text color
           }
         }
@@ -399,10 +399,10 @@ nav.menu {
               &.page_item_has_children {
                 > a {
                   background: url('../img/menu_arrow.svg') right 20px center no-repeat;
-                  padding-right: 50px;
+                  padding-right: 40px;
                   &:hover {
                     background: $blue url('../img/menu_arrow_hover.svg') right 20px center no-repeat;
-                    padding-right: 50px;
+                    padding-right: 40px;
                     color: $white;
                   }
                 }
@@ -580,7 +580,6 @@ nav.mobile {
         position: relative;
         a {
           margin-right: 50px;
-          
         }
         .sub-toggle {
           cursor: pointer;
