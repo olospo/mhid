@@ -3,14 +3,14 @@ section.breadcrumbs {
   margin: 0;
   padding: 15px 0;
   background: #F0F1F5;
+  text-transform: none;
+  letter-spacing: 0px;
   margin-bottom: 20px;
   font: $normal 1.4rem/2.0rem $regular;
   @media (min-width: $breakpoint-tablet) {
     margin-bottom: 40px;
     font: $normal 1.6rem/2.2rem $regular;
   }
-  text-transform: none;
-  letter-spacing: 0px;
 }
 
 section.breadcrumbs + section.content_section, section.breadcrumbs + section.post, section.accordion + section.content_section {
@@ -131,13 +131,13 @@ section.content_section + section.content_section {
     .stat {
       box-sizing: border-box;
       text-align: center;
+      margin-left: 0;
       width: 50%;
       padding: 60px 20px;
       @media (min-width: $breakpoint-tablet) {
         width: 25%;
         padding: 120px $padding-half;
       }
-      margin-left: 0;
       &.white {
         background: $white;
         span.unit {
@@ -192,21 +192,21 @@ section.content_section + section.content_section {
       }
 
       span.unit {
-        
+        display: inline-block;
         font: $bold 3.8rem/3.8rem $regular;
         @media (min-width: $breakpoint-tablet) {
           font: $bold 6.4rem/6.4rem $regular;
         }
-        display: inline-block;
+        
       }
       span.description {
+        display: block;
+        text-transform: uppercase;
+        color: $blue;
         font: $normal 1.4rem/2.0rem $regular;
         @media (min-width: $breakpoint-tablet) {
           font: $bold 1.8rem/2.4rem $regular;
         }
-        display: block;
-        text-transform: uppercase;
-        color: $blue;
       }
     }
     &.one {
@@ -274,6 +274,7 @@ section.content_section + section.content_section {
     height: auto;
     background: #F0F1F5;
     width: 100%;
+    text-align: left;
     @media (max-width: $breakpoint-tablet) {
       order: 1;
     }
@@ -281,8 +282,6 @@ section.content_section + section.content_section {
       position: relative;
       width: 50%;
     }
-    text-align: left;
-    
     .content {
       padding: 30px;
       @media (min-width: $breakpoint-tablet) {
@@ -310,6 +309,8 @@ section.content_section + section.content_section {
           padding: 0 0 20px 0;
         }
         h3 {
+          margin-bottom: 0px;
+          color: $blue;
           font: $bold 2.0rem/3.0rem $regular;
           @media (min-width: $breakpoint-tablet) {
             font: $xbold 2.4rem/3.2rem $regular;
@@ -320,8 +321,6 @@ section.content_section + section.content_section {
           @media (min-width: $breakpoint-desktop) {
             font: $xbold 3.4rem/4.0rem $regular;
           }
-          margin-bottom: 0px;
-          color: $blue;
         }
       }
     }
@@ -336,7 +335,6 @@ section.content_section + section.content_section {
           border-top: none;
           border-right: 10px solid $blue;
         }
-        
       }
     }
     &.teal {

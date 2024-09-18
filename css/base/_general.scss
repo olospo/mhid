@@ -108,10 +108,6 @@ h1, h2, h3, h4 {
 // Page 
 section {
   &.page, &.post, &.search {
-    &.single_post {
-      margin-top: 0;
-    }
-    
     font: $normal 2rem/3.6rem $regular;
     font-size: 2rem;
     line-height: 3.6rem;
@@ -120,11 +116,10 @@ section {
       font-size: 2.6rem;
       line-height: 4rem;
     }
+    &.single_post {
+      margin-top: 0;
+    }
     .content {
-      // padding: 20px 0px;
-      @media (min-width: $breakpoint-tablet) {
-        // padding: 40px 0px;
-      }
       hr {
         clear: both;
         color: #dedede;
@@ -144,11 +139,7 @@ section {
       }
     }
     &.no_hero {
-      // padding: $padding-half 0px;
       margin-top: 90px;
-      @media (min-width: $breakpoint-tablet) {
-        // padding: $padding 0px;
-      }
       aside {
         margin-top: 0;
       }
@@ -257,11 +248,12 @@ section {
     }
   }
   ul {
+    margin: 20px 0px 20px 20px;
     font: $normal 1.6rem/2.4rem $regular;
     @media (min-width: $breakpoint-tablet) {
       font: $normal 1.8rem/3.4rem $regular;
     }
-    margin: 20px 0px 20px 20px;
+    
     li {
       list-style: disc;
       list-style-position: outside;
@@ -277,11 +269,12 @@ section {
     }
   }
   ol {
+    margin: 20px 0px 20px 20px;
     font: $normal 1.6rem/2.4rem $regular;
     @media (min-width: $breakpoint-tablet) {
       font: $normal 1.8rem/3.4rem $regular;
     }
-    margin: 20px 0px 20px 20px;
+    
     li {
       list-style: decimal;
       list-style-position: outside;
@@ -417,28 +410,28 @@ section.hero {
   .background {
     transform: scale(1.05);
     animation: bgZoom 3s;
-    padding: 160px 0px;
-    @media (min-width: $breakpoint-tablet) {
-      padding: 240px 0px;
-    }
     overflow: hidden;
     position: relative;
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
+    padding: 160px 0px;
+    @media (min-width: $breakpoint-tablet) {
+      padding: 240px 0px;
+    }
   }
   .float {
     display: block !important;
     position: absolute !important;
     top: 100% !important;
     left: 0 !important;
+    z-index: 1 !important;
+    width: 100% !important;
+    transform: translate3d(0%, -100%, 0) !important;
     padding: $padding-half 0;
     @media (min-width: $breakpoint-tablet) {
       padding: $padding 0;
     }
-    z-index: 1 !important;
-    width: 100% !important;
-    transform: translate3d(0%, -100%, 0) !important;
   }
   .content {
     h1 {
@@ -484,7 +477,6 @@ section.hero {
     }
   }
 }
-
 
 @keyframes bgZoom {
   0% {
@@ -544,14 +536,14 @@ section.hero {
 }
 
 .breadcrumbs {
+  font: $normal 1.3rem/2.2rem $regular;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   padding: 0 0 30px 0;
   @media (min-width: $breakpoint-tablet) {
     margin-top: -20px;
     padding: 0 0 40px 0;
   }
-  font: $normal 1.3rem/2.2rem $regular;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   .delimiter {
     margin: 0 10px;
   }
@@ -592,11 +584,11 @@ section.hero {
   padding: 30px 0px;
   border-bottom: 1px solid $border;
   .title {
+    overflow: hidden;
     font: $normal 2.2rem/4.4rem $regular;
     @media (min-width: $breakpoint-tablet) {
       font: $normal 2.6rem/4.4rem $regular;
     }
-    overflow: hidden;
   }
 }
 
@@ -653,11 +645,11 @@ section.hero {
     .schema-faq-question {
       cursor: pointer;
       display: block;
+      padding: 0 40px 0 0;
       font: $bold 1.6rem/2.4rem $regular;
       @media (min-width: $breakpoint-laptop) {
         font: $bold 2.0rem/3.6rem $regular;
       }
-      padding: 0 40px 0 0;
       &:after {
         content: '+';
         position: absolute;

@@ -3,13 +3,13 @@ footer {
   font: $normal 1.6rem/3.0rem $regular;
   position: relative;
   overflow-wrap: break-word;
+  color: $white;
+  background: $blue;
+  text-align: left;
   padding: 20px 0px;
   @media (min-width: $breakpoint-tablet) {
     padding: 40px 0px;
   }
-  color: $white;
-  background: $blue;
-  text-align: left;
   .logo {
     img, svg {
       max-height: 120px;
@@ -22,11 +22,11 @@ footer {
   }
   h5 {
     color: $white;
+    margin-bottom: 10px;
     font: $bold 2.2rem/3.2rem $regular;
     @media (min-width: $breakpoint-tablet) {
       text-align: left; 
     }
-    margin-bottom: 10px;
   }
   p, address {
     font: $normal 1.4rem/2.4rem $regular;
@@ -103,11 +103,11 @@ footer {
       margin: 0px 3px;
       a {
         svg {
+          height: auto;
           width: 30px;
           @media (min-width: $breakpoint-tablet) {
             width: 38px;
           }
-          height: auto;
           path {
             transition: all ease .3s;
             fill: $white;
@@ -127,12 +127,12 @@ footer {
   .copyright {
     margin: 20px 0 0 0;
     padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
     @media (min-width: $breakpoint-tablet) {
       margin: 40px 0 0 0;
       padding-top: 40px;
     }
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    text-align: left;
     p {
       font: $normal 1.4rem/2.4rem $regular;
     }
@@ -171,7 +171,6 @@ footer {
             background: $white;
             border: 1px solid transparent;
             padding: 5px;
-            
             background: $white url(../img/search_icon.svg) center center no-repeat;
             cursor: pointer;
             width: 40px;

@@ -15,21 +15,22 @@ nav.sites {
       margin: 0;
       padding: 0;
       display: block;
+      cursor: pointer;
       @media (min-width: 940px) {
         display: inline-block;
       } 
-      cursor: pointer;
+      
       a {
         display: block;
         color: $white;
         text-transform: uppercase;
         margin: 0;
+        font: $normal 1.1rem/2.2rem $regular;
+        text-decoration: none;
         padding: 5px 0px 5px 0px;
         @media (min-width: 940px) {
           padding: 5px 15px 10px 15px;
         }
-        font: $normal 1.1rem/2.2rem $regular;
-        text-decoration: none;
         &:hover {
           color: $white;
           text-decoration: none;
@@ -45,12 +46,11 @@ nav.sites {
         }
         &.current-site, &:hover  {
           a {
-            
+            color: $white;
             @media (min-width: 940px) {
               border-left: none;
               border-top: 3px solid $orange;
             }
-            color: $white;
           }
         }
       }
@@ -63,12 +63,11 @@ nav.sites {
         }
         &.current-site, &:hover  {
           a {
-            
+            color: $white;
             @media (min-width: 940px) {
               border-left: none;
               border-top: 3px solid $green;
             }
-            color: $white;
           }
         }
       }
@@ -80,12 +79,11 @@ nav.sites {
           }
         }
         &.current-site, &:hover  {
-          
+          color: $white;
           @media (min-width: 940px) {
             border-left: none;
             border-top: 3px solid $purple;
           }
-          color: $white;
         }
       }
       &.site-4, &.wisdom { // Wisdom
@@ -96,12 +94,11 @@ nav.sites {
           }
         }
         &.current-site, &:hover  {
-          
+          color: $white;
           @media (min-width: 940px) {
             border-left: none;
             border-top: 3px solid $pink;
           }
-          color: $white;
         }
       }
       &.site-5, &.yag { // YAG
@@ -112,12 +109,12 @@ nav.sites {
           }
         }
         &.current-site, &:hover  { 
-          
+          color: $white;
           @media (min-width: 940px) {
             border-left: none;
             border-top: 3px solid $white;
           }
-          color: $white;
+          
         }
       }
       &.site-6, &.aim { // AIM
@@ -128,29 +125,30 @@ nav.sites {
           }
         }
         &.current-site, &:hover  {
-          
+          color: $white;
           @media (min-width: 940px) {
             border-left: none;
             border-top: 3px solid $teal;
           }
-          color: $white;
+          
         }
       }
     }
   }
   .site-menu {
-    display: none; 
-    @media (max-width: 940px) {
-      display: block;
-      margin: 15px 0;
-      position: relative;
-    }
+    
     color: $white;
     cursor: pointer;
     transform: rotate(0deg);
     transition: .3s ease-in-out;
     height: 10px;
     z-index: 30;
+    display: none; 
+    @media (max-width: 940px) {
+      display: block;
+      margin: 15px 0;
+      position: relative;
+    }
     &:before {
       content: "MHID Projects";
       position: absolute;
@@ -197,7 +195,6 @@ header {
   .site-title {
     color: $white;
     margin: 20px 0px;
-    // line-height: 0;
     img, svg {
       max-height: 100px;
       @media (min-width: $breakpoint-tablet) {
@@ -245,24 +242,24 @@ nav.menu {
     
   }
   .primary {
+    box-sizing: border-box;
+    letter-spacing: 0.1rem;
     @media (min-width: 940px) {
       height: 50px;
     }
-    box-sizing: border-box;
-    letter-spacing: 0.1rem;
     a.menu-toggle {
-      display: none; 
-      @media (max-width: 940px) {
-        display: block;
-        margin: 15px 0;
-        position: relative;
-      }
       color: $blue;
       cursor: pointer;
       transform: rotate(0deg);
       transition: .3s ease-in-out;
       height: 10px;
       z-index: 30;
+      display: none; 
+      @media (max-width: 940px) {
+        display: block;
+        margin: 15px 0;
+        position: relative;
+      }
       &:before {
         content: "Menu";
         position: absolute;
@@ -300,6 +297,7 @@ nav.menu {
     }
     
     ul#menu-main {
+      overflow: hidden;
       display: block;
       position: relative; // Ensure ul has a relative positioning context
       margin: 0;
@@ -537,6 +535,9 @@ nav.mobile {
   display: none;
   top: 90px;
   overflow: scroll;
+  background: #F0F1F5;
+  z-index: 1000;
+  width: 100%;
   @media (min-width: $breakpoint-tablet) {
     top: 166px;
   }
@@ -551,18 +552,13 @@ nav.mobile {
       display: none;
     }
   }
-  background: #F0F1F5;
-  z-index: 1000;
-  width: 100%;
   ul {
     text-align: left;
     margin: 10px 0px;
     padding: 0px 20px 0 10px;
     li {
-      
       text-align: left;
       display: block;
-      // margin: 10px 0px;
       &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
         font: $normal 1.6rem/1.8rem $regular !important;
         color: $blue;

@@ -1,60 +1,47 @@
-const { series, parallel } = require('gulp');
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var minify = require('gulp-clean-css');
+const { src, dest, watch, series, parallel } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const concat = require('gulp-concat');
+const cleanCSS = require('gulp-clean-css');
+const uglify = require('gulp-uglify');
+const notify = require('gulp-notify');
 
-var plugins = require("gulp-load-plugins")({
-  pattern: ['gulp-*', 'gulp.*'],
-  replaceString: /\bgulp[\-.]/
-});
+// File paths
+const sassFiles = './css/**/*.scss';
+const cssOutput = './css/';
+const jsFiles = './js/vendor/*.js';
+const jsOutput = './js/';
 
-// Input and Output folders
-var input = './css/**/*.scss';
-var output = './css/';
-var jsinput = './js/vendor/*.js';
-var jsoutput = './js/';
-
-// CSS
-function css(cb) {
-  gulp.src(input)
-  // Compile Sass
-  .pipe(sass())
-  // Error reporting
-  .on("error", plugins.notify.onError(function (error) {
-    return error.message;
-  }))
-  // Minify
-  .pipe(minify())
-  // Save
-  .pipe(gulp.dest(output))
-  
-  cb();
+// CSS task
+function css() {
+  return src(sassFiles)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(concat('main.css'))
+    .pipe(cleanCSS())
+    .pipe(dest(cssOutput))
+    .pipe(notify({ message: 'CSS task complete', onLast: true }));
 }
 
-// Javascript
-function javascript(cb) {
-  gulp.src(jsinput)
-    .pipe(plugins.concat('/application.js'))
-    .on("error", plugins.notify.onError(function (error) {
-      return error.message;
+// JavaScript task
+function javascript() {
+  return src(jsFiles)
+    .pipe(concat('application.min.js'))
+    .pipe(uglify().on('error', function (error) {
+      console.error(error.message);
+      this.emit('end');
     }))
-    .pipe(plugins.rename({ suffix: '.min' }))
-    .pipe(plugins.uglify())
-    .on("error", plugins.notify.onError(function (error) {
-      return error.message;
-    }))
-    .pipe(gulp.dest(jsoutput));
-  cb();
+    .pipe(dest(jsOutput))
+    .pipe(notify({ message: 'JavaScript task complete', onLast: true }));
 }
-
-// Tasks
-exports.css = css;
-exports.javascript = javascript;
-exports.build = parallel(javascript, css);
 
 // Watch task
-gulp.task('watch', function(done) {
-  gulp.watch(input, gulp.series('css'));
-  gulp.watch(jsinput, gulp.series('javascript'));
-  done();
-});
+function watchFiles() {
+  watch(sassFiles, css);
+  watch(jsFiles, javascript);
+}
+
+// Export tasks
+exports.css = css;
+exports.javascript = javascript;
+exports.build = parallel(css, javascript);
+exports.watch = watchFiles;
+exports.default = series(exports.build, exports.watch);

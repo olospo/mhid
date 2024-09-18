@@ -3,6 +3,7 @@
 function theme_setup() {
   // Menus
   register_nav_menu( 'main', 'Main Menu' );
+  register_nav_menu( 'footer', 'Footer Menu' );
   register_nav_menu( 'network', 'Network Menu');
   
   // RSS Feed
