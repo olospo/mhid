@@ -223,7 +223,7 @@ nav.menu {
   background:#F0F1F5;
   &.open {
     background: $blue;
-    @media (min-width: 1040px) {
+    @media (min-width: 1060px) {
       background:#F0F1F5;
     }
     .primary {
@@ -244,7 +244,7 @@ nav.menu {
   .primary {
     box-sizing: border-box;
     // letter-spacing: 0.1rem;
-    @media (min-width: 1040px) {
+    @media (min-width: 1060px) {
       height: 50px;
     }
     a.menu-toggle {
@@ -255,7 +255,7 @@ nav.menu {
       height: 10px;
       z-index: 30;
       display: none; 
-      @media (max-width: 1040px) {
+      @media (max-width: 1060px) {
         display: block;
         margin: 15px 0;
         position: relative;
@@ -305,7 +305,7 @@ nav.menu {
       line-height:1em;
       margin-right: 30px;
       font-size: 0; // Remove gap between li
-      @media (max-width: 1040px) {
+      @media (max-width: 1060px) {
         margin-right: 60px;
         &:not(.active) {
           display: none; // Hide the menu on mobile when not active
@@ -475,7 +475,7 @@ nav.menu {
       top: 0px;
       right: 0;
       display: block;
-      @media (max-width: 1040px) {
+      @media (max-width: 1060px) {
         display: none;
       }
       .search_form {
@@ -549,7 +549,7 @@ nav.mobile {
   }
   &.active {
     display: block;
-    @media (min-width: 1040px) {
+    @media (min-width: 1060px) {
       display: none;
     }
   }
