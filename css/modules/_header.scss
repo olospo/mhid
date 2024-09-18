@@ -399,11 +399,11 @@ nav.menu {
               &.menu-item-has-children, 
               &.page_item_has_children {
                 > a {
-                  background: url('../img/menu_arrow.svg') right 20px center no-repeat;
-                  padding-right: 40px;
+                  background: url('../img/menu_arrow.svg') right 15px center no-repeat;
+                  padding-right: 35px;
                   &:hover {
-                    background: $blue url('../img/menu_arrow_hover.svg') right 20px center no-repeat;
-                    padding-right: 40px;
+                    background: $blue url('../img/menu_arrow_hover.svg') right 15px center no-repeat;
+                    padding-right: 35px;
                     color: $white;
                   }
                 }
