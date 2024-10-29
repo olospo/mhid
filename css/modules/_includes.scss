@@ -546,3 +546,27 @@ section.content_section + section.content_section {
     }
   }
 }
+
+section.news_items {
+  padding: $padding-half 0;
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding 0;
+  }
+  h2 {
+    border-bottom: 5px solid #EA5D4E;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: $blue;
+    font: $xbold 3.2rem/4.2rem $regular;
+    @media (min-width: $breakpoint-tablet) {
+      font: $xbold 3.2rem/3.8rem $regular;
+    }
+    @media (min-width: $breakpoint-laptop) {
+      font: $xbold 3.8rem/4.6rem $regular;
+    }
+  }
+  .listing {
+    padding: $padding-half 0 0 0;
+  }
+}

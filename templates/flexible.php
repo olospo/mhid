@@ -41,17 +41,19 @@ if (!$has_hero): ?>
         endif;
         // Continue with your layout rendering
         if (get_row_layout() == 'hero'): 
-            get_template_part('flex/hero'); // Hero section
+          get_template_part('flex/hero'); // Hero section
         elseif (get_row_layout() == 'content_section'): 
-            get_template_part('flex/content'); // Content section
+          get_template_part('flex/content'); // Content section
         elseif (get_row_layout() == 'stats'): 
-            get_template_part('flex/stats'); // Stats section
+          get_template_part('flex/stats'); // Stats section
         elseif (get_row_layout() == 'square'): 
-            get_template_part('flex/square'); // Square section
+          get_template_part('flex/square'); // Square section
         elseif (get_row_layout() == 'intro'): 
-            get_template_part('flex/intro'); // Intro section
+          get_template_part('flex/intro'); // Intro section
         elseif (get_row_layout() == 'accordion'): 
-            get_template_part('flex/accordion'); // Accordion section
+          get_template_part('flex/accordion'); // Accordion section
+        elseif (get_row_layout() == 'news_section'): 
+          get_template_part('flex/news'); // Accordion section
         endif;
     endwhile; 
     ?>

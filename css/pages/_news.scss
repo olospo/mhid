@@ -5,6 +5,9 @@ section.archive {
   @media (min-width: $breakpoint-tablet) {
     padding: 40px 0px;
   }
+}
+
+section.archive, section.news_items {
   article {
     margin-bottom: $padding-half;
     &:nth-child(3n+4) {
