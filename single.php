@@ -22,6 +22,16 @@ while ( have_posts() ) : the_post(); ?>
   <div class="container flex">
     <div class="content twelve columns">
       <?php the_content(); ?>
+      
+      <!-- Display categories -->
+      <?php $categories = get_the_category(); 
+      if ( ! empty( $categories ) ) { ?>
+      <div class="categories">
+        <?php foreach ( $categories as $category ) {
+          echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="category-link">' . esc_html( $category->name ) . '</a> ';
+        } ?>
+      </div>
+      <?php } ?>
     </div>
   </div>
 </section>
