@@ -2,8 +2,8 @@
 get_header(); ?>
 
 <?php // Hero
-  $opacity = get_sub_field('opacity_overlay');
-  $bgImage = get_sub_field('background_image');
+  $opacity = get_field('opacity_overlay');
+  $bgImage = get_field('background_image');
 ?>
 <section class="home hero">
   <div class="background" style="background: linear-gradient(rgba(0, 0, 0, 0.<?php echo $opacity; ?>), rgba(0, 0, 0, 0.<?php echo $opacity; ?>)), url(' <?php echo $bgImage; ?> ') center center no-repeat; background-size: cover;"></div>
@@ -12,9 +12,9 @@ get_header(); ?>
       <div class="content eight columns">
       <?php if( have_rows('content') ): // Content ?>
         <?php while( have_rows('content') ): the_row(); 
-          $title  = get_sub_field('title');
-          $content = get_sub_field('content');
-          $button = get_sub_field('button');
+          $title  = get_field('title');
+          $content = get_field('content');
+          $button = get_field('button');
         ?>
       <h1><?php echo $title; ?></h1>
       <?php echo $content; ?>
