@@ -1,5 +1,7 @@
 <?php /* Archive */
-get_header(); ?>
+get_header(); 
+
+while ( have_posts() ) : the_post(); ?>
 
 <div class="flexible_content">
     <?php 
@@ -46,5 +48,7 @@ get_header(); ?>
     </div>
   </div>
 </section>
+
+<?php endwhile; // end of the loop. ?> 
 
 <?php get_footer();  ?>
