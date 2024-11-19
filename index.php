@@ -1,36 +1,33 @@
 <?php /* Archive */
 get_header(); ?>
 
-<?php // Hero
-  $opacity = get_field('opacity_overlay');
-  $bgImage = get_field('background_image');
-?>
-<section class="home hero">
-  <div class="background" style="background: linear-gradient(rgba(0, 0, 0, 0.<?php echo $opacity; ?>), rgba(0, 0, 0, 0.<?php echo $opacity; ?>)), url(' <?php echo $bgImage; ?> ') center center no-repeat; background-size: cover;"></div>
-  <div class="float">
-    <div class="container">
-      <div class="content eight columns">
-      <?php if( have_rows('content') ): // Content ?>
-        <?php while( have_rows('content') ): the_row(); 
-          $title  = get_field('title');
-          $content = get_field('content');
-          $button = get_field('button');
-        ?>
-      <h1><?php echo $title; ?></h1>
-      <?php echo $content; ?>
-      <?php if( $button ): 
-        $link_url = $button['url'];
-        $link_title = $button['title'];
-        $link_target = $button['target'] ? $button['target'] : '_self';
-      ?>
-      <p><a href="<?php echo esc_url( $link_url ); ?>" class="button secondary" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a></p>
-      <?php endif; ?>
-        <?php endwhile; ?>
-      <?php endif; ?> 
-      </div>
-    </div>
-  </div>
-</section>
+<div class="flexible_content">
+    <?php 
+    while (have_rows('section_content')): the_row(); 
+        // Check if we're at the first 'content_section' and breadcrumbs haven't been shown
+        if (get_row_layout() == 'content_section' && !$breadcrumbs_displayed):
+          get_template_part('flex/breadcrumbs');
+          $breadcrumbs_displayed = true; // Set the flag to true after displaying breadcrumbs
+        endif;
+        // Continue with your layout rendering
+        if (get_row_layout() == 'hero'): 
+          get_template_part('flex/hero'); // Hero section
+        elseif (get_row_layout() == 'content_section'): 
+          get_template_part('flex/content'); // Content section
+        elseif (get_row_layout() == 'stats'): 
+          get_template_part('flex/stats'); // Stats section
+        elseif (get_row_layout() == 'square'): 
+          get_template_part('flex/square'); // Square section
+        elseif (get_row_layout() == 'intro'): 
+          get_template_part('flex/intro'); // Intro section
+        elseif (get_row_layout() == 'accordion'): 
+          get_template_part('flex/accordion'); // Accordion section
+        elseif (get_row_layout() == 'news_section'): 
+          get_template_part('flex/news'); // Accordion section
+        endif;
+    endwhile; 
+    ?>
+</div>
 
 <section class="archive">
   <div class="container">
