@@ -3,30 +3,34 @@ get_header(); ?>
 
 <div class="flexible_content">
 <?php 
-while (have_rows('section_content', 76)): the_row(); 
-  // Check if we're at the first 'content_section' and breadcrumbs haven't been shown
-  if (get_row_layout() == 'content_section' && !$breadcrumbs_displayed):
-    get_template_part('flex/breadcrumbs');
-    $breadcrumbs_displayed = true; // Set the flag to true after displaying breadcrumbs
-  endif;
-  // Continue with your layout rendering
-  if (get_row_layout() == 'hero'): 
-    get_template_part('flex/hero'); // Hero section
-  elseif (get_row_layout() == 'content_section'): 
-    get_template_part('flex/content'); // Content section
-  elseif (get_row_layout() == 'stats'): 
-    get_template_part('flex/stats'); // Stats section
-  elseif (get_row_layout() == 'square'): 
-    get_template_part('flex/square'); // Square section
-  elseif (get_row_layout() == 'intro'): 
-    get_template_part('flex/intro'); // Intro section
-  elseif (get_row_layout() == 'accordion'): 
-    get_template_part('flex/accordion'); // Accordion section
-  elseif (get_row_layout() == 'news_section'): 
-    get_template_part('flex/news'); // Accordion section
-  endif;
-endwhile; 
+$page_id = get_option('page_for_posts'); // Dynamically get the Posts Page ID
+if ($page_id && have_rows('section_content', $page_id)) :
+  while (have_rows('section_content', $page_id)) : the_row(); 
+    // Check if we're at the first 'content_section' and breadcrumbs haven't been shown
+    if (get_row_layout() == 'content_section' && !$breadcrumbs_displayed):
+        get_template_part('flex/breadcrumbs');
+        $breadcrumbs_displayed = true; // Set the flag to true after displaying breadcrumbs
+    endif;
+    // Continue with your layout rendering
+    if (get_row_layout() == 'hero'): 
+        get_template_part('flex/hero'); // Hero section
+    elseif (get_row_layout() == 'content_section'): 
+        get_template_part('flex/content'); // Content section
+    elseif (get_row_layout() == 'stats'): 
+        get_template_part('flex/stats'); // Stats section
+    elseif (get_row_layout() == 'square'): 
+        get_template_part('flex/square'); // Square section
+    elseif (get_row_layout() == 'intro'): 
+        get_template_part('flex/intro'); // Intro section
+    elseif (get_row_layout() == 'accordion'): 
+        get_template_part('flex/accordion'); // Accordion section
+    elseif (get_row_layout() == 'news_section'): 
+        get_template_part('flex/news'); // News section
+    endif;
+  endwhile; 
+endif;
 ?>
+</div>
 </div>
 
 <section class="archive">
