@@ -570,3 +570,148 @@ section.news_items {
     padding: $padding-half 0 0 0;
   }
 }
+
+
+.accordionItemContent {
+  h1, h2, h3 {
+    font-family: $regular;
+    color: $black;
+  }
+  h1 {
+    font: $xbold 3.6rem/5rem $regular;
+    margin-bottom: 10px;
+    font-size: 3.6rem;
+  }
+  h2 {
+    font: $bold 2.0rem/3.0rem $regular;
+    margin-bottom: 10px;
+    font-size: 2.0rem;
+    line-height: 3.0rem;
+    @media (min-width: $breakpoint-tablet) {
+      font: $xbold 2.4rem/3.4rem $regular;
+      margin-bottom: 10px;
+      font-size: 2.4rem;
+      line-height: 3.4rem;
+    }
+  }
+  h3 {
+    font: $bold 1.8rem/2.8rem $regular;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    @media (min-width: $breakpoint-tablet) {
+      font: $xbold 2.2rem/3.0rem $regular;
+      margin-bottom: 10px;
+      font-size: 2.2rem;
+    }
+  }
+  h4 {
+    font: $xbold 2rem/2.8rem $regular;
+    margin-bottom: 10px;
+    font-size: 2rem;
+  }
+  h5 {
+    font: $xbold 1.8rem/2.6rem $regular;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+  }
+  p {
+    &.lead {
+      font: $normal 1.8rem/2.8rem $regular;
+    }
+    &.center {
+      text-align: center;
+    }
+  }
+  b, strong {
+    font-weight: bold;
+  }
+  em, i {
+    font-style: italic;
+  }
+  a {
+    color: $blue;
+    text-decoration: underline;
+    text-decoration-color: $blue;
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+  ul {
+    margin: 20px 0px 20px 20px;
+    font: $normal 1.6rem/2.4rem $regular;
+    @media (min-width: $breakpoint-tablet) {
+      font: $normal 1.8rem/3.4rem $regular;
+    }
+    
+    li {
+      list-style: disc;
+      list-style-position: outside;
+      margin-left: 20px;
+      font: $normal 1.6rem/2.4rem $regular;
+      padding-left: 10px;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 1.8rem/3.4rem $regular;
+      }
+    }
+    ul {
+      margin: 10px 0px;
+    }
+  }
+  ol {
+    margin: 20px 0px 20px 20px;
+    font: $normal 1.6rem/2.4rem $regular;
+    @media (min-width: $breakpoint-tablet) {
+      font: $normal 1.8rem/3.4rem $regular;
+    }
+    
+    li {
+      list-style: decimal;
+      list-style-position: outside;
+      margin-left: 20px;
+      padding-left: 10px;
+    }
+  }
+  figure.wp-block-table {
+    td {
+      padding: 15px;
+      border: 1px solid $border;
+    }
+    th {
+      padding: 15px;
+      background: #193E72;
+      border: 1px solid #193E72;
+    }
+  }
+  table {
+    border: 1px solid $border;
+    overflow-x: scroll;
+    font: $normal 1.6rem/2.6rem $regular;
+    width: 100%;
+    table-layout: auto;
+    border-collapse: separate !important;
+    p, ul {
+      font: $normal 1.6rem/2.6rem $regular;
+    }
+    th {
+      color: $white;
+      font: $regular 1.8rem/2.6rem $regular !important;
+      padding: 20px;
+      background: $blue;
+      text-align: left;
+    }
+  
+    tr {
+      td {
+        padding: 20px;
+        border: 1px solid $border;
+      }
+      &:nth-child(odd) {
+        td {
+          background: #F0F1F5;
+        }
+      }
+    }
+  }
+}
