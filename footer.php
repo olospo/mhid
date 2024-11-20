@@ -4,6 +4,7 @@
   // Social
   $facebook = get_field('facebook_link','options');
   $twitter = get_field('twitter_link','options');
+  $bluesky = get_field('bluesky_link','options');
   $linkedin = get_field('linkedin_link','options');
   $vimeo = get_field('vimeo_link','options');
   $instagram = get_field('instagram_link','options');
@@ -27,6 +28,9 @@
         <ul class="social">
           <?php if($facebook): ?>
           <li><a href="<?php echo $facebook; ?>" aria-label="Facebook"><img src="<?php bloginfo('template_directory'); ?>/img/facebook.svg" alt="Facebook" loading="lazy"/></a></li>
+          <?php endif; ?>
+          <?php if($bluesky): ?>
+          <li><a href="<?php echo bluesky; ?>" aria-label="Bluesky"><img src="<?php bloginfo('template_directory'); ?>/img/bluesky_icon.svg" alt="Bluesky" loading="lazy"/></a></li>
           <?php endif; ?>
           <?php if($twitter): ?>
           <li><a href="<?php echo $twitter; ?>" aria-label="Twitter"><img src="<?php bloginfo('template_directory'); ?>/img/twitter.svg" alt="Twitter" loading="lazy"/></a></li>

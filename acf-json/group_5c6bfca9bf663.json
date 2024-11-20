@@ -43,6 +43,26 @@
             "maxlength": ""
         },
         {
+            "key": "field_673ddb1e6bb39",
+            "label": "Bluesky Link",
+            "name": "bluesky_link",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6617dfd4ca08b",
             "label": "LinkedIn Link",
             "name": "linkedin_link",
@@ -121,5 +141,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712840700
+    "modified": 1732107047
 }
