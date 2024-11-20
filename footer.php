@@ -30,7 +30,7 @@
           <li><a href="<?php echo $facebook; ?>" aria-label="Facebook"><img src="<?php bloginfo('template_directory'); ?>/img/facebook.svg" alt="Facebook" loading="lazy"/></a></li>
           <?php endif; ?>
           <?php if($bluesky): ?>
-          <li><a href="<?php echo bluesky; ?>" aria-label="Bluesky"><img src="<?php bloginfo('template_directory'); ?>/img/bluesky_icon.svg" alt="Bluesky" loading="lazy"/></a></li>
+          <li><a href="<?php echo $bluesky; ?>" aria-label="Bluesky"><img src="<?php bloginfo('template_directory'); ?>/img/bluesky_icon.svg" alt="Bluesky" loading="lazy"/></a></li>
           <?php endif; ?>
           <?php if($twitter): ?>
           <li><a href="<?php echo $twitter; ?>" aria-label="Twitter"><img src="<?php bloginfo('template_directory'); ?>/img/twitter.svg" alt="Twitter" loading="lazy"/></a></li>
