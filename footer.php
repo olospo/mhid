@@ -22,7 +22,7 @@
         <p><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
         <?php
         // Check if at least one social icon is present
-        if ($facebook || $twitter || $linkedin || $instagram || $threads):
+        if ($facebook || $bluesky || $twitter || $linkedin || $instagram || $threads):
         ?>
         <h5>Connect with us</h5>
         <ul class="social">
