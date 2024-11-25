@@ -29,8 +29,21 @@ body.main-site {
 //---------------  ANDY ---------------//
 
 body.subsite-1 { // Andy
-  header.main {
-    
+  nav.sites {
+    ul.sites {
+      li.andy { // Wisdom
+        a {
+          border-top: transparent;
+          @media (min-width: 940px) {
+            border-left: none;
+            border-top: 3px solid $green;
+          }
+        }
+        a:hover {
+          border-top: 0px solid $green;
+        }
+      }
+    }
   }
   section.hero.single {
     background: $green;
