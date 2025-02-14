@@ -871,8 +871,9 @@ img.alignnone {
   border: 5px solid #F8F8F8;
 }
 .wp-caption-text, figcaption {
+  margin: 0;
   text-align: center;
   padding: 5px 10px 10px 10px;
-  background: #F8F8F8;
+  background: #F0F1F5;
   font: $normal 1.6rem/2.8rem $regular;
 }
