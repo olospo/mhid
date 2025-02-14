@@ -833,7 +833,8 @@ form.members {
 // WordPress Alignment
 
 img.alignright, .wp-caption.alignright {
-  float:right; margin:0 0 0.8em 0.8em;
+  float:right; 
+  margin:0 0 0.8em 0.8em;
   max-width: 100%;
   height: auto;
 } 
@@ -869,7 +870,7 @@ img.alignnone {
 .wp-caption img {
   border: 5px solid #F8F8F8;
 }
-.wp-caption-text {
+.wp-caption-text, figcaption {
   text-align: center;
   padding: 5px 10px 10px 10px;
   background: #F8F8F8;
