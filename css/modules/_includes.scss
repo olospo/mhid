@@ -115,6 +115,15 @@ section.content_section, section.post {
   }
 }
 
+section.content_section {
+  .embed-container {
+    margin-top: 30px;
+    @media (min-width: $breakpoint-tablet) {
+      margin: 0
+    }
+  }
+}
+
 section.content_section + section.content_section {
   padding: 0 0 $padding-half 0;
 }
