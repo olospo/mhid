@@ -7,7 +7,15 @@ while ( have_posts() ) : the_post(); ?>
   <div class="container">
     <div class="content ten columns">
       <h1><?php the_title(); ?></h1>
-      <p><?php the_date(); ?></p>
+      <?php if ( get_field('event') ): 
+        $event_date = get_field('event_date'); // format: Y-m-d
+        $start_time = get_field('event_start_time'); // format: H:i
+        $end_time = get_field('event_end_time'); // format: H:i
+      ?>
+        <p><?php echo $event_date . ' - ' . $start_time . ' to ' . $end_time; ?></p>
+      <?php else: ?>
+        <p><?php the_date(); ?></p>
+      <?php endif; ?>
     </div>
   </div>
 </section>

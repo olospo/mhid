@@ -6,10 +6,18 @@
   </a>
   <div class="content">
     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-    <span class="date"><?php the_time("F j, Y"); ?></span>
+    
+    <?php if ( get_field('event') ): 
+      $event_date = get_field('event_date'); // format: Y-m-d
+      $start_time = get_field('event_start_time'); // format: H:i
+      $end_time = get_field('event_end_time'); // format: H:i
+    ?>
+      <span class="date"><?php echo $event_date . ' - ' . $start_time . ' to ' . $end_time; ?></span>
+    <?php else: ?>
+      <span class="date"><?php the_time("F j, Y"); ?></span>
+    <?php endif; ?>
     
     <!-- Display categories -->
-    
     <?php 
     $categories = get_the_category(); 
     if ( ! empty( $categories ) ) { ?>
