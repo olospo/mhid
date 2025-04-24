@@ -12,7 +12,7 @@ body.main-site {
           }
         }
         a:hover {
-          border-top: 0px solid $orange;
+          border-top: 3px solid $orange;
         }
       }
     }
@@ -40,7 +40,7 @@ body.subsite-1 { // Andy
           }
         }
         a:hover {
-          border-top: 0px solid $green;
+          border-top: 3px solid $green;
         }
       }
     }
@@ -49,6 +49,20 @@ body.subsite-1 { // Andy
     background: $green;
     h1 {
       color: $white;
+    }
+  }
+  section.fancy-accordion {
+    .container::before {
+      background: #6ab678;
+    }
+    .hexagon {
+      background: #6ab678;
+    }
+    .accordionItem.open .hexagon__inner {
+      background: #FED47A;
+    }
+    .accordionItemHeading:hover .hexagon__inner {
+      background: #FED47A;
     }
   }
   .back_to_top {
@@ -69,7 +83,7 @@ body.subsite-1 { // Andy
 body.subsite-2 { // Support
   nav.sites {
     ul.sites {
-      li.sem{ // Wisdom
+      li.sem{
         a {
           border-top: transparent;
           @media (min-width: 940px) {
@@ -79,7 +93,7 @@ body.subsite-2 { // Support
         
         }
         a:hover {
-          border-top: 0px solid $purple;
+          border-top: 3px solid $purple;
         }
       }
     }
@@ -88,6 +102,20 @@ body.subsite-2 { // Support
     background: $purple;
     h1 {
       color: $white;
+    }
+  }
+  section.fancy-accordion {
+    .container::before {
+      background: #6465AB;
+    }
+    .hexagon {
+      background: #6465AB;
+    }
+    .accordionItem.open .hexagon__inner {
+      background: #F29330;
+    }
+    .accordionItemHeading:hover .hexagon__inner {
+      background: #F29330;
     }
   }
   .back_to_top {
@@ -113,7 +141,7 @@ body.subsite-3 { // Wisdom
         
         }
         a:hover {
-          border-top: 0px solid $pink;
+          border-top: 3px solid $pink;
         }
       }
     }

@@ -724,3 +724,89 @@ section.news_items {
     }
   }
 }
+
+section.fancy-accordion {
+  padding: $padding-half 0;
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding 0;
+  }
+  .container {
+  position: relative;
+  margin-bottom: 40px;
+  }
+  .container::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    bottom: 0;
+    left: 14px;            /* half of 20.8px hexagon width */
+    width: 4px;
+    background: #193d71;
+    z-index: 0;
+  }
+
+  .accordionItemHeading {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  
+  /* Outer hexagon */
+  .hexagon {
+    position: relative;
+    z-index: 1;              /* sit above the line */
+    flex: 0 0 auto;
+    width: 32px;
+    height: 38px;
+    margin-right: 20px;
+    background: #193d71;
+    clip-path: polygon(
+      50% 0%,    /* top point */
+      100% 25%,  /* upper right corner */
+      100% 75%,  /* lower right corner */
+      50% 100%,  /* bottom point */
+      0% 75%,    /* lower left corner */
+      0% 25%     /* upper left corner */
+    );
+  }
+
+  
+  /* Inner “fill” hexagon */
+  .hexagon__inner {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 24px;
+    height: 30px;           /* shrink in by 10% on all sides */
+    background: transparent;
+    clip-path: inherit;     /* same shape as parent */
+    transition: background 0.2s ease;
+  }
+  
+  .accordionItem {
+    border: none;
+    padding: 10px 0;
+    .title {
+      font: $bold 2.2rem/3.4rem $regular;
+    }
+    &.open .accordionItemContent {
+      padding: 10px 40px 10px 50px;
+    }
+    &:first-child {
+      padding: 0 0 10px 0;
+    }
+    &:last-child {
+      padding: 10px 0 0 0;
+    }
+  }
+
+  /* When the item is open, fill it orange */
+  .accordionItem.open .hexagon__inner {
+    background: #EA5D4E;
+  }
+  
+  /* Optional hover state */
+  .accordionItemHeading:hover .hexagon__inner {
+    background: #EA5D4E;
+  }
+}

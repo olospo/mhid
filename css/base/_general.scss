@@ -717,8 +717,8 @@ section.hero {
     right: 15px;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
-    &:nth-child(1) {top: 15px;}
-    &:nth-child(2) {top: 15px;transform: rotate(90deg);}
+    &:nth-child(1) {top: 18px;}
+    &:nth-child(2) {top: 18px;transform: rotate(90deg);}
   }
 }
 

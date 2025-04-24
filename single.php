@@ -30,7 +30,6 @@ while ( have_posts() ) : the_post(); ?>
   <div class="container flex">
     <div class="content twelve columns">
       <?php the_content(); ?>
-      
       <!-- Display categories -->
       <?php $categories = get_the_category(); 
       if ( ! empty( $categories ) ) { ?>

@@ -401,17 +401,21 @@ function breadcrumbs() {
  
     if ( is_category() ) {
       $thisCat = get_category(get_query_var('cat'), false);
-      if ($thisCat->parent != 0) {
-        echo sprintf($link, '/news' , 'Library') . $delimiter;
+    
+      // Always start with a link to the News page
+      echo sprintf($link, $homeLink . '/news', 'News') . $delimiter;
+    
+      // If this category has a parent, show the hierarchy
+      if ( $thisCat->parent != 0 ) {
         $cats = get_category_parents($thisCat->parent, TRUE, $delimiter);
         $cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
         $cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
         echo $cats;
       }
-      echo sprintf($link, $homeLink . '/news' , 'News') . $delimiter;
+    
+      // Finally, show the current category
       echo $before . sprintf($text['category'], single_cat_title('', false)) . $after;
-      
- 
+    
     } elseif ( is_search() ) {
       echo $before . sprintf($text['search'], get_search_query()) . $after;
  

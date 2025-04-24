@@ -51,7 +51,7 @@ if (!$has_hero): ?>
         elseif (get_row_layout() == 'intro'): 
           get_template_part('flex/intro'); // Intro section
         elseif (get_row_layout() == 'accordion'): 
-          get_template_part('flex/accordion'); // Accordion section
+          get_template_part('flex/fancy-accordion'); // Accordion section
         elseif (get_row_layout() == 'news_section'): 
           get_template_part('flex/news'); // Accordion section
         endif;
