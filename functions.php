@@ -402,13 +402,13 @@ function breadcrumbs() {
     if ( is_category() ) {
       $thisCat = get_category(get_query_var('cat'), false);
       if ($thisCat->parent != 0) {
-        echo sprintf($link, '/news/news' , 'Library') . $delimiter;
+        echo sprintf($link, '/news' , 'Library') . $delimiter;
         $cats = get_category_parents($thisCat->parent, TRUE, $delimiter);
         $cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
         $cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
         echo $cats;
       }
-      echo sprintf($link, $homeLink . 'who-we-are/news' , 'News') . $delimiter;
+      echo sprintf($link, $homeLink . '/news' , 'News') . $delimiter;
       echo $before . sprintf($text['category'], single_cat_title('', false)) . $after;
       
  
