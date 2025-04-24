@@ -4,10 +4,10 @@
     <?php while( have_rows('accordion') ): the_row(); 
       $title   = get_sub_field('title');
       $content = get_sub_field('content');
+      $button = get_sub_field('button');
     ?>
       <article class="accordionItem close">
         <div class="title accordionItemHeading">
-          <!-- our hexagon indicator -->
           <div class="hexagon">
             <span class="hexagon__inner"></span>
           </div>
@@ -17,6 +17,9 @@
         </div>
         <div class="accordionItemContent">
           <?php echo wp_kses_post($content); ?>
+          <?php if ( $button && ! empty( $button['url'] ) ): ?>
+            <a href="<?php echo esc_url( $button['url'] ); ?>" target="<?php echo esc_attr( $button['target'] ?: '_self' ); ?>" class="button primary"><?php echo esc_html( $button['title'] ); ?></a>
+          <?php endif; ?>
         </div>
       </article>
     <?php endwhile; ?>

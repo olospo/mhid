@@ -245,6 +245,23 @@
                                     "media_upload": 1,
                                     "delay": 0,
                                     "parent_repeater": "field_6418405d43c93"
+                                },
+                                {
+                                    "key": "field_680a30ca42019",
+                                    "label": "Button",
+                                    "name": "button",
+                                    "aria-label": "",
+                                    "type": "link",
+                                    "instructions": "Optional button to display at the bottom of content",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_6418405d43c93"
                                 }
                             ]
                         }
@@ -315,5 +332,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730216395
+    "modified": 1745498341
 }
