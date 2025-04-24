@@ -4,7 +4,7 @@ get_header(); ?>
 <section class="hero single">
   <div class="container">
     <div class="content ten columns">
-      <h1>Category: <?php single_cat_title(); ?></h1>
+      <h1><?php single_cat_title(); ?></h1>
     </div>
   </div>
 </section>
