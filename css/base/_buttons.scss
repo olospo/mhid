@@ -89,3 +89,7 @@
     text-decoration: none;
   }
 }
+.wp-block-button__link {
+  @extend .button;
+  width: auto !important;
+}

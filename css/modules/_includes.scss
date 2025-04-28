@@ -739,7 +739,10 @@ section.fancy-accordion {
     position: absolute;
     top: 2px;
     bottom: 0;
-    left: 14px;            /* half of 20.8px hexagon width */
+    left: 14px;
+    @media (min-width: $breakpoint-tablet) {
+      left: 14px;
+    }
     width: 4px;
     background: #193d71;
     z-index: 0;
@@ -748,7 +751,7 @@ section.fancy-accordion {
   .accordionItemHeading {
     display: flex;
     align-items: center;
-    padding: 0;
+    padding: 0 35px 0 0;
   }
   
   /* Outer hexagon */
@@ -787,7 +790,12 @@ section.fancy-accordion {
     border: none;
     padding: 10px 0;
     .title {
-      font: $bold 2.2rem/3.4rem $regular;
+      
+      font: $bold 1.8rem/2.4rem $regular;
+      @media (min-width: $breakpoint-tablet) {
+        font: $bold 2.2rem/3.4rem $regular;
+      }
+      
     }
     &.open .accordionItemContent {
       padding: 10px 40px 10px 50px;
