@@ -737,15 +737,15 @@ section.fancy-accordion {
   .container::before {
     content: "";
     position: absolute;
+    width: 4px;
+    background: #193d71;
+    z-index: 0;
     top: 2px;
     bottom: 0;
     left: 14px;
     @media (min-width: $breakpoint-tablet) {
       left: 14px;
     }
-    width: 4px;
-    background: #193d71;
-    z-index: 0;
   }
 
   .accordionItemHeading {
@@ -816,5 +816,126 @@ section.fancy-accordion {
   /* Optional hover state */
   .accordionItemHeading:hover .hexagon__inner {
     background: #EA5D4E;
+  }
+}
+
+// Visual Menu
+
+// Stat Section
+.visual_heading {
+  padding: $padding-half 0 0 0;
+}
+.visual_section {
+  padding: $padding 0;
+  .container {
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  a.visual-link {
+    display: block;
+    text-decoration: none;
+  }
+  .visual_menu {
+    display: flex;
+    flex-flow: wrap;
+    a {
+      text-decoration: none;
+    }
+    p {
+      color: $black;
+      margin-bottom: 20px;
+    }
+    .visual {
+      box-sizing: border-box;
+      text-align: center;
+      @media (min-width: $breakpoint-tablet) {
+        margin-left: 2%; /* Default left margin */
+        margin-right: 2%; /* Default right margin */
+      }
+      cursor: pointer;
+      &:first-child {
+        margin-left: 0; /* No left margin on the first element */
+      }
+      &:last-child {
+        margin-right: 0; /* No right margin on the last element */
+      }
+      .content {
+        padding: 20px;
+      }
+      &.blue {
+        img {
+          background: #d7dae7;
+        }
+        &:hover {
+          background: #d7dae7;
+        }
+      }
+      &.teal {
+        img {
+          background: #cdd9e0;
+        }
+        &:hover {
+          background: #cdd9e0;
+        }
+      }
+      &.orange {
+        img {
+          background: #e8d6d6;
+        }
+        &:hover {
+          background: #e8d6d6;
+        }
+      }
+      &.purple {
+        img {
+          background: #d0d0e3;
+        }
+        &:hover {
+          background: #d0d0e3;
+        }
+      }
+      &.pink {
+        img {
+          background: #e7d0e0;
+        }
+        &:hover {
+          background: #e7d0e0;
+        }
+      }
+    }
+    &.one {
+      .visual {
+        width: 100%;
+        @media (min-width: $breakpoint-tablet) {
+          width: 100%;
+        }
+      }
+    }
+    &.two {
+      .visual {
+        width: 100%;
+        @media (min-width: $breakpoint-tablet) {
+          width: 48%;
+        }
+      }
+    }
+    &.three {
+      .visual {
+        width: 100%;
+        @media (min-width: $breakpoint-tablet) {
+          width: 30.66%;
+        }
+      }
+    }
+    &.four {
+      .visual {
+        width: 100%;
+        @media (min-width: $breakpoint-tablet) {
+          width: 22%;
+        }
+      }
+    }
   }
 }
