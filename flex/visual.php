@@ -6,18 +6,20 @@ if (have_rows('visual_menu')) {
     the_row();
     $row_count++;
   }
+  $word = number_to_word($row_count); // Ensure number_to_word() is defined and working
 }
-$word = number_to_word($row_count); ?>
+?>
 <section class="visual_heading">
   <div class="container">
     <h2><?php echo get_sub_field('visual_menu_title'); ?></h2>
     <?php echo get_sub_field('visual_menu_content'); ?>
   </div>
 </section>
+
 <section class="visual_section">
     <div class="container">
     <?php if( have_rows('visual_menu') ): ?>
-      <div class="visual_menu <?php echo $word; ?>">
+      <div class="visual_menu <?php echo esc_attr($word); ?>"> <!-- Escaped the word to ensure safe output -->
       <?php while( have_rows('visual_menu') ): the_row(); 
         $image = get_sub_field('image');
         $title = get_sub_field('title');
@@ -26,15 +28,16 @@ $word = number_to_word($row_count); ?>
         $colour = get_sub_field('colour_scheme');
       ?>
       
-        <div class="visual <?php echo $colour; ?>">
-          <?php if ( $link && ! empty( $link['url'] ) ): ?>
+        <div class="visual <?php echo esc_attr($colour); ?>"> <!-- Escaped the colour to ensure safe output -->
+          <?php if ( !empty($link['url']) ): ?>
           <a href="<?php echo esc_url( $link['url'] ); ?>" class="visual-link">
-          <?php if( !empty($image) ): $image_url = $image['url']; // Get the image URL
-              echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image['alt']) . '">'; // Display the image with alt text
+          <?php if( !empty($image) ): 
+            $image_url = $image['url']; // Get the image URL
+            echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image['alt']) . '">'; // Display the image with alt text
           endif; ?>
           <div class="content">
-          <h3><?php echo $title; ?></h3>
-          <?php echo $desc; ?>
+          <h3><?php echo esc_html($title); ?></h3> <!-- Escaped title -->
+          <?php echo esc_html($desc); ?> <!-- Escaped description -->
           <span class="button primary filled"><?php echo esc_html( $link['title'] ); ?></span>
           </div>
           </a>
