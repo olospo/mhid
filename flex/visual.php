@@ -27,6 +27,7 @@ $word = number_to_word($row_count); ?>
       ?>
       
         <div class="visual <?php echo $colour; ?>">
+          <?php if ( $link && ! empty( $link['url'] ) ): ?>
           <a href="<?php echo esc_url( $link['url'] ); ?>" class="visual-link">
           <?php if( !empty($image) ): $image_url = $image['url']; // Get the image URL
               echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image['alt']) . '">'; // Display the image with alt text
@@ -38,7 +39,7 @@ $word = number_to_word($row_count); ?>
           </div>
           </a>
         </div>
-      
+      <?php endif; ?>
     <?php endwhile; ?>
     </div>
     <?php endif; ?>
