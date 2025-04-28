@@ -36,8 +36,8 @@ if (have_rows('visual_menu')) {
             echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image['alt']) . '">'; // Display the image with alt text
           endif; ?>
           <div class="content">
-          <h3><?php echo esc_html($title); ?></h3> <!-- Escaped title -->
-          <?php echo esc_html($desc); ?> <!-- Escaped description -->
+          <h3><?php echo $title; ?></h3>
+          <?php echo $desc; ?>
           <span class="button primary filled"><?php echo esc_html( $link['title'] ); ?></span>
           </div>
           </a>
