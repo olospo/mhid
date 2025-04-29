@@ -861,6 +861,21 @@ section.fancy-accordion {
       &:last-child {
         margin-right: 0; /* No right margin on the last element */
       }
+      .image {
+        overflow: hidden;
+        img {
+          transition: transform .5s;
+          transform: scale(1);
+        }
+      }
+      &:hover {
+        .image {
+          img {
+            transition: transform .5s;
+            transform: scale(1.05);
+          }
+        }
+      }
       .content {
         padding: 20px;
       }

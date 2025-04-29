@@ -31,10 +31,12 @@ if (have_rows('visual_menu')) {
         <div class="visual <?php echo esc_attr($colour); ?>"> <!-- Escaped the colour to ensure safe output -->
           <?php if ( !empty($link['url']) ): ?>
           <a href="<?php echo esc_url( $link['url'] ); ?>" class="visual-link">
+          <div class="image">
           <?php if( !empty($image) ): 
             $image_url = $image['url']; // Get the image URL
             echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image['alt']) . '">'; // Display the image with alt text
           endif; ?>
+          </div>
           <div class="content">
           <h3><?php echo $title; ?></h3>
           <?php echo $desc; ?>
