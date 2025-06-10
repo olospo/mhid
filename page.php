@@ -51,6 +51,8 @@ get_header(); ?>
           <?php endwhile; wp_reset_postdata(); // Reset post data to the original global post. ?>
         </ul>
         <?php endif; endif; ?>
+        
+        <?php the_widget( 'getit_widget' ); // GET-IT Widget ?>
       </div>
     </aside>
     <?php wp_reset_postdata(); ?>
