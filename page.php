@@ -52,7 +52,10 @@ get_header(); ?>
         </ul>
         <?php endif; endif; ?>
         
-        <?php the_widget( 'getit_widget' ); // GET-IT Widget ?>
+        <?php if ( class_exists( 'getit_widget' ) ) : // GET-IT Widget ?>
+          <h3>Glossary</h3>
+          <?php the_widget( 'getit_widget' );  ?>
+        <?php endif; ?>
       </div>
     </aside>
     <?php wp_reset_postdata(); ?>
