@@ -240,6 +240,11 @@ function add_site_specific_body_class($classes) {
       // Body class for subsite 5
       $classes[] = 'subsite-5';
       break;
+      
+    case 7:
+      // Body class for subsite 5
+      $classes[] = 'subsite-6';
+      break;
 
     // Add more cases for additional subsites as needed
 
@@ -285,9 +290,9 @@ function enqueue_custom_login_styles() {
         wp_enqueue_style('wisdom-login-styles', get_stylesheet_directory_uri() . '/login/wisdom-login-style.css');
         break;
 
-      case 'yag':
+      case 'insights':
         // CSS file for yag site login
-        wp_enqueue_style('yag-login-styles', get_stylesheet_directory_uri() . '/login/yag-login-style.css');
+        wp_enqueue_style('insights-login-styles', get_stylesheet_directory_uri() . '/login/insights-login-style.css');
         break;
         
       case 'aim':
