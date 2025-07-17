@@ -5,6 +5,9 @@ get_header(); ?>
   <div class="container">
     <div class="content ten columns">
       <h1><?php single_cat_title(); ?></h1>
+      <?php if ( is_category() && category_description() ) : ?>
+      <p><?php echo category_description(); ?></p>
+      <?php endif; ?>
     </div>
   </div>
 </section>

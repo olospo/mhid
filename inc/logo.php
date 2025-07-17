@@ -3,7 +3,7 @@
   $current_site_id = get_current_blog_id();
   $logo_path = '/img/mhid_logo.png'; // Default logo path
 
-  switch ($current_site_id) {
+  switch ($current_site_id) { // Case 1 = main-site. Case 2 = subsite-1
     case 1: // Site 1 
       $logo_path = '/img/mhid_logo.png';
       break;
@@ -16,10 +16,10 @@
     case 4: // Wisdom
       $logo_path = '/img/wisdom_logo.png';
       break;
-    case 5: // YAG
-      $logo_path = '/img/mhid_logo.png';
+    case 5: // Insights
+      $logo_path = '/img/insights_logo.png';
       break;
-    case 6: // YAG
+    case 6: // AIM
       $logo_path = '/img/aim_logo.png';
       break;
   }
