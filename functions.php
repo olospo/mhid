@@ -398,7 +398,7 @@ function breadcrumbs() {
   
   $blog_id = get_current_blog_id();
   switch ($blog_id) {
-    case 4: // the site that wants /our-work/
+    case 5: // the site that wants /our-work/
       $posts_section = [
         'url'   => trailingslashit($homeLink . 'our-work'),
         'label' => 'Our Work'
