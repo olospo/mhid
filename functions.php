@@ -395,6 +395,22 @@ function breadcrumbs() {
   $linkAfter = '</span>';
   $linkAttr = ' rel="v:url" property="v:title"';
   $link = $linkBefore . '<a' . $linkAttr . ' href="%1$s">%2$s</a>' . $linkAfter;
+  
+  $blog_id = get_current_blog_id();
+  switch ($blog_id) {
+    case 4: // the site that wants /our-work/
+      $posts_section = [
+        'url'   => trailingslashit($homeLink . 'our-work'),
+        'label' => 'Our Work'
+      ];
+      break;
+    default:
+      $posts_section = [
+        'url'   => trailingslashit($homeLink . 'news'),
+        'label' => 'News'
+      ];
+  }
+
  
   if (is_home() || is_front_page()) {
  
@@ -447,7 +463,7 @@ function breadcrumbs() {
         printf($link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
         if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
       } else {
-        echo sprintf($link, $homeLink . 'who-we-are/news' , 'News') . $delimiter;
+        echo sprintf($link, $posts_section['url'], $posts_section['label']) . $delimiter;
         $cat = get_the_category(); $cat = $cat[0];
         $cats = get_category_parents($cat, TRUE, $delimiter);
         if ($showCurrent == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
