@@ -84,6 +84,12 @@ footer {
           padding-left: 10px;
         }
       }
+      &.insights {
+        a {
+          border-left: 5px solid #E3336B;
+          padding-left: 10px;
+        }
+      }
       &.aim {
         a {
           border-left: 5px solid $teal;

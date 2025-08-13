@@ -189,9 +189,23 @@ body.subsite-3 { // Wisdom
 
 //---------------  YAG ---------------//
 
-body.subsite-4 { // YAG
-  header.main {
-    
+body.subsite-4 { // INSIGHTS
+  nav.sites {
+    ul.sites {
+      li.insights {
+        a {
+          border-top: transparent;
+          @media (min-width: 940px) {
+            border-left: none;
+            border-top: 3px solid #E3336B;
+          }
+        
+        }
+        a:hover {
+          // border-top: 3px solid $purple;
+        }
+      }
+    }
   }
   section.hero.single {
     background: $blue;
