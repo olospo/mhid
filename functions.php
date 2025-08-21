@@ -197,12 +197,75 @@ function custom_post_type() {
     'exclude_from_search' => false,
     'publicly_queryable'  => true,
     'capability_type'     => 'post',
+    'show_in_rest'          => true,
   );
   register_post_type( 'resource', $args );
-  
 }
 // Ensure the custom post type registration runs during the appropriate action
 add_action( 'init', 'custom_post_type' );
+
+function register_resource_taxonomies() {
+  // Resource Categories (hierarchical, like normal categories)
+  $cat_labels = array(
+    'name'              => _x( 'Resource Categories', 'taxonomy general name', 'text_domain' ),
+    'singular_name'     => _x( 'Resource Category', 'taxonomy singular name', 'text_domain' ),
+    'search_items'      => __( 'Search Resource Categories', 'text_domain' ),
+    'all_items'         => __( 'All Resource Categories', 'text_domain' ),
+    'parent_item'       => __( 'Parent Resource Category', 'text_domain' ),
+    'parent_item_colon' => __( 'Parent Resource Category:', 'text_domain' ),
+    'edit_item'         => __( 'Edit Resource Category', 'text_domain' ),
+    'update_item'       => __( 'Update Resource Category', 'text_domain' ),
+    'add_new_item'      => __( 'Add New Resource Category', 'text_domain' ),
+    'new_item_name'     => __( 'New Resource Category Name', 'text_domain' ),
+    'menu_name'         => __( 'Categories', 'text_domain' ),
+  );
+
+  register_taxonomy(
+    'resource-category',
+    array( 'resource' ),
+    array(
+      'hierarchical'      => true,
+      'labels'            => $cat_labels,
+      'show_ui'           => true,
+      'show_admin_column' => true,
+      'query_var'         => true,
+      'rewrite'           => array( 'slug' => 'resource-category', 'with_front' => false ),
+      'show_in_rest'      => true, // ✅ shows in Gutenberg
+    )
+  );
+
+  // Resource Tags (flat, like post tags)
+  $tag_labels = array(
+    'name'                       => _x( 'Resource Tags', 'taxonomy general name', 'text_domain' ),
+    'singular_name'              => _x( 'Resource Tag', 'taxonomy singular name', 'text_domain' ),
+    'search_items'               => __( 'Search Resource Tags', 'text_domain' ),
+    'popular_items'              => __( 'Popular Resource Tags', 'text_domain' ),
+    'all_items'                  => __( 'All Resource Tags', 'text_domain' ),
+    'edit_item'                  => __( 'Edit Resource Tag', 'text_domain' ),
+    'update_item'                => __( 'Update Resource Tag', 'text_domain' ),
+    'add_new_item'               => __( 'Add New Resource Tag', 'text_domain' ),
+    'new_item_name'              => __( 'New Resource Tag Name', 'text_domain' ),
+    'separate_items_with_commas' => __( 'Separate tags with commas', 'text_domain' ),
+    'add_or_remove_items'        => __( 'Add or remove tags', 'text_domain' ),
+    'choose_from_most_used'      => __( 'Choose from the most used tags', 'text_domain' ),
+    'menu_name'                  => __( 'Tags', 'text_domain' ),
+  );
+
+  register_taxonomy(
+    'resource-tag',
+    array( 'resource' ),
+    array(
+      'hierarchical'      => false,
+      'labels'            => $tag_labels,
+      'show_ui'           => true,
+      'show_admin_column' => true,
+      'query_var'         => true,
+      'rewrite'           => array( 'slug' => 'resource-tag', 'with_front' => false ),
+      'show_in_rest'      => true, // ✅ shows in Gutenberg
+    )
+  );
+}
+add_action( 'init', 'register_resource_taxonomies' );
 
 // Add unique body class based on the current site ID
 function add_site_specific_body_class($classes) {
