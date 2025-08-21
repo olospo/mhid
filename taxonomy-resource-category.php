@@ -21,9 +21,7 @@ $term = get_queried_object();
       <div class="news_listing">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
           <?php
-            // If your inc/article partial is post-specific, consider a resource-specific partial:
-            // get_template_part( 'inc/article', 'resource' );
-            get_template_part( 'inc/article' );
+            get_template_part( 'inc/article-resource');
           ?>
         <?php endwhile; ?>
       </div>
