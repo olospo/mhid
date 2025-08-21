@@ -21,7 +21,7 @@ get_header(); ?>
         ?>
         <div class="news_listing">
             <?php if ( have_posts() ) : while (have_posts()) : the_post();  ?>
-              <?php get_template_part('inc/article'); ?>
+              <?php get_template_part('inc/article-resource'); ?>
             <?php endwhile; ?>
           </div>
           <div class="twelve columns">
