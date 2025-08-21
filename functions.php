@@ -230,7 +230,7 @@ function register_resource_taxonomies() {
       'show_admin_column' => true,
       'query_var'         => true,
       'rewrite'           => array( 'slug' => 'resource-category', 'with_front' => false ),
-      'show_in_rest'      => true, // ✅ shows in Gutenberg
+      'show_in_rest'      => true,
     )
   );
 
@@ -261,7 +261,7 @@ function register_resource_taxonomies() {
       'show_admin_column' => true,
       'query_var'         => true,
       'rewrite'           => array( 'slug' => 'resource-tag', 'with_front' => false ),
-      'show_in_rest'      => true, // ✅ shows in Gutenberg
+      'show_in_rest'      => true,
     )
   );
 }

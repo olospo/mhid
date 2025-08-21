@@ -181,15 +181,16 @@ section.newsletter_cta {
 }
 
 .categories {
-  margin: 20px 0px;
+  margin: 10px 0px;
   font: $normal 1.5rem/2.4rem $regular;
   a {
-    margin-right: 5px;
+    margin: 2px 2px 2px 0px;
     background: $orange;
     color: $white;
     padding: 7px 15px;
     text-decoration: underline;
     text-decoration-color: $white;
+    white-space: nowrap;
     &:hover {
       color: $white;
       background: $blue;
