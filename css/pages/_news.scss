@@ -191,6 +191,7 @@ section.newsletter_cta {
     text-decoration: underline;
     text-decoration-color: $white;
     white-space: nowrap;
+    display: inline-block;
     &:hover {
       color: $white;
       background: $blue;
