@@ -16,7 +16,7 @@
           <span></span>
         </div>
         <div class="accordionItemContent">
-          <?php echo wp_kses_post($content); ?>
+          <?php echo $content; ?>
           <?php if ( $button && ! empty( $button['url'] ) ): ?>
             <a href="<?php echo esc_url( $button['url'] ); ?>" target="<?php echo esc_attr( $button['target'] ?: '_self' ); ?>" class="button primary"><?php echo esc_html( $button['title'] ); ?></a>
           <?php endif; ?>
