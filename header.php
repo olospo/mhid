@@ -13,6 +13,10 @@
 <?php break;
   case 4: // Wisdom Typekit ?>
 <link rel="stylesheet" href="https://use.typekit.net/kwl7ryk.css">   
+<?php case 5: // AIM Cookies  ?>
+<!-- Start cookieyes banner -->
+<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/9b151d1fdf7ce1bba0e522e6/script.js"></script>
+<!-- End cookieyes banner -->
 <?php break; } ?>
 </head>
 <body <?php body_class(); ?>>
