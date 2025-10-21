@@ -23,6 +23,12 @@ get_header(); ?>
 <?php endwhile; ?>
 <?php endif; ?>
 
+<section class="breadcrumbs">
+  <div class="container">
+  <?php if (function_exists('breadcrumbs')) breadcrumbs(); ?>
+  </div>
+</section>
+
 <section class="archive">
   <div class="container">
     <div class="twelve columns">
