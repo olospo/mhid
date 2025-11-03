@@ -474,7 +474,6 @@ function breadcrumbs() {
       ];
   }
 
- 
   if (is_home() || is_front_page()) {
  
     if ($showOnHome == 1) echo '<a href="' . $homeLink . '">' . $text['home'] . '</a>';
@@ -504,24 +503,20 @@ function breadcrumbs() {
       echo $before . sprintf($text['search'], get_search_query()) . $after;
  
     } elseif ( is_day() ) {
-    //echo sprintf($link, '/category/news' , 'News') . $delimiter;	
       echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
       echo sprintf($link, get_month_link(get_the_time('Y'),get_the_time('m')), get_the_time('F')) . $delimiter;
       echo $before . get_the_time('d') . $after;
  
     } elseif ( is_month() ) {
-    //echo sprintf($link, '/category/news' , 'News') . $delimiter;	
       echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
       echo $before . get_the_time('F') . $after;
  
     } elseif ( is_year() ) {
-   // echo sprintf($link, '/category/news' , 'News') . $delimiter;	
       echo $before . get_the_time('Y') . $after;
  
     } elseif ( is_single() && !is_attachment() ) {
       if ( get_post_type() != 'post' ) {
         $post_type = get_post_type_object(get_post_type());
-    
         $slug = $post_type->rewrite;
         printf($link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
         if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
@@ -532,13 +527,16 @@ function breadcrumbs() {
         if ($showCurrent == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
         $cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
         $cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-        // echo $cats;
         if ($showCurrent == 1) echo $before . get_the_title() . $after;
       }
  
-    } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-      
-     
+    } elseif ( is_post_type_archive() ) {
+      // ✅ FIXED: Proper breadcrumb for CPT archives (e.g., /resources/)
+      $post_type = get_queried_object();
+      if ( isset($post_type->name) && isset($post_type->labels->name) ) {
+        printf($link, get_post_type_archive_link($post_type->name), $post_type->labels->name);
+      }
+ 
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
       $cat = get_the_category($parent->ID); $cat = $cat[0];
@@ -571,7 +569,7 @@ function breadcrumbs() {
       echo $before . sprintf($text['tag'], single_tag_title('', false)) . $after;
  
     } elseif ( is_author() ) {
-       global $author;
+      global $author;
       $userdata = get_userdata($author);
       echo $before . sprintf($text['author'], $userdata->display_name) . $after;
  
@@ -586,9 +584,9 @@ function breadcrumbs() {
     }
  
     echo '</div>';
- 
   }
 }
+
 
 
 function tg_include_custom_post_types_in_search_results( $query ) {
