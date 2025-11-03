@@ -19,4 +19,5 @@ jobs:
           server-dir: public_html/wp-content/themes/mhid/
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
           # Requires secrets to be added to the repo (Settings > Secrets)
