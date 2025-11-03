@@ -593,7 +593,7 @@ function breadcrumbs() {
 
 function tg_include_custom_post_types_in_search_results( $query ) {
   if ( $query->is_main_query() && $query->is_search() && ! is_admin() ) {
-      $query->set( 'post_type', array( 'post', 'page' ) );
+      $query->set( 'post_type', array( 'post', 'page', 'resource' ) );
   }
 }
 add_action( 'pre_get_posts', 'tg_include_custom_post_types_in_search_results' );
