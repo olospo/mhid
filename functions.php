@@ -587,8 +587,7 @@ function breadcrumbs() {
   }
 }
 
-
-
+// Search
 function tg_include_custom_post_types_in_search_results( $query ) {
   if ( $query->is_main_query() && $query->is_search() && ! is_admin() ) {
       $query->set( 'post_type', array( 'post', 'page', 'resource' ) );
@@ -610,27 +609,44 @@ function number_to_word($number) {
 }
 
 function custom_menu_classes($classes, $item, $args) {
-    // Check if it's the primary menu (adjust 'primary' to your actual menu location)
-    if ($args->theme_location == 'main') {
+    // Only apply to the main navigation menu
+    if ($args->theme_location === 'main') {
 
-        // Remove 'current_page_parent' from 'News' menu item on 'Resources' CPT archive or single CPT item
-        if (is_post_type_archive('resource') || is_singular('resource')) {
-            // Assuming 'News' is set as the blog page
-            if ($item->object_id == get_option('page_for_posts')) {
-                $classes = array_diff($classes, array('current_page_parent', 'current-menu-item', 'current_page_ancestor'));
+        // Slugs — adjust if different
+        $cpt_slug      = 'resource';
+        $taxonomy_slug = 'resource-category';
+
+        // Blog page (used for the News link)
+        $blog_page_id = get_option('page_for_posts');
+
+        // --- Remove News highlight on Resource-related pages ---
+        if (is_post_type_archive($cpt_slug) || is_singular($cpt_slug) || is_tax($taxonomy_slug)) {
+            if ((int)$item->object_id === (int)$blog_page_id) {
+                $classes = array_diff($classes, ['current_page_parent', 'current-menu-item', 'current_page_ancestor']);
             }
         }
-        
-        // Add 'current-menu-item' to 'Resources' menu item on 'Resources' CPT archive or single CPT item
-        if (is_post_type_archive('resource') || is_singular('resource')) {
-            if ($item->object == 'custom' && $item->url == get_post_type_archive_link('resources')) {
+
+        // --- Add active class to Resources link on CPT archive, single, or taxonomy ---
+        if (is_post_type_archive($cpt_slug) || is_singular($cpt_slug) || is_tax($taxonomy_slug)) {
+
+            // Allow for both "Custom Link" and real archive menu items
+            $archive_link = get_post_type_archive_link($cpt_slug);
+
+            // Normalise URL comparison (remove trailing slash issues)
+            $menu_url = untrailingslashit($item->url);
+            $archive_url = untrailingslashit($archive_link);
+
+            if ($menu_url === $archive_url) {
                 $classes[] = 'current-menu-item';
+                $classes[] = 'current_page_parent';
             }
         }
     }
-    return $classes;
+
+    return array_unique($classes);
 }
 add_filter('nav_menu_css_class', 'custom_menu_classes', 10, 3);
+
 
 // Private Content
 function remove_protected_text($title) {
