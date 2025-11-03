@@ -14,8 +14,9 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: ${{ secrets.SERVER_IP }}
           port: 21
+          protocol: ftps
+          server: termite-lon.cloudhosting.uk
           server-dir: public_html/wp-content/themes/mhid/
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
