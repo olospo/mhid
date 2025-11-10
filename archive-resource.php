@@ -15,16 +15,15 @@ get_header(); ?>
   </div>
 </section>
 
+<section class="filters">
+  <div class="container">
+    <?php get_template_part( 'inc/resource', 'filter' ); ?>
+  </div>
+</section>
+
 <section class="archive">
   <div class="container">
     <div class="twelve columns">
-      <div class="news_listing">
-        <?php 
-          query_posts(array( 
-            'post_type' => 'resource',
-            'showposts' => 24,
-          ));  
-        ?>
         <div class="news_listing">
             <?php if ( have_posts() ) : while (have_posts()) : the_post();  ?>
               <?php get_template_part('inc/article-resource'); ?>
@@ -34,13 +33,24 @@ get_header(); ?>
           <?php numeric_posts_nav(); ?>
           </div>
           <?php else : ?>
-          <!-- No posts found -->
+          <p>No resources found.</p>
           <?php endif; wp_reset_query(); ?>
         </div>
-        
-        
+
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filters = document.querySelectorAll('.resource-filters select');
+    filters.forEach(select => {
+      select.addEventListener('change', function() {
+        this.form.submit();
+      });
+    });
+  });
+</script>
+
 
 <?php get_footer();  ?>

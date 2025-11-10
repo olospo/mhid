@@ -850,11 +850,11 @@ section.fancy-accordion {
     .visual {
       box-sizing: border-box;
       text-align: center;
+      cursor: pointer;
       @media (min-width: $breakpoint-tablet) {
         margin-left: 2%; /* Default left margin */
         margin-right: 2%; /* Default right margin */
       }
-      cursor: pointer;
       &:first-child {
         margin-left: 0; /* No left margin on the first element */
       }

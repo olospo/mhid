@@ -18,8 +18,7 @@ nav.sites {
       cursor: pointer;
       @media (min-width: 940px) {
         display: inline-block;
-      } 
-      
+      }
       a {
         display: block;
         color: $white;
@@ -42,7 +41,6 @@ nav.sites {
           @media (min-width: 940px) {
             border-left: none;
           }
-        
         }
         &.current-site, &:hover  {
           a {
@@ -372,8 +370,8 @@ nav.menu {
         &.current_page_parent.page_item_has_children {
           > a {
             background: $blue url('../img/menu_arrow_hover.svg') right 20px center no-repeat; // Apply the hover background
-            padding-right: 40px; // Ensure padding for arrow space
-            color: $white; // Text color
+            padding-right: 40px; 
+            color: $white;
           }
         }
         ul {

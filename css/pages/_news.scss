@@ -181,13 +181,31 @@ section.newsletter_cta {
 }
 
 .categories {
-  margin: 10px 0px;
+  margin: 5px 0px;
   font: $normal 1.5rem/2.4rem $regular;
   a {
     margin: 2px 2px 2px 0px;
     background: $orange;
     color: $white;
-    padding: 7px 15px;
+    padding: 5px 10px;
+    text-decoration: underline;
+    text-decoration-color: $white;
+    white-space: nowrap;
+    display: inline-block;
+    &:hover {
+      color: $white;
+      background: $blue;
+    }
+  }
+}
+.resource-types {
+  margin: 5px 0px;
+  font: $normal 1.5rem/2.4rem $regular;
+  a {
+    margin: 2px 2px 2px 0px;
+    background: $teal;
+    color: $white;
+    padding: 5px 10px;
     text-decoration: underline;
     text-decoration-color: $white;
     white-space: nowrap;
