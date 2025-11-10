@@ -16,8 +16,8 @@ $selected_type = ! empty( $_GET['resource-type'] ) ? sanitize_text_field( $_GET[
 ?>
 
 <form method="get" class="resource-filters">
-  <div class="filter-group">
-    <label for="resource-category">Filter by Category:</label>
+  <div class="filter-group cat">
+    <label for="resource-category">Filter by <span>Category</span></label>
     <select name="resource-category" id="resource-category">
       <option value="">All Categories</option>
       <?php
@@ -33,8 +33,8 @@ $selected_type = ! empty( $_GET['resource-type'] ) ? sanitize_text_field( $_GET[
     </select>
   </div>
 
-  <div class="filter-group">
-    <label for="resource-type">Filter by Type:</label>
+  <div class="filter-group type">
+    <label for="resource-type">Filter by <span>Resource Type</span></label>
     <select name="resource-type" id="resource-type">
       <option value="">All Types</option>
       <?php
@@ -53,7 +53,7 @@ $selected_type = ! empty( $_GET['resource-type'] ) ? sanitize_text_field( $_GET[
   <?php
   // Only show reset link if any filter is active
   if ( $selected_cat || $selected_type ) : ?>
-    <a href="<?php echo esc_url( get_post_type_archive_link( 'resource' ) ); ?>" >Reset</a>
+    <a href="<?php echo esc_url( get_post_type_archive_link( 'resource' ) ); ?>" class="reset">Reset</a>
   <?php endif; ?>
 </form>
 

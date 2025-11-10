@@ -498,6 +498,16 @@ function breadcrumbs() {
     
       // Finally, show the current category
       echo $before . sprintf($text['category'], single_cat_title('', false)) . $after;
+      
+      } elseif ( is_tax( array( 'resource-category', 'resource-type' ) ) && !is_post_type_archive('resource') ) {
+      $term = get_queried_object();
+      
+      // Always start with a "Resources" link
+      printf( $link, get_post_type_archive_link( 'resource' ), 'Resources' );
+      echo $delimiter;
+      
+      // Then show the taxonomy term name
+      echo $before . esc_html( $term->name ) . $after;
     
     } elseif ( is_search() ) {
       echo $before . sprintf($text['search'], get_search_query()) . $after;
@@ -530,13 +540,28 @@ function breadcrumbs() {
         if ($showCurrent == 1) echo $before . get_the_title() . $after;
       }
  
-    } elseif ( is_post_type_archive() ) {
-      // ✅ FIXED: Proper breadcrumb for CPT archives (e.g., /resources/)
-      $post_type = get_queried_object();
-      if ( isset($post_type->name) && isset($post_type->labels->name) ) {
-        printf($link, get_post_type_archive_link($post_type->name), $post_type->labels->name);
+    } // Handle Resource archives and filtered Resource listings
+    elseif ( is_post_type_archive('resource') ) {
+    
+      printf($link, get_post_type_archive_link('resource'), 'Resources');
+    
+      // Check if filters are applied
+      $filters = array();
+    
+      if ( isset($_GET['resource-category']) && $_GET['resource-category'] ) {
+        $term = get_term_by('slug', sanitize_text_field($_GET['resource-category']), 'resource-category');
+        if ( $term ) $filters[] = esc_html($term->name);
       }
- 
+    
+      if ( isset($_GET['resource-type']) && $_GET['resource-type'] ) {
+        $term = get_term_by('slug', sanitize_text_field($_GET['resource-type']), 'resource-type');
+        if ( $term ) $filters[] = esc_html($term->name);
+      }
+    
+      // Only append “Filtered by” if filters exist
+      if ( ! empty( $filters ) ) {
+        echo $delimiter . $before . 'Filtered by ' . implode(' + ', $filters) . $after;
+      }
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
       $cat = get_the_category($parent->ID); $cat = $cat[0];
