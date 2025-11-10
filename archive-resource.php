@@ -15,11 +15,13 @@ get_header(); ?>
   </div>
 </section>
 
+<!--
 <section class="filters">
   <div class="container">
-    <?php get_template_part( 'inc/resource', 'filter' ); ?>
+    <?php // get_template_part( 'inc/resource', 'filter' ); ?>
   </div>
 </section>
+-->
 
 <section class="archive">
   <div class="container">
