@@ -267,6 +267,14 @@ function register_resource_taxonomies() {
 }
 add_action( 'init', 'register_resource_taxonomies' );
 
+if (function_exists('acf_add_options_sub_page')) {
+    acf_add_options_sub_page([
+        'page_title'  => 'Resources Settings',
+        'menu_title'  => 'Resource Settings',
+        'parent_slug' => 'edit.php?post_type=resource',
+    ]);
+}
+
 // Add unique body class based on the current site ID
 function add_site_specific_body_class($classes) {
   // Get the current site ID
