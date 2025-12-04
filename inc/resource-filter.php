@@ -26,7 +26,15 @@ $selected_type = ! empty( $_GET['resource-type'] ) ? sanitize_text_field( $_GET[
         'hide_empty' => true,
       ) );
       usort( $categories, function( $a, $b ) {
-          // Extract numbers from the term names
+      
+          // Determine group priority (Keystone before Step)
+          $aIsKeystone = stripos($a->name, 'Keystone') !== false;
+          $bIsKeystone = stripos($b->name, 'Keystone') !== false;
+      
+          if ( $aIsKeystone && !$bIsKeystone ) return -1;
+          if ( !$aIsKeystone && $bIsKeystone ) return 1;
+      
+          // If both are in same group, sort numerically by number in name
           preg_match('/\d+/', $a->name, $numA);
           preg_match('/\d+/', $b->name, $numB);
       
@@ -35,6 +43,7 @@ $selected_type = ! empty( $_GET['resource-type'] ) ? sanitize_text_field( $_GET[
       
           return $numA - $numB;
       });
+
       foreach ( $categories as $cat ) :
         $selected = ( $selected_cat === $cat->slug ) ? 'selected' : '';
         echo '<option value="' . esc_attr( $cat->slug ) . '" ' . $selected . '>' . esc_html( $cat->name ) . '</option>';
