@@ -25,6 +25,16 @@ $selected_type = ! empty( $_GET['resource-type'] ) ? sanitize_text_field( $_GET[
         'taxonomy'   => 'resource-category',
         'hide_empty' => true,
       ) );
+      usort( $categories, function( $a, $b ) {
+          // Extract numbers from the term names
+          preg_match('/\d+/', $a->name, $numA);
+          preg_match('/\d+/', $b->name, $numB);
+      
+          $numA = isset($numA[0]) ? intval($numA[0]) : 999;
+          $numB = isset($numB[0]) ? intval($numB[0]) : 999;
+      
+          return $numA - $numB;
+      });
       foreach ( $categories as $cat ) :
         $selected = ( $selected_cat === $cat->slug ) ? 'selected' : '';
         echo '<option value="' . esc_attr( $cat->slug ) . '" ' . $selected . '>' . esc_html( $cat->name ) . '</option>';
