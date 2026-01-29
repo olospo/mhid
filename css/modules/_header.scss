@@ -128,10 +128,12 @@ nav.sites {
           }
         }
         &.current-site, &:hover  {
-          color: $white;
-          @media (min-width: 940px) {
-            border-left: none;
-            border-top: 3px solid $teal;
+          a {
+            color: $white;
+            @media (min-width: 940px) {
+              border-left: none;
+              border-top: 3px solid $teal;
+            }
           }
         }
       }
@@ -143,10 +145,12 @@ nav.sites {
           }
         }
         &.current-site, &:hover  {
-          color: $white;
-          @media (min-width: 940px) {
-            border-left: none;
-            border-top: 3px solid #e3336b;
+          a {
+            color: $white;
+            @media (min-width: 940px) {
+              border-left: none;
+              border-top: 3px solid #e3336b;
+            }
           }
         }
         
