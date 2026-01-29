@@ -115,7 +115,7 @@ nav.sites {
             color: $white;
             @media (min-width: 940px) {
               border-left: none;
-              border-top: 3px solid #EA5D4E;
+              border-top: 3px solid #7AA2D6;
             }
           }
         }
@@ -133,8 +133,23 @@ nav.sites {
             border-left: none;
             border-top: 3px solid $teal;
           }
-          
         }
+      }
+      &.insights {
+        a {
+          border-top: transparent;
+          @media (min-width: 940px) {
+            border-left: none;
+          }
+        }
+        &.current-site, &:hover  {
+          color: $white;
+          @media (min-width: 940px) {
+            border-left: none;
+            border-top: 3px solid #e3336b;
+          }
+        }
+        
       }
     }
   }
