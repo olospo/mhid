@@ -22,6 +22,9 @@
     case 6: // AIM
       $logo_path = '/img/aim_logo.png';
       break;
+    case 7: // PCRN
+    $logo_path = '/img/pcrn_logo.png';
+    break;
   }
   ?>
   <img src="<?php bloginfo('template_directory'); ?><?php echo $logo_path; ?>" alt="<?php echo bloginfo( 'name' ); ?>">

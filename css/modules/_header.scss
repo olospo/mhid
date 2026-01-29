@@ -35,7 +35,7 @@ nav.sites {
           text-decoration: none;
         }
       }
-      &.site-1, &.mhid { // MHID
+      &.mhid { // MHID
         a {
           border-top: transparent;
           @media (min-width: 940px) {
@@ -52,7 +52,7 @@ nav.sites {
           }
         }
       }
-      &.site-2, &.andy { // Andy
+      &.andy { // Andy
         a {
           border-top: transparent;
           @media (min-width: 940px) {
@@ -69,7 +69,7 @@ nav.sites {
           }
         }
       }
-      &.site-3, &.sem { // Supporting Early Minds
+      &.sem { // Supporting Early Minds
         a {
           border-top: transparent;
           @media (min-width: 940px) {
@@ -84,7 +84,7 @@ nav.sites {
           }
         }
       }
-      &.site-4, &.wisdom { // Wisdom
+      &.wisdom { // Wisdom
         a {
           border-top: transparent;
           @media (min-width: 940px) {
@@ -99,7 +99,7 @@ nav.sites {
           }
         }
       }
-      &.site-5, &.yag { // YAG
+      &.pcrn { // YAG
         a {
           border-top: transparent;
           @media (min-width: 940px) {
@@ -115,7 +115,7 @@ nav.sites {
           
         }
       }
-      &.site-6, &.aim { // AIM
+      &.aim { // AIM
         a {
           border-top: transparent;
           @media (min-width: 940px) {

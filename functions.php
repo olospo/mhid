@@ -370,6 +370,11 @@ function enqueue_custom_login_styles() {
         // CSS file for yag site login
         wp_enqueue_style('aim-login-styles', get_stylesheet_directory_uri() . '/login/aim-login-style.css');
         break;
+        
+      case 'pcrn':
+      // CSS file for yag site login
+      wp_enqueue_style('aim-login-styles', get_stylesheet_directory_uri() . '/login/pcrn-login-style.css');
+      break;
 
       default:
         // Default CSS file if no specific match is found
