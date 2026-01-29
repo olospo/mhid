@@ -230,3 +230,23 @@ body.subsite-5 { // AIM
     }
   }
 }
+
+//---------------  PCRN ---------------//
+
+body.subsite-6 { // PCRN
+  header.main {
+    
+  }
+  section.hero.single {
+    background: #EF8015;
+    h1 {
+      color: $white;
+    }
+  }
+  .back_to_top {
+    background: #EF8015 url("../img/arrow_up.svg") no-repeat center center;
+    &:hover {
+      background: #ce6f15 url("../img/arrow_up.svg") no-repeat center center;
+    }
+  }
+}
