@@ -77,10 +77,12 @@ nav.sites {
           }
         }
         &.current-site, &:hover  {
-          color: $white;
-          @media (min-width: 940px) {
-            border-left: none;
-            border-top: 3px solid $purple;
+          a {
+            color: $white;
+            @media (min-width: 940px) {
+              border-left: none;
+              border-top: 3px solid $purple;
+            }
           }
         }
       }
@@ -92,10 +94,12 @@ nav.sites {
           }
         }
         &.current-site, &:hover  {
-          color: $white;
-          @media (min-width: 940px) {
-            border-left: none;
-            border-top: 3px solid $pink;
+          a {
+            color: $white;
+            @media (min-width: 940px) {
+              border-left: none;
+              border-top: 3px solid $pink;
+            }
           }
         }
       }
@@ -107,12 +111,13 @@ nav.sites {
           }
         }
         &.current-site, &:hover  { 
-          color: $white;
-          @media (min-width: 940px) {
-            border-left: none;
-            border-top: 3px solid $white;
+          a {
+            color: $white;
+            @media (min-width: 940px) {
+              border-left: none;
+              border-top: 3px solid #EA5D4E;
+            }
           }
-          
         }
       }
       &.aim { // AIM
