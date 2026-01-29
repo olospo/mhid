@@ -378,8 +378,8 @@ function enqueue_custom_login_styles() {
 
       default:
         // Default CSS file if no specific match is found
-        wp_enqueue_style('default-login-styles', get_stylesheet_directory_uri() . '/login/mhid-login-style.css');
-        break;
+      wp_enqueue_style('default-login-styles', get_stylesheet_directory_uri() . '/login/mhid-login-style.css');
+      break;
     }
 }
 add_action('login_enqueue_scripts', 'enqueue_custom_login_styles');
