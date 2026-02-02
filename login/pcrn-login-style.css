@@ -1,9 +1,9 @@
 body {
-background: #193E72;
+background: #005F8C;
 }
 
 #login h1 a {
-background-image: url("../img/pcrn_logo.png");
+background-image: url("../img/login/pcrn_logo.png");
 background-size: contain;
 background-position: left top;
 width: 210px;
@@ -20,7 +20,7 @@ background-color: #EBE9E6;
 border-style: none;
 }
 #login {
-background: #193E72;
+background: #005F8C;
 margin: 20px auto;
 padding: 20px 20px;
 width: 350px;
@@ -46,7 +46,7 @@ float:none;
 margin-top:15px;
 }
 .login.wp-core-ui .button-primary {
-background: #EA5D4E;
+background: #F0801A;
 color: #FFF;
 text-shadow: none;
 float: none;
