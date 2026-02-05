@@ -275,6 +275,55 @@ if (function_exists('acf_add_options_sub_page')) {
     ]);
 }
 
+/** Only enable Opportunities CPT on subsite-6 (blog_id = 7) */
+function tg_opportunities_enabled(): bool {
+  return (int) get_current_blog_id() === 7;
+}
+
+add_action('init', function () {
+  if ( ! tg_opportunities_enabled() ) {
+    return;
+  }
+
+  // Register CPT
+  $labels = [
+    'name'               => _x('Opportunities', 'Post Type General Name', 'text_domain'),
+    'singular_name'      => _x('Opportunity', 'Post Type Singular Name', 'text_domain'),
+    'menu_name'          => __('Opportunities', 'text_domain'),
+    'add_new'            => __('Add New', 'text_domain'),
+    'add_new_item'       => __('Add New Opportunity', 'text_domain'),
+    'edit_item'          => __('Edit Opportunity', 'text_domain'),
+    'new_item'           => __('New Opportunity', 'text_domain'),
+    'view_item'          => __('View Opportunity', 'text_domain'),
+    'search_items'       => __('Search Opportunities', 'text_domain'),
+    'not_found'          => __('Not found', 'text_domain'),
+    'not_found_in_trash' => __('Not found in Trash', 'text_domain'),
+    'all_items'          => __('All Opportunities', 'text_domain'),
+  ];
+
+  $args = [
+    'label'               => __('Opportunity', 'text_domain'),
+    'description'         => __('Opportunities', 'text_domain'),
+    'labels'              => $labels,
+    'supports'            => ['title', 'editor', 'thumbnail', 'excerpt', 'revisions'],
+    'hierarchical'        => false,
+    'public'              => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'menu_position'       => 26,
+    'menu_icon'           => 'dashicons-pressthis',
+    'has_archive'         => true,
+    'rewrite'             => ['slug' => 'opportunities', 'with_front' => false],
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'show_in_rest'        => true,
+  ];
+
+  register_post_type('opportunity', $args);
+
+}, 0);
+
+
 // Add unique body class based on the current site ID
 function add_site_specific_body_class($classes) {
   // Get the current site ID
@@ -313,7 +362,7 @@ function add_site_specific_body_class($classes) {
       break;
       
     case 7:
-      // Body class for subsite 5
+      // Body class for subsite 6
       $classes[] = 'subsite-6';
       break;
 
