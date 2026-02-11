@@ -32,6 +32,13 @@
                 "operator": "==",
                 "value": "acf-options-resource-settings"
             }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-opportunities-settings"
+            }
         ]
     ],
     "menu_order": 0,
@@ -43,5 +50,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1763460657
+    "modified": 1770303288
 }

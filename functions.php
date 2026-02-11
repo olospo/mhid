@@ -275,9 +275,11 @@ if (function_exists('acf_add_options_sub_page')) {
     ]);
 }
 
+// OPPORTUNITY ONLY CODE
+
 /** Only enable Opportunities CPT on subsite-6 (blog_id = 7) */
 function tg_opportunities_enabled(): bool {
-  return (int) get_current_blog_id() === 7;
+  return (int) get_current_blog_id() === 7; // 7 is live - 2 is local
 }
 
 add_action('init', function () {
@@ -320,6 +322,126 @@ add_action('init', function () {
   ];
 
   register_post_type('opportunity', $args);
+  
+  // --- Topic taxonomy (e.g. Eating Disorders) ---
+  register_taxonomy('opportunity-topic', ['opportunity'], [
+    'labels' => [
+      'name'              => _x('Topics', 'taxonomy general name', 'text_domain'),
+      'singular_name'     => _x('Topic', 'taxonomy singular name', 'text_domain'),
+      'search_items'      => __('Search Topics', 'text_domain'),
+      'all_items'         => __('All Topics', 'text_domain'),
+      'edit_item'         => __('Edit Topic', 'text_domain'),
+      'update_item'       => __('Update Topic', 'text_domain'),
+      'add_new_item'      => __('Add New Topic', 'text_domain'),
+      'new_item_name'     => __('New Topic Name', 'text_domain'),
+      'menu_name'         => __('Topics', 'text_domain'),
+    ],
+    'public'            => true,
+    'hierarchical'      => true, // category-like
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'show_in_rest'      => true,
+    'rewrite'           => ['slug' => 'opportunity-topic', 'with_front' => false],
+  ]);
+  
+  // --- Age taxonomy (e.g. 0-12) ---
+  register_taxonomy('opportunity-age', ['opportunity'], [
+    'labels' => [
+      'name'              => _x('Ages', 'taxonomy general name', 'text_domain'),
+      'singular_name'     => _x('Age', 'taxonomy singular name', 'text_domain'),
+      'search_items'      => __('Search Ages', 'text_domain'),
+      'all_items'         => __('All Ages', 'text_domain'),
+      'edit_item'         => __('Edit Age', 'text_domain'),
+      'update_item'       => __('Update Age', 'text_domain'),
+      'add_new_item'      => __('Add New Age', 'text_domain'),
+      'new_item_name'     => __('New Age Name', 'text_domain'),
+      'menu_name'         => __('Age', 'text_domain'),
+    ],
+    'public'            => true,
+    'hierarchical'      => true, // category-like
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'show_in_rest'      => true,
+    'rewrite'           => ['slug' => 'opportunity-age', 'with_front' => false],
+  ]);
+  
+  if (function_exists('acf_add_options_sub_page')) {
+      acf_add_options_sub_page([
+          'page_title'  => 'Opportunities Settings',
+          'menu_title'  => 'Opportunities Settings',
+          'parent_slug' => 'edit.php?post_type=opportunity',
+      ]);
+  }
+  
+  add_action('pre_get_posts', function ($query) {
+    if (is_admin() || ! $query->is_main_query()) return;
+    if (! tg_opportunities_enabled()) return;
+  
+    // Only target the Opportunities archive
+    if (! $query->is_post_type_archive('opportunity')) return;
+  
+    $today = (int) current_time('Ymd');
+    $is_past = (bool) get_query_var('opportunity_past'); // set by rewrite rule below
+  
+    // Optional: set ordering/pagination defaults
+    $query->set('posts_per_page', -1);
+  
+    if ($is_past) {
+      // Past opportunities: expiry date before today (and must have an expiry date)
+      $query->set('meta_key', 'expires_on');
+      $query->set('orderby', 'meta_value_num');
+      $query->set('order', 'DESC');
+  
+      $query->set('meta_query', [
+        [
+          'key'     => 'expires_on',
+          'value'   => $today,
+          'type'    => 'NUMERIC',
+          'compare' => '<',
+        ],
+      ]);
+    } else {
+      // Current opportunities: no expiry OR expiry today/future
+      $query->set('meta_key', 'expires_on');
+      $query->set('orderby', 'meta_value_num');
+      $query->set('order', 'ASC'); // soonest expiring first is usually nice UX
+  
+      $query->set('meta_query', [
+        'relation' => 'OR',
+        [
+          'key'     => 'expires_on',
+          'compare' => 'NOT EXISTS',
+        ],
+        [
+          'key'     => 'expires_on',
+          'value'   => '',
+          'compare' => '=',
+        ],
+        [
+          'key'     => 'expires_on',
+          'value'   => $today,
+          'type'    => 'NUMERIC',
+          'compare' => '>=',
+        ],
+      ]);
+    }
+  });
+
+  // Past Opportunities
+  add_action('init', function () {
+    if (! tg_opportunities_enabled()) return;
+  
+    add_rewrite_rule(
+      '^opportunities/past/?$',
+      'index.php?post_type=opportunity&opportunity_past=1',
+      'top'
+    );
+  });
+  
+  add_filter('query_vars', function ($vars) {
+    $vars[] = 'opportunity_past';
+    return $vars;
+  });
 
 }, 0);
 
@@ -624,6 +746,45 @@ function breadcrumbs() {
       if ( ! empty( $filters ) ) {
         echo $delimiter . $before . 'Filtered by ' . implode(' + ', $filters) . $after;
       }
+    } // Handle Resource archives and filtered Resource listings
+    elseif ( is_post_type_archive('opportunity') ) {
+    
+      $is_past = (bool) get_query_var('opportunity_past');
+    
+      // Main Opportunities link
+      printf($link, get_post_type_archive_link('opportunity'), 'Opportunities');
+    
+      // If this is the Past archive, add that breadcrumb level
+      if ( $is_past ) {
+        echo $delimiter . $before . 'Past opportunities' . $after;
+      }
+    
+      // Check if filters are applied (only applies to current archive, not past)
+      $filters = array();
+    
+      if ( isset($_GET['opportunity-topic']) && $_GET['opportunity-topic'] ) {
+        $term = get_term_by(
+          'slug',
+          sanitize_text_field($_GET['opportunity-topic']),
+          'opportunity-topic'
+        );
+        if ( $term ) $filters[] = esc_html($term->name);
+      }
+    
+      if ( isset($_GET['opportunity-age']) && $_GET['opportunity-age'] ) {
+        $term = get_term_by(
+          'slug',
+          sanitize_text_field($_GET['opportunity-age']),
+          'opportunity-age'
+        );
+        if ( $term ) $filters[] = esc_html($term->name);
+      }
+    
+      // Append filters if present and not in past archive
+      if ( ! empty($filters) && ! $is_past ) {
+        echo $delimiter . $before . 'Filtered by ' . implode(' + ', $filters) . $after;
+      }
+    
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
       $cat = get_the_category($parent->ID); $cat = $cat[0];
