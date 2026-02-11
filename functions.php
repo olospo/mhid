@@ -618,6 +618,8 @@ class childNav extends Walker_page {
   }
 }
 
+
+
 // Breadcrumbs
 function breadcrumbs() {
  
@@ -857,43 +859,67 @@ function number_to_word($number) {
 }
 
 function custom_menu_classes($classes, $item, $args) {
-    // Only apply to the main navigation menu
-    if ($args->theme_location === 'main') {
 
-        // Slugs — adjust if different
-        $cpt_slug      = 'resource';
-        $taxonomy_slug = 'resource-category';
+  // Only apply to the main navigation menu
+  if (empty($args->theme_location) || $args->theme_location !== 'main') {
+    return $classes;
+  }
 
-        // Blog page (used for the News link)
-        $blog_page_id = get_option('page_for_posts');
+  // The "News" menu item is typically the Posts page
+  $blog_page_id = (int) get_option('page_for_posts');
 
-        // --- Remove News highlight on Resource-related pages ---
-        if (is_post_type_archive($cpt_slug) || is_singular($cpt_slug) || is_tax($taxonomy_slug)) {
-            if ((int)$item->object_id === (int)$blog_page_id) {
-                $classes = array_diff($classes, ['current_page_parent', 'current-menu-item', 'current_page_ancestor']);
-            }
-        }
+  // Detect if we're in Resources or Opportunities context
+  $is_resource_context =
+    is_post_type_archive('resource') ||
+    is_singular('resource') ||
+    is_tax(['resource-category', 'resource-type']);
 
-        // --- Add active class to Resources link on CPT archive, single, or taxonomy ---
-        if (is_post_type_archive($cpt_slug) || is_singular($cpt_slug) || is_tax($taxonomy_slug)) {
+  $is_opportunity_context =
+    is_post_type_archive('opportunity') ||
+    is_singular('opportunity') ||
+    is_tax(['opportunity-topic', 'opportunity-age']);
 
-            // Allow for both "Custom Link" and real archive menu items
-            $archive_link = get_post_type_archive_link($cpt_slug);
-
-            // Normalise URL comparison (remove trailing slash issues)
-            $menu_url = untrailingslashit($item->url);
-            $archive_url = untrailingslashit($archive_link);
-
-            if ($menu_url === $archive_url) {
-                $classes[] = 'current-menu-item';
-                $classes[] = 'current_page_parent';
-            }
-        }
+  // --- Remove News highlight on Resource/Opportunity pages ---
+  if (($is_resource_context || $is_opportunity_context) && $blog_page_id) {
+    if ((int) $item->object_id === $blog_page_id) {
+      $classes = array_diff($classes, ['current_page_parent', 'current-menu-item', 'current_page_ancestor']);
     }
+  }
 
-    return array_unique($classes);
+  // --- Force Resources menu item to look active on Resources pages ---
+  if ($is_resource_context) {
+    $archive_link = get_post_type_archive_link('resource');
+
+    if ($archive_link) {
+      $menu_url    = untrailingslashit($item->url);
+      $archive_url = untrailingslashit($archive_link);
+
+      if ($menu_url === $archive_url) {
+        $classes[] = 'current-menu-item';
+        $classes[] = 'current_page_parent';
+      }
+    }
+  }
+
+  // --- Force Opportunities menu item to look active on Opportunities pages ---
+  if ($is_opportunity_context) {
+    $archive_link = get_post_type_archive_link('opportunity');
+
+    if ($archive_link) {
+      $menu_url    = untrailingslashit($item->url);
+      $archive_url = untrailingslashit($archive_link);
+
+      if ($menu_url === $archive_url) {
+        $classes[] = 'current-menu-item';
+        $classes[] = 'current_page_parent';
+      }
+    }
+  }
+
+  return array_values(array_unique($classes));
 }
-add_filter('nav_menu_css_class', 'custom_menu_classes', 10, 3);
+add_filter('nav_menu_css_class', 'custom_menu_classes', 20, 3);
+
 
 
 // Private Content
@@ -923,3 +949,4 @@ function custom_password_form() {
     return $output;
 }
 add_filter('the_password_form', 'custom_password_form');
+
