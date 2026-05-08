@@ -20,7 +20,7 @@ add_action( 'after_setup_theme', 'theme_setup' );
 // Enqueue styles
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
-  wp_enqueue_style( 'main', get_stylesheet_directory_uri().'/css/main.css', false, filemtime( get_stylesheet_directory() . '/style.css' ) );
+  wp_enqueue_style( 'main', get_template_directory_uri().'/css/main.css', false, filemtime( get_template_directory() . '/style.css' ) );
 }
 
 // Enqueue scripts
@@ -28,14 +28,14 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
 function theme_enqueue_scripts() {
 
   wp_deregister_script( 'jquery' ); // Deregister to put jQuery into footer
-  wp_register_script( 'jquery', get_stylesheet_directory_uri().'/js/jquery.min.js', false, NULL, true );
+  wp_register_script( 'jquery', get_template_directory_uri().'/js/jquery.min.js', false, NULL, true );
   
   wp_enqueue_script( 'jquery' ); // Re-register jQuery
   
-  wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri().'/js/application.min.js', 'jquery', NULL, true );
+  wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/application.min.js', 'jquery', NULL, true );
   wp_enqueue_script(
       'theme-functions',
-      get_stylesheet_directory_uri() . '/js/functions.js',
+      get_template_directory_uri() . '/js/functions.js',
       array('jquery'),  // Dependencies should be in an array
       filemtime( get_stylesheet_directory() . '/style.css' ), // Version number
       true  // Load in footer
@@ -950,3 +950,19 @@ function custom_password_form() {
 }
 add_filter('the_password_form', 'custom_password_form');
 
+/**
+ * Restrict AIM Library child theme to AIM subsite only
+ */
+add_filter('allowed_themes', function ($themes) {
+
+    // AIM site ID
+    $aim_site_id = 7;
+
+    // Hide child theme from all other subsites
+    if (get_current_blog_id() !== $aim_site_id) {
+        unset($themes['aim-library']);
+    }
+
+    return $themes;
+
+});
