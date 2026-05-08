@@ -956,7 +956,7 @@ add_filter('the_password_form', 'custom_password_form');
 add_filter('allowed_themes', function ($themes) {
 
     // AIM site ID
-    $aim_site_id = 7;
+    $aim_site_id = 6;
 
     // Hide child theme from all other subsites
     if (get_current_blog_id() !== $aim_site_id) {
