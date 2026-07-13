@@ -4,7 +4,7 @@ nav.sites {
   ul.sites {
     text-align: right;
     margin: 0;
-    @media (max-width: 940px) {
+    @media (max-width: 2400px) {
       margin: 20px 0 10px 0;
       &:not(.active) {
         display: none; // Hide the menu on mobile when not active
@@ -16,7 +16,7 @@ nav.sites {
       padding: 0;
       display: block;
       cursor: pointer;
-      @media (min-width: 940px) {
+      @media (min-width: 2400px) {
         display: inline-block;
       }
       a {
@@ -38,14 +38,14 @@ nav.sites {
       &.mhid { // MHID
         a {
           border-top: transparent;
-          @media (min-width: 940px) {
+          @media (min-width: 2400px) {
             border-left: none;
           }
         }
         &.current-site, &:hover  {
           a {
             color: $white;
-            @media (min-width: 940px) {
+            @media (min-width: 2400px) {
               border-left: none;
               border-top: 3px solid $orange;
             }
@@ -55,14 +55,14 @@ nav.sites {
       &.andy { // Andy
         a {
           border-top: transparent;
-          @media (min-width: 940px) {
+          @media (min-width: 2400px) {
             border-left: none;
           }
         }
         &.current-site, &:hover  {
           a {
             color: $white;
-            @media (min-width: 940px) {
+            @media (min-width: 2400px) {
               border-left: none;
               border-top: 3px solid $green;
             }
@@ -72,14 +72,14 @@ nav.sites {
       &.sem { // Supporting Early Minds
         a {
           border-top: transparent;
-          @media (min-width: 940px) {
+          @media (min-width: 2400px) {
             border-left: none;
           }
         }
         &.current-site, &:hover  {
           a {
             color: $white;
-            @media (min-width: 940px) {
+            @media (min-width: 2400px) {
               border-left: none;
               border-top: 3px solid $purple;
             }
@@ -89,14 +89,14 @@ nav.sites {
       &.wisdom { // Wisdom
         a {
           border-top: transparent;
-          @media (min-width: 940px) {
+          @media (min-width: 2400px) {
             border-left: none;
           }
         }
         &.current-site, &:hover  {
           a {
             color: $white;
-            @media (min-width: 940px) {
+            @media (min-width: 2400px) {
               border-left: none;
               border-top: 3px solid $pink;
             }
@@ -106,14 +106,14 @@ nav.sites {
       &.pcrn { // YAG
         a {
           border-top: transparent;
-          @media (min-width: 940px) {
+          @media (min-width: 2400px) {
             border-left: none;
           }
         }
         &.current-site, &:hover  { 
           a {
             color: $white;
-            @media (min-width: 940px) {
+            @media (min-width: 2400px) {
               border-left: none;
               border-top: 3px solid #7AA2D6;
             }
@@ -123,14 +123,14 @@ nav.sites {
       &.aim { // AIM
         a {
           border-top: transparent;
-          @media (min-width: 940px) {
+          @media (min-width: 2400px) {
             border-left: none;
           }
         }
         &.current-site, &:hover  {
           a {
             color: $white;
-            @media (min-width: 940px) {
+            @media (min-width: 2400px) {
               border-left: none;
               border-top: 3px solid $teal;
             }
@@ -140,14 +140,14 @@ nav.sites {
       &.insights {
         a {
           border-top: transparent;
-          @media (min-width: 940px) {
+          @media (min-width: 2400px) {
             border-left: none;
           }
         }
         &.current-site, &:hover  {
           a {
             color: $white;
-            @media (min-width: 940px) {
+            @media (min-width: 2400px) {
               border-left: none;
               border-top: 3px solid #e3336b;
             }
@@ -158,14 +158,14 @@ nav.sites {
       &.open {
         a {
           border-top: transparent;
-          @media (min-width: 940px) {
+          @media (min-width: 2400px) {
             border-left: none;
           }
         }
         &.current-site, &:hover  {
           a {
             color: $white;
-            @media (min-width: 940px) {
+            @media (min-width: 2400px) {
               border-left: none;
               border-top: 3px solid #c07eb3;
             }
@@ -183,7 +183,7 @@ nav.sites {
     height: 10px;
     z-index: 30;
     display: none; 
-    @media (max-width: 940px) {
+    @media (max-width: 2400px) {
       display: block;
       margin: 15px 0;
       position: relative;
@@ -262,7 +262,7 @@ nav.menu {
   background:#F0F1F5;
   &.open {
     background: $blue;
-    @media (min-width: 1060px) {
+    @media (min-width: 1160px) {
       background:#F0F1F5;
     }
     .primary {
@@ -283,7 +283,7 @@ nav.menu {
   .primary {
     box-sizing: border-box;
     // letter-spacing: 0.1rem;
-    @media (min-width: 1060px) {
+    @media (min-width: 1160px) {
       height: 50px;
     }
     a.menu-toggle {
@@ -294,7 +294,7 @@ nav.menu {
       height: 10px;
       z-index: 30;
       display: none; 
-      @media (max-width: 1060px) {
+      @media (max-width: 1160px) {
         display: block;
         margin: 15px 0;
         position: relative;
@@ -344,7 +344,7 @@ nav.menu {
       line-height:1em;
       margin-right: 30px;
       font-size: 0; // Remove gap between li
-      @media (max-width: 1060px) {
+      @media (max-width: 1160px) {
         margin-right: 60px;
         &:not(.active) {
           display: none; // Hide the menu on mobile when not active
@@ -514,7 +514,7 @@ nav.menu {
       top: 0px;
       right: 0;
       display: block;
-      @media (max-width: 1060px) {
+      @media (max-width: 1160px) {
         display: none;
       }
       .search_form {
@@ -588,7 +588,7 @@ nav.mobile {
   }
   &.active {
     display: block;
-    @media (min-width: 1060px) {
+    @media (min-width: px) {
       display: none;
     }
   }
