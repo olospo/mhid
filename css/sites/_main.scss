@@ -1,23 +1,6 @@
 //--------------- MHID ---------------//
 
 body.main-site {
-  nav.sites {
-    ul.sites {
-      li.mhid { // Wisdom
-        a {
-          border-top: transparent;
-          @media (min-width: 940px) {
-            border-left: none;
-            border-top: 3px solid $orange;
-          }
-        }
-        a:hover {
-          // border-top: 3px solid $orange;
-        }
-      }
-    }
-  }
-
   section.hero.single {
     background: $blue;
     h1 {
@@ -29,22 +12,6 @@ body.main-site {
 //---------------  ANDY ---------------//
 
 body.subsite-1 { // Andy
-  nav.sites {
-    ul.sites {
-      li.andy { // Wisdom
-        a {
-          border-top: transparent;
-          @media (min-width: 940px) {
-            border-left: none;
-            border-top: 3px solid $green;
-          }
-        }
-        a:hover {
-          // border-top: 3px solid $green;
-        }
-      }
-    }
-  }
   section.hero.single {
     background: $green;
     h1 {
@@ -81,23 +48,6 @@ body.subsite-1 { // Andy
 //--------------- Early Minds ---------------//
 
 body.subsite-2 { // Support
-  nav.sites {
-    ul.sites {
-      li.sem{
-        a {
-          border-top: transparent;
-          @media (min-width: 940px) {
-            border-left: none;
-            border-top: 3px solid $purple;
-          }
-        
-        }
-        a:hover {
-          // border-top: 3px solid $purple;
-        }
-      }
-    }
-  }
   section.hero.single {
     background: $purple;
     h1 {
@@ -129,24 +79,6 @@ body.subsite-2 { // Support
 //---------------  Wisdom ---------------//
 
 body.subsite-3 { // Wisdom
-  nav.sites {
-    ul.sites {
-      li.wisdom { // Wisdom
-        a {
-          border-top: transparent;
-          @media (min-width: 940px) {
-            border-left: none;
-            border-top: 3px solid $pink;
-          }
-        
-        }
-        a:hover {
-          // border-top: 3px solid $pink;
-        }
-      }
-    }
-  }
-
   section.hero.single {
     background: $pink;
     h1 {
@@ -190,19 +122,6 @@ body.subsite-3 { // Wisdom
 //---------------  YAG ---------------//
 
 body.subsite-4 { // INSIGHTS
-  nav.sites {
-    ul.sites {
-      li.insights {
-        a {
-          border-top: transparent;
-          @media (min-width: 940px) {
-            border-left: none;
-            border-top: 3px solid #E3336B;
-          }
-        }
-      }
-    }
-  }
   section.hero.single {
     background: $blue;
     h1 {
