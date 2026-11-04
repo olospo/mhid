@@ -295,6 +295,14 @@ section.newsletter_cta {
       color: $white;
       background: $blue;
     }
+    &.news-link {
+      background: #193E72;
+      color: $white;
+      &:hover {
+        background: $orange;
+        color: $white;
+      }
+    }
   }
 }
 .resource-types {

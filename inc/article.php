@@ -23,7 +23,7 @@
     if ( ! empty( $categories ) ) { ?>
       <div class="categories">
       <?php foreach ( $categories as $category ) {
-        echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="category-link">' . esc_html( $category->name ) . '</a> ';
+        echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="news-link">' . esc_html( $category->name ) . '</a> ';
       } ?>
     </div>
     <?php } ?>
