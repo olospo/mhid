@@ -80,7 +80,7 @@ footer {
       }
       &.wisdom {
         a {
-          border-left: 5px solid $pink;
+          border-left: 5px solid #fed47a;
           padding-left: 10px;
         }
       }
@@ -92,7 +92,13 @@ footer {
       }
       &.aim {
         a {
-          border-left: 5px solid $teal;
+          border-left: 5px solid #2ea9b0;
+          padding-left: 10px;
+        }
+      }
+      &.open {
+        a {
+          border-left: 5px solid #a74794;
           padding-left: 10px;
         }
       }
