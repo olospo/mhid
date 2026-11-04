@@ -15,7 +15,7 @@ $selected_cat  = ! empty( $_GET['resource-category'] ) ? sanitize_text_field( $_
 $selected_type = ! empty( $_GET['resource-type'] ) ? sanitize_text_field( $_GET['resource-type'] ) : $current_type;
 ?>
 
-<form method="get" class="resource-filters">
+<form method="get" action="<?php echo esc_url( get_post_type_archive_link( 'resource' ) ); ?>" class="resource-filters">
   <div class="filter-group cat">
     <label for="resource-category">Filter by <span>Category</span></label>
     <select name="resource-category" id="resource-category">

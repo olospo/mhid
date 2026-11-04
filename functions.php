@@ -82,68 +82,68 @@ add_filter('excerpt_length', 'excerpt_length');
 // Read More after excerpt
 function new_excerpt_more($more) {
   global $post;
-	return '';
+  return '';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
 // Get ID from Page Name
 function ID_from_page_name($page_name)
 {
-	global $wpdb;
-	$page_name_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_name = '".$page_name."'");
-	return $page_name_id;
+  global $wpdb;
+  $page_name_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_name = '".$page_name."'");
+  return $page_name_id;
 }
 
 // Pagination
 function numeric_posts_nav() {
-	if( is_singular() )
-		return;
-	global $wp_query;
-	/** Stop execution if there's only 1 page */
-	if( $wp_query->max_num_pages <= 1 )
-		return;
-	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-	$max   = intval( $wp_query->max_num_pages );
-	/**	Add current page to the array */
-	if ( $paged >= 1 )
-		$links[] = $paged;
-	/**	Add the pages around the current page to the array */
-	if ( $paged >= 3 ) {
-		$links[] = $paged - 1;
-		$links[] = $paged - 2;
-	}
-	if ( ( $paged + 2 ) <= $max ) {
-		$links[] = $paged + 2;
-		$links[] = $paged + 1;
-	}
-	echo '<div class="pagination"><ul>' . "\n";
-	/**	Previous Post Link */
-	if ( get_previous_posts_link() )
-		printf( '<li class="prev">%s</li>' . "\n", get_previous_posts_link('< Previous Page') );
-	/**	Link to first page, plus ellipses if necessary */
-	if ( ! in_array( 1, $links ) ) {
-		$class = 1 == $paged ? ' class="active"' : '';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
-		if ( ! in_array( 2, $links ) )
-			echo '<li>…</li>';
-	}
-	/**	Link to current page, plus 2 pages in either direction if necessary */
-	sort( $links );
-	foreach ( (array) $links as $link ) {
-		$class = $paged == $link ? ' class="active"' : '';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
-	}
-	/**	Link to last page, plus ellipses if necessary */
-	if ( ! in_array( $max, $links ) ) {
-		if ( ! in_array( $max - 1, $links ) )
-			echo '<li>…</li>' . "\n";
-		$class = $paged == $max ? ' class="active"' : '';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
-	}
-	/**	Next Post Link */
-	if ( get_next_posts_link() )
-		printf( '<li class="next">%s</li>' . "\n", get_next_posts_link('Next Page >') );
-	echo '</ul></div>' . "\n";
+  if( is_singular() )
+    return;
+  global $wp_query;
+  /** Stop execution if there's only 1 page */
+  if( $wp_query->max_num_pages <= 1 )
+    return;
+  $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+  $max   = intval( $wp_query->max_num_pages );
+  /**	Add current page to the array */
+  if ( $paged >= 1 )
+    $links[] = $paged;
+  /**	Add the pages around the current page to the array */
+  if ( $paged >= 3 ) {
+    $links[] = $paged - 1;
+    $links[] = $paged - 2;
+  }
+  if ( ( $paged + 2 ) <= $max ) {
+    $links[] = $paged + 2;
+    $links[] = $paged + 1;
+  }
+  echo '<div class="pagination"><ul>' . "\n";
+  /**	Previous Post Link */
+  if ( get_previous_posts_link() )
+    printf( '<li class="prev">%s</li>' . "\n", get_previous_posts_link('< Previous Page') );
+  /**	Link to first page, plus ellipses if necessary */
+  if ( ! in_array( 1, $links ) ) {
+    $class = 1 == $paged ? ' class="active"' : '';
+    printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+    if ( ! in_array( 2, $links ) )
+      echo '<li>…</li>';
+  }
+  /**	Link to current page, plus 2 pages in either direction if necessary */
+  sort( $links );
+  foreach ( (array) $links as $link ) {
+    $class = $paged == $link ? ' class="active"' : '';
+    printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+  }
+  /**	Link to last page, plus ellipses if necessary */
+  if ( ! in_array( $max, $links ) ) {
+    if ( ! in_array( $max - 1, $links ) )
+      echo '<li>…</li>' . "\n";
+    $class = $paged == $max ? ' class="active"' : '';
+    printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+  }
+  /**	Next Post Link */
+  if ( get_next_posts_link() )
+    printf( '<li class="next">%s</li>' . "\n", get_next_posts_link('Next Page >') );
+  echo '</ul></div>' . "\n";
 }
 // This stuff fixes the pagination issue with custom posts. 
 function remove_page_from_query_string($query_string)
@@ -194,6 +194,10 @@ function custom_post_type() {
     'menu_icon'           => 'dashicons-editor-alignleft',
     'can_export'          => true,
     'has_archive'         => true,
+    'rewrite'             => array(
+        'slug'       => 'resources',
+        'with_front' => false,
+    ),
     'exclude_from_search' => false,
     'publicly_queryable'  => true,
     'capability_type'     => 'post',
@@ -541,10 +545,22 @@ function breadcrumbs() {
  
     } elseif ( is_single() && !is_attachment() ) {
       if ( get_post_type() != 'post' ) {
-        $post_type = get_post_type_object(get_post_type());
-        $slug = $post_type->rewrite;
-        printf($link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
-        if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
+        $current_post_type = get_post_type();
+        $post_type = get_post_type_object( $current_post_type );
+
+        // Use the registered archive URL and a plural label for Resources.
+        $archive_url = get_post_type_archive_link( $current_post_type );
+        $breadcrumb_label = ( 'resource' === $current_post_type )
+          ? 'Resources'
+          : $post_type->labels->singular_name;
+
+        if ( $archive_url ) {
+          printf( $link, esc_url( $archive_url ), esc_html( $breadcrumb_label ) );
+        }
+
+        if ( $showCurrent == 1 ) {
+          echo $delimiter . $before . get_the_title() . $after;
+        }
       } else {
         echo sprintf($link, $posts_section['url'], $posts_section['label']) . $delimiter;
         $cat = get_the_category(); $cat = $cat[0];
@@ -657,9 +673,9 @@ function breadcrumbs() {
     }
  
     if ( get_query_var('paged') ) {
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page') . ' ' . get_query_var('paged');
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
+      if ( get_query_var('paged') ) {
+          echo $delimiter . $before . 'Page ' . get_query_var('paged') . $after;
+      }
     }
  
     echo '</div>';
